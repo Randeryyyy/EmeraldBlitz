@@ -41414,7 +41414,7 @@ F_TRAINER_FEMALE |
 #line 16169
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 16171
-            .ability = ABILITY_CLOUD_NINE,
+            .ability = ABILITY_NATURAL_CURE,
 #line 16168
             .lvl = 12,
 #line 16170
@@ -41506,7 +41506,7 @@ F_TRAINER_FEMALE |
 #line 16209
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 16211
-            .ability = ABILITY_CLOUD_NINE,
+            .ability = ABILITY_NATURAL_CURE,
 #line 16208
             .lvl = 18,
 #line 16210

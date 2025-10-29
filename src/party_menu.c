@@ -2938,29 +2938,19 @@ static bool8 MonNeedsHealing(struct Pokemon *mon)
 
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
-    u8 i, j;
     bool32 canStopEvo = TRUE;
     u16 targetSpecies = GetEvolutionTargetSpecies(&gPlayerParty[gPartyMenu.slotId], EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO);
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
-    // Add field moves to action list
-    for (i = 0; i < MAX_MON_MOVES; i++)
+    if (MonKnowsMove(&mons[slotId], MOVE_FLASH))
     {
-        for (j = 0; j != 2; j++) //Only append Cut, Flash, and Fly
-        {
-            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
-            {
-                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                    break;
-            }
-            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FIELD_MOVE_TELEPORT)
-            {
-                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                    break;
-            }
-        }
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLASH);
+    }
+    if (MonKnowsMove(&mons[slotId], MOVE_MILK_DRINK))
+    {
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_MILK_DRINK);
     }
 
     if (!InBattlePike())
@@ -5845,18 +5835,20 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     struct PartyMenuInternal *ptr = sPartyMenuInternal;
-    s16 *arrayPtr = ptr->data;
-    bool8 cannotUseEffect;
-    int i;
-    bool8 learnedNewMove = FALSE; // Variable to track if a new move is learned
-    bool8 canEvolve = FALSE; // Variable to track if the Pokemon can evolve
-    u16 learnMove;  // Declare learnMove before use
-    u16 targetSpecies;  // Declare targetSpecies before use
+    s16 *arrayPtr = ptr->data; // array for storing pre-levelup stats
+    bool8 cannotUseEffect; // TRUE if the item cannot be used
+    int i = 0; // loop counter
+    bool8 learnedNewMove = FALSE;
+    bool8 canEvolve = FALSE;
+    u16 learnMove;
+    gTasks[taskId].data[15] = (u32)task;
+    u16 targetSpecies;
     bool32 canStopEvo = TRUE;
+    bool8 fromFieldMove = gIsFromFieldMove; // Store gIsFromFieldMove before it's reset
 
-    for (i = 0; i < 25 && !learnedNewMove && !canEvolve; i++)
+    for (; i < 25 && !learnedNewMove && !canEvolve; i++)
     {
-        if (!(B_RARE_CANDY_CAP && GetMonData(mon, MON_DATA_LEVEL) >= GetCurrentLevelCap()))
+        if (!(B_RARE_CANDY_CAP && GetMonData(mon, MON_DATA_LEVEL) >= GetCurrentLevelCap()) || fromFieldMove)
         {
             BufferMonStatsToTaskData(mon, arrayPtr);
             cannotUseEffect = ExecuteTableBasedItemEffect(mon, gSpecialVar_ItemId, gPartyMenu.slotId, 0);
@@ -5912,6 +5904,20 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
             }
             else
             {
+                if (fromFieldMove)
+                {
+                gIsFromFieldMove = FALSE;
+                    gPartyMenu.action = 0;
+                    for (i = 0; i < PARTY_SIZE; i++)
+                        {
+                            AnimatePartySlot(i, (i == gPartyMenu.slotId));
+                        }
+                    ClearStdWindowAndFrameToTransparent(6, FALSE);
+                    ClearWindowTilemap(6);
+                    DisplayPartyMenuStdMessage(PARTY_MSG_CHOOSE_MON);
+                    gTasks[taskId].func = Task_HandleChooseMonInput;
+                break; // Exit loop after one iteration if fromFieldMove is TRUE
+                }
                 gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
             }
         }

@@ -1,6 +1,8 @@
 #include "global.h"
 #include "menu.h"
 #include "party_menu.h"
+#include "item_menu.h"
+#include "item_use.h" // Needed for ItemUseCB_RareCandy
 #include "pokemon.h"
 #include "sound.h"
 #include "sprite.h"
@@ -9,6 +11,8 @@
 #include "task.h"
 #include "constants/party_menu.h"
 #include "constants/songs.h"
+#include "constants/moves.h"
+#include "fldeff.h"
 
 static void Task_SoftboiledRestoreHealth(u8 taskId);
 static void Task_DisplayHPRestoredMessage(u8 taskId);
@@ -41,34 +45,70 @@ void ChooseMonForSoftboiled(u8 taskId)
 
 void Task_TryUseSoftboiledOnPartyMon(u8 taskId)
 {
-    u16 hp;
-
     u8 userPartyId = gPartyMenu.slotId;
     u8 recipientPartyId = gPartyMenu.slotId2;
-    if(recipientPartyId > PARTY_SIZE)
+    u16 move;
+    int i;
+
+    if (recipientPartyId > PARTY_SIZE)
     {
         gPartyMenu.action = 0;
         DisplayPartyMenuStdMessage(PARTY_MSG_CHOOSE_MON);
         gTasks[taskId].func = Task_HandleChooseMonInput;
         return;
     }
-
-    hp = GetMonData(&gPlayerParty[recipientPartyId], MON_DATA_HP);
-    if(hp == 0 || userPartyId == recipientPartyId || GetMonData(&gPlayerParty[recipientPartyId], MON_DATA_MAX_HP) == hp)
+    
+    // Check if the user knows MOVE_MILK_DRINK
+    for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        CantUseSoftboiledOnMon(taskId);
-        return;
+        move = GetMonData(&gPlayerParty[userPartyId], MON_DATA_MOVE1 + i);
+        if (move == MOVE_MILK_DRINK)
+        {
+            if (userPartyId == recipientPartyId) // Cannot use on self
+            {
+                CantUseSoftboiledOnMon(taskId);
+                return;
+            }
+            Task_SoftboiledRestoreHealth(taskId); // Skip HP reduction for Milk Drink
+            return;
+        }
     }
 
+      //   if (GetMonData(&gPlayerParty[recipientPartyId], MON_DATA_HP) == 0 || userPartyId == recipientPartyId || GetMonData(&gPlayerParty[recipientPartyId], MON_DATA_MAX_HP) == GetMonData(&gPlayerParty[recipientPartyId], MON_DATA_HP))
+     //    {
+     //        CantUseSoftboiledOnMon(taskId);
+     //        return;
+    //     }
+
     // Take away Softboiled user's health first (-1)
-    PlaySE(SE_USE_ITEM);
-    PartyMenuModifyHP(taskId, userPartyId, -1, GetMonData(&gPlayerParty[userPartyId], MON_DATA_MAX_HP)/5, Task_SoftboiledRestoreHealth);
+     //    PlaySE(SE_USE_ITEM);
+     //    PartyMenuModifyHP(taskId, userPartyId, -1, GetMonData(&gPlayerParty[userPartyId], MON_DATA_MAX_HP)/5, Task_SoftboiledRestoreHealth);
 }
 
 static void Task_SoftboiledRestoreHealth(u8 taskId)
 {
     PlaySE(SE_USE_ITEM);
-    PartyMenuModifyHP(taskId, gPartyMenu.slotId2, 1, GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_MAX_HP)/5, Task_DisplayHPRestoredMessage);
+    
+    u8 userPartyId = gPartyMenu.slotId;
+    u8 recipientPartyId = gPartyMenu.slotId2;
+    u16 move;
+    int i;
+
+    // Check if the user knows MOVE_MILK_DRINK
+    for (i = 0; i < MAX_MON_MOVES; i++) // This loop is now also in Task_TryUseSoftboiledOnPartyMon
+    {
+        move = GetMonData(&gPlayerParty[userPartyId], MON_DATA_MOVE1 + i);
+        if (move == MOVE_MILK_DRINK) 
+        {
+            gSpecialVar_ItemId = ITEM_RARE_CANDY; // Simulate using a Rare Candy
+            gIsFromFieldMove = TRUE;
+            gPartyMenu.slotId = recipientPartyId; // Target the recipient Pokémon
+            ItemUseCB_RareCandy(taskId, Task_FinishSoftboiled); // Call Rare Candy logic, then finish Milk Drink flow
+            return; // Prevent standard Softboiled HP restoration
+        }
+    }
+    // This part is now only for Soft-Boiled
+    //    PartyMenuModifyHP(taskId, gPartyMenu.slotId2, 1, GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_MAX_HP)/5, Task_DisplayHPRestoredMessage);
 }
 
 static void Task_DisplayHPRestoredMessage(u8 taskId)
@@ -82,8 +122,6 @@ static void Task_DisplayHPRestoredMessage(u8 taskId)
 
 static void Task_FinishSoftboiled(u8 taskId)
 {
-    if(IsPartyMenuTextPrinterActive() == TRUE)
-        return;
     gPartyMenu.action = 0;
     AnimatePartySlot(gPartyMenu.slotId, 0);
     gPartyMenu.slotId = gPartyMenu.slotId2;
@@ -96,7 +134,7 @@ static void Task_FinishSoftboiled(u8 taskId)
 
 static void Task_ChooseNewMonForSoftboiled(u8 taskId)
 {
-    if(IsPartyMenuTextPrinterActive() == TRUE)
+    if (IsPartyMenuTextPrinterActive() == TRUE)
         return;
     DisplayPartyMenuStdMessage(PARTY_MSG_USE_ON_WHICH_MON);
     gTasks[taskId].func = Task_HandleChooseMonInput;

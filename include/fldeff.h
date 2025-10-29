@@ -1,6 +1,8 @@
 #ifndef GUARD_FLDEFF_H
 #define GUARD_FLDEFF_H
 
+extern bool8 gIsFromFieldMove;
+
 // cut
 bool32 SetUpFieldMove_Cut(void);
 bool8 FldEff_UseCutOnGrass(void);

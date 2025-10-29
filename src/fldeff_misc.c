@@ -25,6 +25,7 @@
 
 
 EWRAM_DATA struct MapPosition gPlayerFacingPosition = {0};
+EWRAM_DATA bool8 gIsFromFieldMove = FALSE;
 
 static void Task_ComputerScreenOpenEffect(u8);
 static void Task_ComputerScreenCloseEffect(u8);
