@@ -3541,6 +3541,50 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         gBattleScripting.battler = battler;
         switch (gLastUsedAbility)
         {
+        case ABILITY_FORECAST:
+            {
+                u16 move = gBattleMons[battler].moves[0];
+                u8 moveType;
+                u8 weatherToSet = 0;
+                u8 moveFound = 0;
+
+                if (move != MOVE_NONE)
+                {
+                    /* Use the battle-aware move type (accounts for any effects that may
+                       modify move type). Determine weather based on the first move's type. */
+                    moveType = GetBattleMoveType(move);
+                    if (moveType == TYPE_FIRE) {
+                        weatherToSet = BATTLE_WEATHER_SUN;
+                        moveFound = 1;
+                    }
+                    else if (moveType == TYPE_WATER) {
+                        weatherToSet = BATTLE_WEATHER_RAIN;
+                        moveFound = 1;
+                    }
+                    else if (moveType == TYPE_ICE) {
+                        weatherToSet = BATTLE_WEATHER_HAIL;
+                        moveFound = 1;
+                    }
+                }
+
+                if (moveFound == 1 && TryChangeBattleWeather(battler, weatherToSet, TRUE))
+                {
+                    if (weatherToSet == BATTLE_WEATHER_SUN)
+                        BattleScriptPushCursorAndCallback(BattleScript_DroughtActivates);
+                    else if (weatherToSet == BATTLE_WEATHER_RAIN)
+                        BattleScriptPushCursorAndCallback(BattleScript_DrizzleActivates);
+                    else // BATTLE_WEATHER_HAIL
+                        BattleScriptPushCursorAndCallback(BattleScript_SnowWarningActivatesHail);
+                    effect++;
+                }
+                else if ((IsBattlerWeatherAffected(battler, gBattleWeather) || gBattleWeather == B_WEATHER_NONE || !HasWeatherEffect())
+                       && TryBattleFormChange(battler, FORM_CHANGE_BATTLE_WEATHER))
+                {
+                    BattleScriptPushCursorAndCallback(BattleScript_BattlerFormChangeWithStringEnd3);
+                    effect++;
+                }
+            }
+            break;
         case ABILITY_TRACE:
             {
                 u32 chosenTarget;

@@ -16,6 +16,7 @@ SootopolisCity_Gym_1F_OnResume:
 SootopolisCity_Gym_1F_OnLoad:
 	call SootopolisCity_Gym_1F_EventScript_CheckSetStairMetatiles
 	special SetSootopolisGymCrackedIceMetatiles
+	goto_if_set FLAG_TEMP_5, SootopolisCity_Gym_1F_EventScript_End
 	clearflag FLAG_HIDE_WALLACE_FOR_ARCHIE
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_WALLACE
 	call_if_eq VAR_BADGE_COUNT, 7, SootopolisCity_Gym_EventScript_RollforArchie
@@ -31,6 +32,9 @@ SootopolisCity_Gym_ArchieAppears:
 	setflag FLAG_HIDE_WALLACE_FOR_ARCHIE
     setflag FLAG_TEMP_5
     end
+
+SootopolisCity_Gym_1F_EventScript_End:
+	end
 
 SootopolisCity_Gym_1F_EventScript_CheckSetStairMetatiles::
 	goto_if_lt VAR_ICE_STEP_COUNT, 8, SootopolisCity_Gym_1F_EventScript_StopCheckingStairs  @ All stairs ice

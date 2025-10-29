@@ -4,6 +4,7 @@ LavaridgeTown_Gym_1F_MapScripts::
 	.byte 0
 
 LavaridgeTown_Gym_1F_OnLoad:
+	goto_if_set FLAG_TEMP_5, LavaridgeTown_Gym_1F_EventScript_End
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_FLANNERY
 	call_if_eq VAR_BADGE_COUNT, 7, LavaridgeTown_Gym_1F_EventScript_RollforMaxie
 	end
@@ -17,6 +18,9 @@ LavaridgeTown_Gym_1F_MaxieAppears:
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_MAXIE
     setflag FLAG_TEMP_5
     end
+
+LavaridgeTown_Gym_1F_EventScript_End:
+	end
 
 LavaridgeTown_Gym_1F_OnTransition:
 	call LavaridgeTown_Gym_1F_EventScript_SetTrainerTempVars

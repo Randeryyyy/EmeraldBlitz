@@ -722,7 +722,6 @@ SlateportCity_Pokemart_PowerTMs_Badge2TMsItems:
 	.2byte ITEM_TM_SANDSTORM
 	.2byte ITEM_TM_SKILL_SWAP
 	.2byte ITEM_TM_STEEL_WING
-	.2byte ITEM_TM_SUNNY_DAY
 	.2byte ITEM_TM_THIEF
 	.2byte ITEM_TM_TOXIC
 	.2byte ITEM_TM_TRICK_ROOM
@@ -796,7 +795,6 @@ SlateportCity_Pokemart_PowerTMs_Badge7TMsItems:
 	.2byte ITEM_TM_SANDSTORM
 	.2byte ITEM_TM_SKILL_SWAP
 	.2byte ITEM_TM_STEEL_WING
-	.2byte ITEM_TM_SUNNY_DAY
 	.2byte ITEM_TM_THIEF
 	.2byte ITEM_TM_TOXIC
 	.2byte ITEM_TM_TRICK_ROOM
@@ -817,6 +815,7 @@ SlateportCity_Pokemart_PowerTMs_Badge7TMsItems:
 	.2byte ITEM_TM_HYPER_BEAM
 	.2byte ITEM_TM_IRON_TAIL
 	.2byte ITEM_TM_RAIN_DANCE
+	.2byte ITEM_TM_SUNNY_DAY
 	.2byte ITEM_TM_SHADOW_BALL
 	.2byte ITEM_TM_THUNDER
 	.2byte ITEM_TM_X_SCISSOR
