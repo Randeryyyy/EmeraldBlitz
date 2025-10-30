@@ -6050,7 +6050,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sNoibatLevelUpLearnset,
         .teachableLearnset = sNoibatTeachableLearnset,
         .eggMoveLearnset = sNoibatEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_RAZOR_FANG, SPECIES_NOIVERN}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SOOTHE_BELL, SPECIES_NOIVERN}),
     },
 
     [SPECIES_NOIVERN] =

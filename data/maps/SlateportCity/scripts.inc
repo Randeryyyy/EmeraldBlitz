@@ -566,7 +566,6 @@ SlateportCity_PokemartDecor_Badge3::
 
 	.align 2
 SlateportCity_Pokemart_Badge3Items:
-	.2byte ITEM_SOOTHE_BELL
 	.2byte ITEM_WHIPPED_DREAM
 	.2byte ITEM_ABILITY_CAPSULE
 	.2byte ITEM_ABILITY_PATCH
@@ -593,7 +592,6 @@ SlateportCity_Pokemart_Badge4Items:
 	.2byte ITEM_DRAGON_SCALE
 	.2byte ITEM_KINGS_ROCK
 	.2byte ITEM_METAL_COAT
-	.2byte ITEM_RAZOR_FANG
 	.2byte ITEM_SOOTHE_BELL
 	.2byte ITEM_WHIPPED_DREAM
 	.2byte ITEM_ABILITY_CAPSULE
@@ -622,7 +620,6 @@ SlateportCity_Pokemart_Badge5Items:
 	.2byte ITEM_DRAGON_SCALE
 	.2byte ITEM_KINGS_ROCK
 	.2byte ITEM_METAL_COAT
-	.2byte ITEM_RAZOR_FANG
 	.2byte ITEM_SOOTHE_BELL
 	.2byte ITEM_WHIPPED_DREAM
 	.2byte ITEM_ABILITY_CAPSULE
@@ -651,7 +648,6 @@ SlateportCity_Pokemart_Badge6Items:
 	.2byte ITEM_DRAGON_SCALE
 	.2byte ITEM_KINGS_ROCK
 	.2byte ITEM_METAL_COAT
-	.2byte ITEM_RAZOR_FANG
 	.2byte ITEM_SOOTHE_BELL
 	.2byte ITEM_WHIPPED_DREAM
 	.2byte ITEM_ABILITY_CAPSULE

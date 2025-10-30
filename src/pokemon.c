@@ -4853,13 +4853,20 @@ u32 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
             case EVO_LEVEL:
                 if (evolutionItem == ITEM_WHIPPED_DREAM)
                 {
-                    u16 targetSpeciesBST;
-                    const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[evolutions[i].targetSpecies];
-                    targetSpeciesBST = speciesInfo->baseHP + speciesInfo->baseAttack + speciesInfo->baseDefense + speciesInfo->baseSpAttack + speciesInfo->baseSpDefense + speciesInfo->baseSpeed;
-
-                    if (targetSpeciesBST < 380)
+                    // Check if the target species can evolve further
+                    const struct Evolution *targetEvolutions = GetSpeciesEvolutions(evolutions[i].targetSpecies);
+                    if (targetEvolutions != NULL && targetEvolutions[0].method != EVOLUTIONS_END)
                     {
-                        conditionMet = TRUE;
+                        u16 currentSpeciesBST;
+                        const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[species];
+                        currentSpeciesBST = speciesInfo->baseHP + speciesInfo->baseAttack + speciesInfo->baseDefense + speciesInfo->baseSpAttack + speciesInfo->baseSpDefense + speciesInfo->baseSpeed;
+
+                        if (currentSpeciesBST < 300)
+                        {
+                            // Check that it's a level-up evolution and not via some other condition
+                            if (evolutions[i].method == EVO_LEVEL)
+                                conditionMet = TRUE;
+                        }
                     }
                 }
             }

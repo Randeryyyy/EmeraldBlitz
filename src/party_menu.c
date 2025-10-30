@@ -1950,6 +1950,23 @@ static void Task_ReturnToChooseMonAfterText(u8 taskId)
     {
         ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
         ClearWindowTilemap(WIN_MSG);
+        // If we got here from a field move (e.g. Milk Drink), do the
+        // minimal cleanup to return the player to the overworld.
+        if (gIsFromFieldMove)
+        {
+            u8 i;
+            gIsFromFieldMove = FALSE;
+            gPartyMenu.action = 0;
+            for (i = 0; i < PARTY_SIZE; i++)
+            {
+                AnimatePartySlot(i, (i == gPartyMenu.slotId));
+            }
+            ClearStdWindowAndFrameToTransparent(6, FALSE);
+            ClearWindowTilemap(6);
+            DisplayPartyMenuStdMessage(PARTY_MSG_CHOOSE_MON);
+            gTasks[taskId].func = Task_HandleChooseMonInput;
+            return;
+        }
         if (MenuHelpers_IsLinkActive() == TRUE)
         {
             gTasks[taskId].func = Task_WaitForLinkAndReturnToChooseMon;
@@ -2519,15 +2536,13 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_FLOETTE
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SKRELP
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SEADRA
-         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_GLIGAR
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_GOOMY
-         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_NOIBAT
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SLOWPOKE
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SLOWPOKE_GALAR
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SCYTHER
-        )) || (VarGet(VAR_BADGE_COUNT) >= 3 && (
-            GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SWADLOON
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SWADLOON
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_GOLBAT
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_NOIBAT
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_BUNEARY
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_CHANSEY
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_WOOBAT
@@ -2538,6 +2553,8 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_TRAPINCH
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SMOLIV
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_HATENNA
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SPHEAL
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_HORSEA
         )) || (VarGet(VAR_BADGE_COUNT) >= 0 && (
             GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_AZURILL
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SCATTERBUG
@@ -2950,7 +2967,23 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     }
     if (MonKnowsMove(&mons[slotId], MOVE_MILK_DRINK))
     {
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_MILK_DRINK);
+        u16 species = GetMonData(&mons[slotId], MON_DATA_SPECIES);
+        bool32 used = FALSE;
+
+        // Check persistent flags per species group. If the flag is set, don't show Milk Drink.
+        if (species == SPECIES_MAREEP)
+            used = FlagGet(FLAG_MAREEP_USED_MILK_DRINK);
+        else if (species == SPECIES_FLAAFFY)
+            used = FlagGet(FLAG_FLAAFFY_USED_MILK_DRINK);
+        else if (species == SPECIES_AMPHAROS)
+            used = FlagGet(FLAG_AMPHAROS_USED_MILK_DRINK);
+        else if (species == SPECIES_SKIDDO)
+            used = FlagGet(FLAG_SKIDDO_USED_MILK_DRINK);
+        else if (species == SPECIES_GOGOAT)
+            used = FlagGet(FLAG_GOGOAT_USED_MILK_DRINK);
+
+        if (!used)
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_MILK_DRINK);
     }
 
     if (!InBattlePike())
@@ -5904,7 +5937,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
             }
             else
             {
-                if (fromFieldMove)
+                if (fromFieldMove) //cleanup milk drink
                 {
                 gIsFromFieldMove = FALSE;
                     gPartyMenu.action = 0;

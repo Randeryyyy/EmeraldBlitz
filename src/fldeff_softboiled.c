@@ -13,9 +13,10 @@
 #include "constants/songs.h"
 #include "constants/moves.h"
 #include "fldeff.h"
+#include "event_data.h"
 
 static void Task_SoftboiledRestoreHealth(u8 taskId);
-static void Task_DisplayHPRestoredMessage(u8 taskId);
+//static void Task_DisplayHPRestoredMessage(u8 taskId);
 static void Task_FinishSoftboiled(u8 taskId);
 static void CantUseSoftboiledOnMon(u8 taskId);
 
@@ -100,6 +101,19 @@ static void Task_SoftboiledRestoreHealth(u8 taskId)
         move = GetMonData(&gPlayerParty[userPartyId], MON_DATA_MOVE1 + i);
         if (move == MOVE_MILK_DRINK) 
         {
+            // Set persistent flag so this species group can no longer use Milk Drink from the party menu
+            u16 userSpecies = GetMonData(&gPlayerParty[userPartyId], MON_DATA_SPECIES);
+            if (userSpecies == SPECIES_MAREEP)
+                FlagSet(FLAG_MAREEP_USED_MILK_DRINK);
+            else if (userSpecies == SPECIES_FLAAFFY)
+                FlagSet(FLAG_FLAAFFY_USED_MILK_DRINK);
+            else if (userSpecies == SPECIES_AMPHAROS)
+                FlagSet(FLAG_AMPHAROS_USED_MILK_DRINK);
+            else if (userSpecies == SPECIES_SKIDDO)
+                FlagSet(FLAG_SKIDDO_USED_MILK_DRINK);
+            else if (userSpecies == SPECIES_GOGOAT)
+                FlagSet(FLAG_GOGOAT_USED_MILK_DRINK);
+
             gSpecialVar_ItemId = ITEM_RARE_CANDY; // Simulate using a Rare Candy
             gIsFromFieldMove = TRUE;
             gPartyMenu.slotId = recipientPartyId; // Target the recipient Pokémon
@@ -111,14 +125,14 @@ static void Task_SoftboiledRestoreHealth(u8 taskId)
     //    PartyMenuModifyHP(taskId, gPartyMenu.slotId2, 1, GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_MAX_HP)/5, Task_DisplayHPRestoredMessage);
 }
 
-static void Task_DisplayHPRestoredMessage(u8 taskId)
-{
-    GetMonNickname(&gPlayerParty[gPartyMenu.slotId2], gStringVar1);
-    StringExpandPlaceholders(gStringVar4, gText_PkmnHPRestoredByVar2);
-    DisplayPartyMenuMessage(gStringVar4, FALSE);
-    ScheduleBgCopyTilemapToVram(2);
-    gTasks[taskId].func = Task_FinishSoftboiled;
-}
+//static void Task_DisplayHPRestoredMessage(u8 taskId)
+//{
+//    GetMonNickname(&gPlayerParty[gPartyMenu.slotId2], gStringVar1);
+//    StringExpandPlaceholders(gStringVar4, gText_PkmnHPRestoredByVar2);
+//    DisplayPartyMenuMessage(gStringVar4, FALSE);
+//    ScheduleBgCopyTilemapToVram(2);
+//    gTasks[taskId].func = Task_FinishSoftboiled;
+// }
 
 static void Task_FinishSoftboiled(u8 taskId)
 {
