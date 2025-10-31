@@ -2536,7 +2536,6 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_FLOETTE
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SKRELP
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SEADRA
-         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_GOOMY
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SLOWPOKE
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SLOWPOKE_GALAR
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SCYTHER
@@ -2546,15 +2545,19 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_BUNEARY
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_CHANSEY
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_WOOBAT
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_FEEBAS
         )) || (VarGet(VAR_BADGE_COUNT) >= 2 && (
             GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_LITWICK
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SOLOSIS
-         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SANDILE
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_JANGMO_O
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_TRAPINCH
-         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SMOLIV
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_VANILLITE
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_HATENNA
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SPHEAL
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_HORSEA
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_ARON
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_GOOMY
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_HONEDGE
         )) || (VarGet(VAR_BADGE_COUNT) >= 0 && (
             GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_AZURILL
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SCATTERBUG
