@@ -4013,6 +4013,12 @@ static void PrintMovePowerAndAccuracy(u16 moveIndex)
         FillWindowPixelRect(PSS_LABEL_WINDOW_MOVES_POWER_ACC, PIXEL_FILL(0), 53, 0, 19, 32);
 
         u32 power = GetMovePower(moveIndex);
+
+        if (moveIndex == MOVE_LAST_RESPECTS)
+        {
+            power += (power * gSaveBlock1Ptr->playerFaintCounter);
+        }
+
         if (power < 2)
         {
             text = gText_ThreeDashes;

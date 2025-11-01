@@ -4319,7 +4319,10 @@ static void Cmd_tryfaintmon(void)
             {
                 gHitMarker |= HITMARKER_PLAYER_FAINTED;
                 if (gBattleResults.playerFaintCounter < 255)
+                    {
                     gBattleResults.playerFaintCounter++;
+                    gSaveBlock1Ptr->playerFaintCounter++;
+                    }
                 AdjustFriendshipOnBattleFaint(battler);
                 gSideTimers[B_SIDE_PLAYER].retaliateTimer = 2;
             }

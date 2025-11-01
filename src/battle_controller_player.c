@@ -1723,7 +1723,14 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
 {
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct*)(&gBattleResources->bufferA[battler][4]);
     u16 move = moveInfo->moves[gMoveSelectionCursor[battler]];
-    u16 pwr = GetMovePower(move);
+    u16 pwr;
+
+        if (move == MOVE_LAST_RESPECTS)
+        {
+            pwr = 30 + (30 * gSaveBlock1Ptr->playerFaintCounter);
+        }
+    else
+        pwr = GetMovePower(move);
     u16 acc = GetMoveAccuracy(move);
 
     u8 pwr_num[3], acc_num[3];
