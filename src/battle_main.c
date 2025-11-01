@@ -3010,8 +3010,6 @@ static void ClearSetBScriptingStruct(void)
 static void BattleStartClearSetData(void)
 {
     s32 i;
-
-    gSaveBlock1Ptr->playerFaintCounter = gBattleResults.playerFaintCounter;
     
     TurnValuesCleanUp(FALSE);
     SpecialStatusesClear();
@@ -3059,8 +3057,6 @@ static void BattleStartClearSetData(void)
     gBattlerAbility = 0;
     gBattleWeather = 0;
     gHitMarker = 0;
-
-    gBattleResults.playerFaintCounter = gSaveBlock1Ptr->playerFaintCounter;
 
     if (!(gBattleTypeFlags & BATTLE_TYPE_RECORDED))
     {

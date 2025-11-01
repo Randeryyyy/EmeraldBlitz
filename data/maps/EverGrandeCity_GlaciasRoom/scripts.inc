@@ -39,7 +39,7 @@ EverGrandeCity_GlaciaAppears:
 
 EverGrandeCity_TuckerAppears:
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TUCKER
-    setflag FLAG_TEMP_5
+    setflag FLAG_UNUSED_0x0E9
     return
 
 EverGrandeCity_GlaciasRoom_EventScript_ResetAdvanceToNextRoom::
@@ -57,7 +57,7 @@ EverGrandeCity_GlaciasRoom_EventScript_Glacia::
 	goto_if_set FLAG_DEFEATED_ELITE_4_GLACIA, EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT
-	goto_if_set FLAG_TEMP_5, EverGrandeCity_GlaciasRoom_EventScript_Tucker
+	goto_if_set FLAG_UNUSED_0x0E9, EverGrandeCity_GlaciasRoom_EventScript_Tucker
 	trainerbattle_no_intro TRAINER_GLACIA, EverGrandeCity_GlaciasRoom_Text_Defeat
 	goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
 	end
@@ -77,7 +77,7 @@ EverGrandeCity_GlaciasRoom_EventScript_Defeated::
 	setflag FLAG_DEFEATED_ELITE_4_GLACIA
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
-	clearflag FLAG_TEMP_5
+	clearflag FLAG_UNUSED_0x0E9
 	release
 	end
 

@@ -19724,7 +19724,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "This move deals more damage\n"
             "for each fallen ally."),
         .effect = EFFECT_LAST_RESPECTS,
-        .power = 30,
+        .power = 20,
         .type = TYPE_GHOST,
         .accuracy = 100,
         .pp = 10,

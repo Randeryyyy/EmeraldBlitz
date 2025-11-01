@@ -21,7 +21,7 @@ EverGrandeCity_SidneyAppears:
 
 EverGrandeCity_BrandonAppears:
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_BRANDON
-    setflag FLAG_TEMP_5
+    setflag FLAG_UNUSED_0x0E9
     return
 
 EverGrandeCity_SidneysRoom_OnLoad:
@@ -63,7 +63,7 @@ EverGrandeCity_SidneysRoom_EventScript_Sidney::
 	goto_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_SidneysRoom_Text_IntroSpeech, MSGBOX_DEFAULT
-	goto_if_set FLAG_TEMP_5, EverGrandeCity_SidneysRoom_EventScript_Brandon
+	goto_if_set FLAG_UNUSED_0x0E9, EverGrandeCity_SidneysRoom_EventScript_Brandon
 	trainerbattle_no_intro TRAINER_SIDNEY, EverGrandeCity_SidneysRoom_Text_Defeat
 	goto EverGrandeCity_SidneysRoom_EventScript_Defeated
 	end
@@ -83,7 +83,7 @@ EverGrandeCity_SidneysRoom_EventScript_Defeated::
 	setflag FLAG_DEFEATED_ELITE_4_SIDNEY
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_SidneysRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
-	clearflag FLAG_TEMP_5
+	clearflag FLAG_UNUSED_0x0E9
 	release
 	end
 

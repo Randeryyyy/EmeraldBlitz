@@ -4,7 +4,7 @@ LavaridgeTown_Gym_1F_MapScripts::
 	.byte 0
 
 LavaridgeTown_Gym_1F_OnLoad:
-	goto_if_set FLAG_TEMP_5, LavaridgeTown_Gym_1F_EventScript_End
+	goto_if_set FLAG_UNUSED_0x0E9, LavaridgeTown_Gym_1F_EventScript_End
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_FLANNERY
 	call_if_eq VAR_BADGE_COUNT, 7, LavaridgeTown_Gym_1F_EventScript_RollforMaxie
 	end
@@ -16,7 +16,7 @@ LavaridgeTown_Gym_1F_EventScript_RollforMaxie:
 
 LavaridgeTown_Gym_1F_MaxieAppears:
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_MAXIE
-    setflag FLAG_TEMP_5
+    setflag FLAG_UNUSED_0x0E9
     end
 
 LavaridgeTown_Gym_1F_EventScript_End:
@@ -105,7 +105,7 @@ LavaridgeTown_Gym_1F_EventScript_Flannery_Trainer7::
 	goto LavaridgeTown_Gym_1F_EventScript_PostBattle
 
 LavaridgeTown_Gym_1F_EventScript_Flannery_Trainer8::
-	goto_if_set FLAG_TEMP_5, LavaridgeTown_Gym_1F_EventScript_Maxie_Trainer8
+	goto_if_set FLAG_UNUSED_0x0E9, LavaridgeTown_Gym_1F_EventScript_Maxie_Trainer8
 	trainerbattle_single TRAINER_FLANNERY_8, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated, NO_MUSIC
 	goto LavaridgeTown_Gym_1F_EventScript_PostBattle
 
@@ -135,7 +135,7 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	setflag FLAG_BADGE04_GET
 	setvar VAR_0x8008, 4
 	setvar VAR_FORCEANIM, 0
-	clearflag FLAG_TEMP_5
+	clearflag FLAG_UNUSED_0x0E9
 	call Common_EventScript_SetGymTrainers
 	call LavaridgeTown_Gym_1F_EventScript_GiveOverheat
 	closemessage

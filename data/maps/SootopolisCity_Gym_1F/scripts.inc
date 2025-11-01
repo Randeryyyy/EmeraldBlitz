@@ -16,7 +16,7 @@ SootopolisCity_Gym_1F_OnResume:
 SootopolisCity_Gym_1F_OnLoad:
 	call SootopolisCity_Gym_1F_EventScript_CheckSetStairMetatiles
 	special SetSootopolisGymCrackedIceMetatiles
-	goto_if_set FLAG_TEMP_5, SootopolisCity_Gym_1F_EventScript_End
+	goto_if_set FLAG_UNUSED_0x0E9, SootopolisCity_Gym_1F_EventScript_End
 	clearflag FLAG_HIDE_WALLACE_FOR_ARCHIE
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_WALLACE
 	call_if_eq VAR_BADGE_COUNT, 7, SootopolisCity_Gym_EventScript_RollforArchie
@@ -30,7 +30,7 @@ SootopolisCity_Gym_EventScript_RollforArchie:
 SootopolisCity_Gym_ArchieAppears:
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ARCHIE
 	setflag FLAG_HIDE_WALLACE_FOR_ARCHIE
-    setflag FLAG_TEMP_5
+    setflag FLAG_UNUSED_0x0E9
     end
 
 SootopolisCity_Gym_1F_EventScript_End:
@@ -145,7 +145,7 @@ SootopolisCity_Gym_EventScript_Juan_Trainer7::
 	goto SootopolisCity_Gym_EventScript_PostBattle
 
 SootopolisCity_Gym_EventScript_Juan_Trainer8::
-	goto_if_set FLAG_TEMP_5, SootopolisCity_Gym_EventScript_Archie_Trainer8
+	goto_if_set FLAG_UNUSED_0x0E9, SootopolisCity_Gym_EventScript_Archie_Trainer8
 	trainerbattle_double TRAINER_JUAN_8, SootopolisCity_Gym_1F_Text_JuanIntro, SootopolisCity_Gym_1F_Text_JuanDefeat, SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons, SootopolisCity_Gym_1F_EventScript_JuanDefeated, NO_MUSIC
 	goto SootopolisCity_Gym_EventScript_PostBattle
 
@@ -171,7 +171,7 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	setflag FLAG_BADGE08_GET
 	setvar VAR_0x8008, 8
    	setvar VAR_FORCEANIM, 0
-	clearflag FLAG_TEMP_5
+	clearflag FLAG_UNUSED_0x0E9
 	call Common_EventScript_SetGymTrainers
 	call SootopolisCity_Gym_1F_EventScript_GiveWaterPulse
 	closemessage
