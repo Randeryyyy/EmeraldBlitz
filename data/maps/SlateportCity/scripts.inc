@@ -719,6 +719,7 @@ SlateportCity_Pokemart_PowerTMs_Badge2TMsItems:
 	.2byte ITEM_TM_SKILL_SWAP
 	.2byte ITEM_TM_STEEL_WING
 	.2byte ITEM_TM_THIEF
+	.2byte ITEM_TM_TORMENT
 	.2byte ITEM_TM_TOXIC
 	.2byte ITEM_TM_TRICK_ROOM
 	pokemartlistend
@@ -733,8 +734,6 @@ SlateportCity_Pokemart_PowerTMs_Badge3TMs::
 	.align 2
 SlateportCity_Pokemart_PowerTMs_Badge3TMsItems:
 	.2byte ITEM_TM_BULLET_SEED
-	.2byte ITEM_TM_STEEL_WING
-	.2byte ITEM_TM_THIEF
 	pokemartlistend
 
 SlateportCity_Pokemart_PowerTMs_Badge4TMs::
@@ -746,10 +745,7 @@ SlateportCity_Pokemart_PowerTMs_Badge4TMs::
 
 	.align 2
 SlateportCity_Pokemart_PowerTMs_Badge4TMsItems:
-	.2byte ITEM_TM_DIG
 	.2byte ITEM_TM_BULLET_SEED
-	.2byte ITEM_TM_STEEL_WING
-	.2byte ITEM_TM_THIEF
 	pokemartlistend
 
 SlateportCity_Pokemart_PowerTMs_Badge5TMs::
@@ -792,6 +788,7 @@ SlateportCity_Pokemart_PowerTMs_Badge7TMsItems:
 	.2byte ITEM_TM_SKILL_SWAP
 	.2byte ITEM_TM_STEEL_WING
 	.2byte ITEM_TM_THIEF
+	.2byte ITEM_TM_TORMENT
 	.2byte ITEM_TM_TOXIC
 	.2byte ITEM_TM_TRICK_ROOM
 	.2byte ITEM_TM_DOUBLE_TEAM
@@ -802,7 +799,6 @@ SlateportCity_Pokemart_PowerTMs_Badge7TMsItems:
 	.2byte ITEM_TM_SOLAR_BEAM
 	.2byte ITEM_TM_BLIZZARD
 	.2byte ITEM_TM_BRICK_BREAK
-	.2byte ITEM_TM_DARK_PULSE
 	.2byte ITEM_TM_DAZZLING_GLEAM
 	.2byte ITEM_TM_DIG
 	.2byte ITEM_TM_DRAGON_CLAW

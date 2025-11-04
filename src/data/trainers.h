@@ -42427,7 +42427,7 @@ F_TRAINER_FEMALE |
             .moves = {
 #line 16612
                 MOVE_CONFUSION,
-                MOVE_ROCK_SLIDE,
+                MOVE_ROCK_THROW,
                 MOVE_CALM_MIND,
                 MOVE_SAFEGUARD,
             },
@@ -42452,7 +42452,7 @@ F_TRAINER_FEMALE |
                 MOVE_PSYWAVE,
                 MOVE_FIRE_SPIN,
                 MOVE_CALM_MIND,
-                MOVE_ROCK_THROW,
+                MOVE_ROCK_SLIDE,
             },
             },
         },
@@ -42540,7 +42540,7 @@ F_TRAINER_FEMALE |
             .moves = {
 #line 16662
                 MOVE_CONFUSION,
-                MOVE_ROCK_SLIDE,
+                MOVE_PSYSHOCK,
                 MOVE_CALM_MIND,
                 MOVE_HYPNOSIS,
             },
@@ -42565,7 +42565,7 @@ F_TRAINER_FEMALE |
                 MOVE_PSYWAVE,
                 MOVE_FIRE_SPIN,
                 MOVE_CALM_MIND,
-                MOVE_ROCK_THROW,
+                MOVE_ROCK_SLIDE,
             },
             },
         },
@@ -42653,7 +42653,7 @@ F_TRAINER_FEMALE |
             .moves = {
 #line 16712
                 MOVE_COSMIC_POWER,
-                MOVE_POWER_GEM,
+                MOVE_PSYSHOCK,
                 MOVE_CALM_MIND,
                 MOVE_HYPNOSIS,
             },

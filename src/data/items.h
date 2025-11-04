@@ -10993,18 +10993,19 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_DARK_PULSE] =
+    [ITEM_TM_X_SCISSOR] =
     {
-        .name = ITEM_NAME("Dark Pulse"),
+        .name = ITEM_NAME("X Scissor"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The user releases a\n"
-            "horrible aura imbued\n"
-            "with dark thoughts."), 
+            "The user slashes at\n"
+            "the foe by crossing\n"
+            "its scythes."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_X_SCISSOR, // Todo
     },
 
     [ITEM_TM_TOXIC] =
@@ -11515,19 +11516,18 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_X_SCISSOR] =
+    [ITEM_TM_TORMENT] =
     {
-        .name = ITEM_NAME("X Scissor"),
-        .price = 3000,
+        .name = ITEM_NAME("Torment"),
+        .price = 1000,
         .description = COMPOUND_STRING(
-            "The user slashes at\n"
-            "the foe by crossing\n"
-            "its scythes."),
+            "Prevents the foe\n"
+            "from using the same\n"
+            "move in a row."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_X_SCISSOR, // Todo
     },
 
     [ITEM_TM_FACADE] =

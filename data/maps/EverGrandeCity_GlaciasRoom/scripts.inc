@@ -24,23 +24,22 @@ EverGrandeCity_GlaciasRoom_EventScript_WalkInCloseDoor::
 	end
 
 EverGrandeCity_GlaciasRoom_OnLoad:
-	random 2
-	copyvar VAR_0x800A, VAR_RESULT
-	switch VAR_RESULT
-	case 0, EverGrandeCity_GlaciaAppears
-	case 1, EverGrandeCity_TuckerAppears
 	call_if_set FLAG_DEFEATED_ELITE_4_GLACIA, EverGrandeCity_GlaciasRoom_EventScript_ResetAdvanceToNextRoom
 	call_if_eq VAR_ELITE_4_STATE, 3, EverGrandeCity_GlaciasRoom_EventScript_CloseDoor
-	end
-
-EverGrandeCity_GlaciaAppears:
+	goto_if_eq VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_GLACIA, EverGrandeCity_GlaciasRoom_End
+	goto_if_eq VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TUCKER, EverGrandeCity_GlaciasRoom_End
+	random 2
+	goto_if_eq VAR_RESULT, 1, EverGrandeCity_TuckerAppears
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_GLACIA
-    return
+	end
 
 EverGrandeCity_TuckerAppears:
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TUCKER
-    setflag FLAG_UNUSED_0x0E9
-    return
+    setflag FLAG_BOSS_FLIP
+    end
+
+EverGrandeCity_GlaciasRoom_End:
+	end
 
 EverGrandeCity_GlaciasRoom_EventScript_ResetAdvanceToNextRoom::
 	call PokemonLeague_EliteFour_EventScript_ResetAdvanceToNextRoom
@@ -57,7 +56,7 @@ EverGrandeCity_GlaciasRoom_EventScript_Glacia::
 	goto_if_set FLAG_DEFEATED_ELITE_4_GLACIA, EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT
-	goto_if_set FLAG_UNUSED_0x0E9, EverGrandeCity_GlaciasRoom_EventScript_Tucker
+	goto_if_set FLAG_BOSS_FLIP, EverGrandeCity_GlaciasRoom_EventScript_Tucker
 	trainerbattle_no_intro TRAINER_GLACIA, EverGrandeCity_GlaciasRoom_Text_Defeat
 	goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
 	end
@@ -77,7 +76,7 @@ EverGrandeCity_GlaciasRoom_EventScript_Defeated::
 	setflag FLAG_DEFEATED_ELITE_4_GLACIA
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
-	clearflag FLAG_UNUSED_0x0E9
+	clearflag FLAG_BOSS_FLIP
 	release
 	end
 

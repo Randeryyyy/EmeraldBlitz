@@ -4016,7 +4016,7 @@ static void PrintMovePowerAndAccuracy(u16 moveIndex)
 
         if (moveIndex == MOVE_LAST_RESPECTS)
         {
-            power += (power * gSaveBlock1Ptr->playerFaintCounter);
+            power += (15 * gSaveBlock1Ptr->playerFaintCounter);
         }
 
         if (power < 2)

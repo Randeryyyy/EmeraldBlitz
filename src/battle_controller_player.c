@@ -1727,7 +1727,7 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
 
         if (move == MOVE_LAST_RESPECTS)
         {
-            pwr = 20 + (20 * gSaveBlock1Ptr->playerFaintCounter);
+            pwr = 50 + (15 * gSaveBlock1Ptr->playerFaintCounter);
         }
     else
         pwr = GetMovePower(move);

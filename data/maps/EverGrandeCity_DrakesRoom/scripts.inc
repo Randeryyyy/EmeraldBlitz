@@ -25,23 +25,22 @@ EverGrandeCity_DrakesRoom_EventScript_WalkInCloseDoor::
 	end
 
 EverGrandeCity_DrakesRoom_OnLoad:
-	random 2
-	copyvar VAR_0x800A, VAR_RESULT
-	switch VAR_RESULT
-	case 0, EverGrandeCity_DrakeAppears
-	case 1, EverGrandeCity_SpenserAppears
 	call_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom
 	call_if_eq VAR_ELITE_4_STATE, 4, EverGrandeCity_DrakesRoom_EventScript_CloseDoor
-	end
-
-EverGrandeCity_DrakeAppears:
+	goto_if_eq VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_DRAKE, EverGrandeCity_DrakesRoom_End
+	goto_if_eq VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPENSER, EverGrandeCity_DrakesRoom_End
+	random 2
+	goto_if_eq VAR_RESULT, 1, EverGrandeCity_SpenserAppears
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_DRAKE
-    return
+	end
 
 EverGrandeCity_SpenserAppears:
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPENSER
-    setflag FLAG_UNUSED_0x0E9
-    return
+    setflag FLAG_BOSS_FLIP
+    end
+
+EverGrandeCity_DrakesRoom_End:
+	end
 
 EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom::
 	call PokemonLeague_EliteFour_EventScript_ResetAdvanceToNextRoom
@@ -58,7 +57,7 @@ EverGrandeCity_DrakesRoom_EventScript_Drake::
 	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
-	goto_if_set FLAG_UNUSED_0x0E9, EverGrandeCity_DrakesRoom_EventScript_Spenser
+	goto_if_set FLAG_BOSS_FLIP, EverGrandeCity_DrakesRoom_EventScript_Spenser
 	trainerbattle_no_intro TRAINER_DRAKE, EverGrandeCity_DrakesRoom_Text_Defeat
 	goto EverGrandeCity_DrakesRoom_EventScript_Defeated
 	end
@@ -76,7 +75,7 @@ EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech::
 EverGrandeCity_DrakesRoom_EventScript_Defeated::
 	setvar VAR_0x8004, FANCOUNTER_DEFEATED_DRAKE
 	setvar VAR_FORCEANIM, 0
-	clearflag FLAG_UNUSED_0x0E9
+	clearflag FLAG_BOSS_FLIP
 	special Script_TryGainNewFanFromCounter
 	setflag FLAG_DEFEATED_ELITE_4_DRAKE
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles

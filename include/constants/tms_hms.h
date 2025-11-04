@@ -6,7 +6,7 @@
     F(DRAGON_CLAW) \
     F(WATER_PULSE) \
     F(CALM_MIND) \
-    F(DARK_PULSE) \
+    F(X_SCISSOR) \
     F(TOXIC) \
     F(HAIL) \
     F(BULK_UP) \
@@ -42,7 +42,7 @@
     F(FIRE_BLAST) \
     F(ROCK_TOMB) \
     F(AERIAL_ACE) \
-    F(X_SCISSOR) \
+    F(TORMENT) \
     F(FACADE) \
     F(SECRET_POWER) \
     F(REST) \

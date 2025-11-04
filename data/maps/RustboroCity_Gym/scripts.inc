@@ -3,6 +3,8 @@ RustboroCity_Gym_MapScripts::
 	.byte 0
 
 RustboroCity_Gym_OnLoad:
+	goto_if_eq VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ROXANNE, RustboroCity_Gym_LeaderAlreadySet
+	goto_if_eq VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_VIOLA, RustboroCity_Gym_LeaderAlreadySet
 	random 2
 	goto_if_eq VAR_RESULT, 1, RustboroCity_Gym_ViolaAppears
 	goto RustboroCity_Gym_RoxanneAppears
@@ -14,8 +16,11 @@ RustboroCity_Gym_RoxanneAppears:
 
 RustboroCity_Gym_ViolaAppears:
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_VIOLA
-    setflag FLAG_UNUSED_0x0E9
+    setflag FLAG_BOSS_FLIP
     end
+
+RustboroCity_Gym_LeaderAlreadySet:
+	end
 
 RustboroCity_Gym_EventScript_Roxanne::
 	setvar VAR_FORCEANIM, 1
@@ -32,42 +37,42 @@ RustboroCity_Gym_EventScript_Roxanne::
 	call_if_eq VAR_BADGE_COUNT, 7, RustboroCity_Gym_EventScript_Roxanne_Trainer8
 
 RustboroCity_Gym_EventScript_Roxanne_Trainer1::
-	goto_if_set FLAG_UNUSED_0x0E9, RustboroCity_Gym_EventScript_Viola_Trainer1
+	goto_if_set FLAG_BOSS_FLIP, RustboroCity_Gym_EventScript_Viola_Trainer1
 	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 	goto RustboroCity_Gym_EventScript_PostBattle
 
 RustboroCity_Gym_EventScript_Roxanne_Trainer2::
-	goto_if_set FLAG_UNUSED_0x0E9, RustboroCity_Gym_EventScript_Viola_Trainer2
+	goto_if_set FLAG_BOSS_FLIP, RustboroCity_Gym_EventScript_Viola_Trainer2
 	trainerbattle_single TRAINER_SAWYER_5, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 	goto RustboroCity_Gym_EventScript_PostBattle //Not sure why, but TRAINER_ROXANNE_2 breaks, so Sawyer5 is a duplicate copy of Roxanne2
 
 RustboroCity_Gym_EventScript_Roxanne_Trainer3::
-	goto_if_set FLAG_UNUSED_0x0E9, RustboroCity_Gym_EventScript_Viola_Trainer3
+	goto_if_set FLAG_BOSS_FLIP, RustboroCity_Gym_EventScript_Viola_Trainer3
 	trainerbattle_single TRAINER_ROXANNE_3, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 	goto RustboroCity_Gym_EventScript_PostBattle
 
 RustboroCity_Gym_EventScript_Roxanne_Trainer4::
-	goto_if_set FLAG_UNUSED_0x0E9, RustboroCity_Gym_EventScript_Viola_Trainer4
+	goto_if_set FLAG_BOSS_FLIP, RustboroCity_Gym_EventScript_Viola_Trainer4
 	trainerbattle_single TRAINER_ROXANNE_4, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 	goto RustboroCity_Gym_EventScript_PostBattle
 
 RustboroCity_Gym_EventScript_Roxanne_Trainer5::
-	goto_if_set FLAG_UNUSED_0x0E9, RustboroCity_Gym_EventScript_Viola_Trainer5
+	goto_if_set FLAG_BOSS_FLIP, RustboroCity_Gym_EventScript_Viola_Trainer5
 	trainerbattle_single TRAINER_ROXANNE_5, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 	goto RustboroCity_Gym_EventScript_PostBattle
 
 RustboroCity_Gym_EventScript_Roxanne_Trainer6::
-	goto_if_set FLAG_UNUSED_0x0E9, RustboroCity_Gym_EventScript_Viola_Trainer6
+	goto_if_set FLAG_BOSS_FLIP, RustboroCity_Gym_EventScript_Viola_Trainer6
 	trainerbattle_single TRAINER_ROXANNE_6, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 	goto RustboroCity_Gym_EventScript_PostBattle
 
 RustboroCity_Gym_EventScript_Roxanne_Trainer7::
-	goto_if_set FLAG_UNUSED_0x0E9, RustboroCity_Gym_EventScript_Viola_Trainer7
+	goto_if_set FLAG_BOSS_FLIP, RustboroCity_Gym_EventScript_Viola_Trainer7
 	trainerbattle_single TRAINER_ROXANNE_7, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 	goto RustboroCity_Gym_EventScript_PostBattle
 
 RustboroCity_Gym_EventScript_Roxanne_Trainer8::
-	goto_if_set FLAG_UNUSED_0x0E9, RustboroCity_Gym_EventScript_Viola_Trainer8
+	goto_if_set FLAG_BOSS_FLIP, RustboroCity_Gym_EventScript_Viola_Trainer8
 	trainerbattle_single TRAINER_ROXANNE_8, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 	goto RustboroCity_Gym_EventScript_PostBattle
 
@@ -119,7 +124,7 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 	setflag FLAG_BADGE01_GET
 	setvar VAR_0x8008, 1
 	setvar VAR_FORCEANIM, 0
-	clearflag FLAG_UNUSED_0x0E9
+	clearflag FLAG_BOSS_FLIP
 	call Common_EventScript_SetGymTrainers
 	goto RustboroCity_Gym_EventScript_GiveRockTomb
 	end

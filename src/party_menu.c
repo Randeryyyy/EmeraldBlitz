@@ -2997,7 +2997,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MAIL);
         else
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
-        if (MonNeedsHealing(&mons[slotId]))
+        if (MonNeedsHealing(&mons[slotId]) && GetMonData(&mons[slotId], MON_DATA_HP) != 0)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_HEAL);
     }
         if (targetSpecies != SPECIES_NONE)

@@ -8208,7 +8208,7 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
             basePower = 100;
         break;
     case EFFECT_LAST_RESPECTS:
-        basePower += (20 * gSaveBlock1Ptr->playerFaintCounter);
+        basePower += (15 * gSaveBlock1Ptr->playerFaintCounter);
         break;
     default:
         break;

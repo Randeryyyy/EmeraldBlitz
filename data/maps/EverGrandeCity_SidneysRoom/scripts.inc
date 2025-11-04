@@ -6,23 +6,22 @@ EverGrandeCity_SidneysRoom_MapScripts::
 	.byte 0
 
 EverGrandeCity_SidneysRoom_OnTransition:
-	random 2
-	copyvar VAR_0x800A, VAR_RESULT
-	switch VAR_RESULT
-	case 0, EverGrandeCity_SidneyAppears
-	case 1, EverGrandeCity_BrandonAppears
 	setflag FLAG_MET_SCOTT_IN_EVERGRANDE
 	setflag FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT
-	end
-
-EverGrandeCity_SidneyAppears:
+	goto_if_eq VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SIDNEY, EverGrandeCity_SidneysRoom_End
+	goto_if_eq VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_BRANDON, EverGrandeCity_SidneysRoom_End
+	random 2
+	goto_if_eq VAR_RESULT, 1, EverGrandeCity_BrandonAppears
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SIDNEY
-    return
+	end
 
 EverGrandeCity_BrandonAppears:
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_BRANDON
-    setflag FLAG_UNUSED_0x0E9
-    return
+    setflag FLAG_BOSS_FLIP
+    end
+
+EverGrandeCity_SidneysRoom_End:
+	end
 
 EverGrandeCity_SidneysRoom_OnLoad:
 	call_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_ResetAdvanceToNextRoom
@@ -63,7 +62,7 @@ EverGrandeCity_SidneysRoom_EventScript_Sidney::
 	goto_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_SidneysRoom_Text_IntroSpeech, MSGBOX_DEFAULT
-	goto_if_set FLAG_UNUSED_0x0E9, EverGrandeCity_SidneysRoom_EventScript_Brandon
+	goto_if_set FLAG_BOSS_FLIP, EverGrandeCity_SidneysRoom_EventScript_Brandon
 	trainerbattle_no_intro TRAINER_SIDNEY, EverGrandeCity_SidneysRoom_Text_Defeat
 	goto EverGrandeCity_SidneysRoom_EventScript_Defeated
 	end
@@ -83,7 +82,7 @@ EverGrandeCity_SidneysRoom_EventScript_Defeated::
 	setflag FLAG_DEFEATED_ELITE_4_SIDNEY
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_SidneysRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
-	clearflag FLAG_UNUSED_0x0E9
+	clearflag FLAG_BOSS_FLIP
 	release
 	end
 

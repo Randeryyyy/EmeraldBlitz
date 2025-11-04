@@ -16610,7 +16610,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
 - Confusion
-- Rock Slide
+- Rock Throw
 - Calm Mind
 - Safeguard
 
@@ -16622,7 +16622,7 @@ Ability: Levitate
 - Psywave
 - Fire Spin
 - Calm Mind
-- Rock Throw
+- Rock Slide
 
 === TRAINER_TATE_AND_LIZA_3 ===
 Name: TATE&LIZA
@@ -16660,7 +16660,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
 - Confusion
-- Rock Slide
+- Psyshock
 - Calm Mind
 - Hypnosis
 
@@ -16672,7 +16672,7 @@ Ability: Levitate
 - Psywave
 - Fire Spin
 - Calm Mind
-- Rock Throw
+- Rock Slide
 
 === TRAINER_TATE_AND_LIZA_4 ===
 Name: TATE&LIZA
@@ -16710,7 +16710,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
 - Cosmic Power
-- Power Gem
+- Psyshock
 - Calm Mind
 - Hypnosis
 

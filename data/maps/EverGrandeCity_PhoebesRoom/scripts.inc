@@ -24,23 +24,22 @@ EverGrandeCity_PhoebesRoom_EventScript_WalkInCloseDoor::
 	end
 
 EverGrandeCity_PhoebesRoom_OnLoad:
-	random 2
-	copyvar VAR_0x800A, VAR_RESULT
-	switch VAR_RESULT
-	case 0, EverGrandeCity_PhoebeAppears
-	case 1, EverGrandeCity_LucyAppears
 	call_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, EverGrandeCity_PhoebesRoom_EventScript_ResetAdvanceToNextRoom
 	call_if_eq VAR_ELITE_4_STATE, 2, EverGrandeCity_PhoebesRoom_EventScript_CloseDoor
-	end
-
-EverGrandeCity_PhoebeAppears:
+	goto_if_eq VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_PHOEBE, EverGrandeCity_PhoebesRoom_End
+	goto_if_eq VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_LUCY, EverGrandeCity_PhoebesRoom_End
+	random 2
+	goto_if_eq VAR_RESULT, 1, EverGrandeCity_LucyAppears
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_PHOEBE
-    return
+	end
 
 EverGrandeCity_LucyAppears:
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_LUCY
-    setflag FLAG_UNUSED_0x0E9
-    return
+    setflag FLAG_BOSS_FLIP
+    end
+
+EverGrandeCity_PhoebesRoom_End:
+	end
 
 EverGrandeCity_PhoebesRoom_EventScript_ResetAdvanceToNextRoom::
 	call PokemonLeague_EliteFour_EventScript_ResetAdvanceToNextRoom
@@ -57,7 +56,7 @@ EverGrandeCity_PhoebesRoom_EventScript_Phoebe::
 	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_PhoebesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
-	goto_if_set FLAG_UNUSED_0x0E9, EverGrandeCity_PhoebesRoom_EventScript_Lucy
+	goto_if_set FLAG_BOSS_FLIP, EverGrandeCity_PhoebesRoom_EventScript_Lucy
 	trainerbattle_no_intro TRAINER_PHOEBE, EverGrandeCity_PhoebesRoom_Text_Defeat
 	goto EverGrandeCity_PhoebesRoom_EventScript_Defeated
 	end
@@ -77,7 +76,7 @@ EverGrandeCity_PhoebesRoom_EventScript_Defeated::
 	setflag FLAG_DEFEATED_ELITE_4_PHOEBE
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
-	clearflag FLAG_UNUSED_0x0E9
+	clearflag FLAG_BOSS_FLIP
 	release
 	end
 
