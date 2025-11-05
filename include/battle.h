@@ -13,6 +13,7 @@
 #include "battle_util2.h"
 #include "battle_bg.h"
 #include "pokeball.h"
+#include "main.h"
 #include "battle_debug.h"
 #include "battle_dynamax.h"
 #include "battle_terastal.h"
@@ -141,7 +142,6 @@ struct ProtectStruct
 {
     u32 protected:7; // 126 protect options
     u32 noValidMoves:1;
-    u32 helpingHand:1;
     u32 bounceMove:1;
     u32 stealMove:1;
     u32 nonVolatileStatusImmobility:1;
@@ -163,13 +163,14 @@ struct ProtectStruct
     u32 shellTrap:1;
     u32 eatMirrorHerb:1;
     u32 activateOpportunist:2; // 2 - to copy stats. 1 - stats copied (do not repeat). 0 - no stats to copy
-    // End of 32-bit bitfield
     u16 usedAllySwitch:1;
+    // End of 32-bit bitfield
+    u32 helpingHand:3;
     u16 lashOutAffected:1;
     u16 assuranceDoubled:1;
     u16 myceliumMight:1;
     u16 laggingTail:1;
-    u16 padding:11;
+    u16 padding:9;
     // End of 16-bit bitfield
     u16 physicalDmg;
     u16 specialDmg;
@@ -600,7 +601,8 @@ struct PartyState
     u32 supersweetSyrup:1;
     u32 timesGotHit:5;
     u32 changedSpecies:11; // For forms when multiple mons can change into the same pokemon.
-    u32 padding:10;
+    u32 sentOut:1;
+    u32 padding:9;
 };
 
 // Cleared at the beginning of the battle. Fields need to be cleared when needed manually otherwise.
@@ -721,7 +723,7 @@ struct BattleStruct
     struct Illusion illusion[MAX_BATTLERS_COUNT];
     u8 soulheartBattlerId;
     u8 friskedBattler; // Frisk needs to identify 2 battlers in double battles.
-    u8 sameMoveTurns[MAX_BATTLERS_COUNT]; // For Metronome, number of times the same moves has been SUCCESFULLY used.
+    u8 metronomeItemCounter[MAX_BATTLERS_COUNT]; // For Metronome, number of times the same moves has been SUCCESFULLY used.
     u8 quickClawBattlerId;
     struct LostItem itemLost[NUM_BATTLE_SIDES][PARTY_SIZE];  // Pokemon that had items consumed or stolen (two bytes per party member per side)
     u8 blunderPolicy:1; // should blunder policy activate
@@ -781,7 +783,8 @@ struct BattleStruct
     u8 hazardsQueue[NUM_BATTLE_SIDES][HAZARDS_MAX_COUNT];
     u8 numHazards[NUM_BATTLE_SIDES];
     u8 hazardsCounter:4; // Counter for applying hazard on switch in
-    u8 padding2:4;
+    u8 incrementEchoedVoice:1;
+    u8 echoedVoiceCounter:3;
 };
 
 struct AiBattleData
@@ -1116,7 +1119,7 @@ extern u16 gBattleTurnCounter;
 extern u8 gBattlerAbility;
 extern struct QueuedStatBoost gQueuedStatBoosts[MAX_BATTLERS_COUNT];
 
-extern void (*gPreBattleCallback1)(void);
+extern MainCallback gPreBattleCallback1;
 extern void (*gBattleMainFunc)(void);
 extern struct BattleResults gBattleResults;
 extern u8 gLeveledUpInBattle;
@@ -1124,7 +1127,7 @@ extern u8 gHealthboxSpriteIds[MAX_BATTLERS_COUNT];
 extern u8 gMultiUsePlayerCursor;
 extern u8 gNumberOfMovesToChoose;
 extern bool8 gHasFetchedBall;
-extern u8 gLastUsedBall;
+extern u16 gLastUsedBall;
 extern u16 gLastThrownBall;
 extern u16 gBallToDisplay;
 extern bool8 gLastUsedBallMenuPresent;
