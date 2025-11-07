@@ -122,7 +122,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	setvar VAR_PETALBURG_WOODS_STATE, 1  //First set of speedchoice variables to set
 	setflag FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE
 	setflag FLAG_HIDE_PETALBURG_WOODS_AQUA_GRUNT
-	setflag FLAG_RECEIVED_NECTAR //Is Oricorio in the game? If not, set this flag
+	setflag FLAG_RECEIVED_NECTAR 
+	@ Is Oricorio in the game? If not, set this flag^
 
 	@ Roxanne Flags
 	setflag FLAG_RETURNED_DEVON_GOODS

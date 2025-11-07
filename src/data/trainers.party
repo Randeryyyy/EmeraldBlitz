@@ -17545,7 +17545,7 @@ AI: Basic Trainer / Force Setup First Turn
 Mugshot: Purple
 
 Cacturne
-Level: 46
+Level: 52
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Sand Veil
@@ -17555,7 +17555,7 @@ Ability: Sand Veil
 - Spiky Shield
 
 Samurott-Hisui
-Level: 48
+Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Torrent
@@ -17565,7 +17565,7 @@ Ability: Torrent
 - Aerial Ace
 
 Shiftry
-Level: 46
+Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Chlorophyll
@@ -17575,7 +17575,7 @@ Ability: Chlorophyll
 - Hurricane
 
 Crawdaunt
-Level: 48
+Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Hyper Cutter
@@ -17585,7 +17585,7 @@ Ability: Hyper Cutter
 - Facade
 
 Absol @ Sitrus Berry
-Level: 49
+Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Super Luck
@@ -17594,66 +17594,66 @@ Ability: Super Luck
 - Swords Dance
 - Night Slash
 
-=== TRAINER_BRANDON ===
-Name: BRANDON
-Class: Elite Four
-Pic: Pyramid King Brandon
+=== TRAINER_SPENSER ===
+Name: SPENSER
+Class: Palace Maven
+Pic: Palace Maven Spenser
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Risky
-Mugshot: Yellow
+AI: Basic Trainer
+Mugshot: Green
 
-Dugtrio-Alola
-Level: 46
+Roserade
+Level: 52
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Tangling Hair
-- Earthquake
-- Tri Attack
-- Dig
-- Iron Head
+Ability: Poison Point
+- Toxic Spikes
+- Giga Drain
+- Leech Seed
+- Sludge Bomb
 
-Swampert
-Level: 48
+Decidueye-Hisui
+Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Torrent
-- Earthquake
-- Muddy Water
-- Protect
-- Mud Shot
+Ability: Overgrow
+- Leaf Blade
+- Aerial Ace
+- Feather Dance
+- Triple Arrows
 
-Flygon
-Level: 46
+Sceptile
+Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Levitate
-- Sandstorm
-- Rock Slide
-- Dragon Claw
-- Earthquake
+Ability: Overgrow
+- Leaf Blade
+- X Scissor
+- Agility
+- Dual Chop
 
-Rhyperior
-Level: 48
+Ludicolo
+Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Solid Rock
-- Stone Edge
-- Megahorn
-- Earthquake
-- Hammer Arm
+Ability: Own Tempo
+- Giga Drain
+- Hydro Pump
+- Ice Beam
+- Astonish
 
-Regirock @ Sitrus Berry
-Level: 49
+Breloom @ Sitrus Berry
+Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Clear Body
-- Stone Edge
-- Hammer Arm
-- Ancientpower
-- Explosion
+Ability: Technician
+- Mach Punch
+- Bullet Seed
+- Bulk Up
+- Spore
 
 === TRAINER_PHOEBE ===
 Name: PHOEBE
@@ -17667,17 +17667,17 @@ AI: Basic Trainer
 Mugshot: Green
 
 Dusclops
-Level: 48
+Level: 52
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Pressure
 - Shadow Punch
 - Confuse Ray
 - Will O Wisp
-- Payback
+- Earthquake
 
 Typhlosion-Hisui
-Level: 49
+Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Blaze
@@ -17687,7 +17687,7 @@ Ability: Blaze
 - Flamethrower
 
 Sableye
-Level: 50
+Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Keen Eye
@@ -17697,7 +17697,7 @@ Ability: Keen Eye
 - Feint Attack
 
 Banette
-Level: 49
+Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Cursed Body
@@ -17707,11 +17707,11 @@ Ability: Cursed Body
 - Feint Attack
 
 Dusknoir @ Sitrus Berry
-Level: 51
+Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Pressure
-- Hex
+- Shadow Ball
 - Ice Punch
 - Fire Punch
 - Thunder Punch
@@ -17728,7 +17728,7 @@ AI: Basic Trainer
 Mugshot: Purple
 
 Seviper @ Salac Berry
-Level: 48
+Level: 52
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Shed Skin
@@ -17738,17 +17738,17 @@ Ability: Shed Skin
 - Crunch
 
 Overqwil
-Level: 50
+Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Poison Point
 - Sludge Bomb
 - Pin Missile
 - Crunch
-- Brine
+- Waterfall
 
 Swalot
-Level: 49
+Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Liquid Ooze
@@ -17758,7 +17758,7 @@ Ability: Liquid Ooze
 - Shadow Ball
 
 Dustox
-Level: 49
+Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Compound Eyes
@@ -17768,7 +17768,7 @@ Ability: Compound Eyes
 - Sleep Powder
 
 Crobat @ Sitrus Berry
-Level: 51
+Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Inner Focus
@@ -17789,7 +17789,7 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Sandslash-Alola
-Level: 50
+Level: 52
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Snow Cloak
@@ -17799,7 +17799,7 @@ Ability: Snow Cloak
 - Icy Wind
 
 Ninetales-Alola
-Level: 50
+Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Snow Warning
@@ -17809,7 +17809,7 @@ Ability: Snow Warning
 - Ice Shard
 
 Froslass
-Level: 52
+Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Snow Cloak
@@ -17819,7 +17819,7 @@ Ability: Snow Cloak
 - Blizzard
 
 Glalie
-Level: 52
+Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Inner Focus
@@ -17829,7 +17829,7 @@ Ability: Inner Focus
 - Freeze Dry
 
 Walrein @ Sitrus Berry
-Level: 53
+Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Thick Fat
@@ -17850,7 +17850,7 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Wigglytuff
-Level: 50
+Level: 52
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Cute Charm
@@ -17859,18 +17859,8 @@ Ability: Cute Charm
 - Dazzling Gleam
 - Light Screen
 
-Azumarill
-Level: 52
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Thick Fat
-- Play Rough
-- Aqua Tail
-- Brick Break
-- Double Edge
-
 Rapidash-Galar
-Level: 52
+Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Pastel Veil
@@ -17879,8 +17869,18 @@ Ability: Pastel Veil
 - Megahorn
 - Dazzling Gleam
 
+Azumarill
+Level: 53
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Thick Fat
+- Play Rough
+- Aqua Tail
+- Brick Break
+- Double Edge
+
 Mawile
-Level: 50
+Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Intimidate
@@ -17890,7 +17890,7 @@ Ability: Intimidate
 - Attract
 
 Gardevoir @ Sitrus Berry
-Level: 53
+Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Synchronize
@@ -17960,66 +17960,66 @@ Ability: Intimidate
 - Rock Slide
 - Crunch
 
-=== TRAINER_SPENSER ===
-Name: SPENSER
-Class: Palace Maven
-Pic: Palace Maven Spenser
+=== TRAINER_BRANDON ===
+Name: BRANDON
+Class: Elite Four
+Pic: Pyramid King Brandon
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
-Mugshot: Green
+AI: Basic Trainer / Risky
+Mugshot: Yellow
 
-Roserade
+Dugtrio-Alola
 Level: 52
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Poison Point
-- Toxic Spikes
-- Giga Drain
-- Leech Seed
-- Sludge Bomb
+Ability: Tangling Hair
+- Earthquake
+- Tri Attack
+- Dig
+- Iron Head
 
-Decidueye-Hisui
+Swampert
 Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Overgrow
-- Leaf Blade
-- Aerial Ace
-- Feather Dance
-- Triple Arrows
+Ability: Torrent
+- Earthquake
+- Muddy Water
+- Protect
+- Rock Slide
 
-Sceptile
+Flygon
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Overgrow
-- Leaf Blade
-- X Scissor
-- Agility
-- Dual Chop
+Ability: Levitate
+- Sandstorm
+- Rock Slide
+- Dragon Claw
+- Earthquake
 
-Ludicolo
+Rhyperior
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Own Tempo
-- Giga Drain
-- Hydro Pump
-- Ice Beam
-- Astonish
+Ability: Solid Rock
+- Stone Edge
+- Megahorn
+- Earthquake
+- Hammer Arm
 
-Breloom @ Sitrus Berry
+Regirock @ Sitrus Berry
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Technician
-- Mach Punch
-- Bullet Seed
-- Bulk Up
-- Spore
+Ability: Clear Body
+- Stone Edge
+- Hammer Arm
+- Ancientpower
+- Explosion
 
 === TRAINER_STEVEN ===
 Name: STEVEN
@@ -18033,7 +18033,7 @@ AI: Basic Trainer
 Mugshot: Yellow
 
 Skarmory
-Level: 58
+Level: 57
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Sturdy
@@ -18043,7 +18043,7 @@ Ability: Sturdy
 - Steel Wing
 
 Goodra-Hisui
-Level: 57
+Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Hydration
@@ -18053,7 +18053,7 @@ Ability: Hydration
 - Dragon Breath
 
 Aggron
-Level: 56
+Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Sturdy
@@ -18063,7 +18063,7 @@ Ability: Sturdy
 - Iron Tail
 
 Cradily
-Level: 57
+Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Storm Drain
@@ -18073,7 +18073,7 @@ Ability: Storm Drain
 - Confuse Ray
 
 Armaldo
-Level: 57
+Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Swift Swim
@@ -18083,7 +18083,7 @@ Ability: Swift Swim
 - Crush Claw
 
 Metagross @ Metagrossite
-Level: 59
+Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Clear Body

@@ -6369,7 +6369,7 @@ const struct Item gItemsInfo[] =
     [ITEM_CLEFABLITE] =
     {
         .name = ITEM_NAME("Clefablite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6380,14 +6380,14 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Clefablite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Clefablite,
+        .iconPic = gItemIcon_Audinite,
+        .iconPalette = gItemIconPalette_Audinite,
     },
 
     [ITEM_VICTREEBELITE] =
     {
         .name = ITEM_NAME("Victreebelite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6405,7 +6405,7 @@ const struct Item gItemsInfo[] =
     [ITEM_STARMINITE] =
     {
         .name = ITEM_NAME("Starminite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6416,14 +6416,14 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Starminite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Starminite,
+        .iconPic = gItemIcon_Audinite,
+        .iconPalette = gItemIconPalette_Audinite,
     },
 
     [ITEM_DRAGONINITE] =
     {
         .name = ITEM_NAME("Dragoninite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6441,7 +6441,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MEGANIUMITE] =
     {
         .name = ITEM_NAME("Meganiumite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6459,7 +6459,7 @@ const struct Item gItemsInfo[] =
     [ITEM_FERALIGITE] =
     {
         .name = ITEM_NAME("Feraligite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6470,14 +6470,14 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Feraligite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Feraligite,
+        .iconPic = gItemIcon_Audinite,
+        .iconPalette = gItemIconPalette_Audinite,
     },
 
     [ITEM_SKARMORITE] =
     {
         .name = ITEM_NAME("Skarmorite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6495,7 +6495,7 @@ const struct Item gItemsInfo[] =
     [ITEM_FROSLASSITE] =
     {
         .name = ITEM_NAME("Froslassite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6506,14 +6506,14 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Froslassite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Froslassite,
+        .iconPic = gItemIcon_Audinite,
+        .iconPalette = gItemIconPalette_Audinite,
     },
 
     [ITEM_EMBOARITE] =
     {
         .name = ITEM_NAME("Emboarite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6531,7 +6531,7 @@ const struct Item gItemsInfo[] =
     [ITEM_EXCADRITE] =
     {
         .name = ITEM_NAME("Excadrite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6542,14 +6542,14 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Excadrite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Excadrite,
+        .iconPic = gItemIcon_Audinite,
+        .iconPalette = gItemIconPalette_Audinite,
     },
 
     [ITEM_SCOLIPITE] =
     {
         .name = ITEM_NAME("Scolipite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6560,14 +6560,14 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Scolipite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Scolipite,
+        .iconPic = gItemIcon_Audinite,
+        .iconPalette = gItemIconPalette_Audinite,
     },
 
     [ITEM_SCRAFTINITE] =
     {
         .name = ITEM_NAME("Scraftinite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6585,7 +6585,7 @@ const struct Item gItemsInfo[] =
     [ITEM_EELEKTROSSITE] =
     {
         .name = ITEM_NAME("Eelektrossite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6603,7 +6603,7 @@ const struct Item gItemsInfo[] =
     [ITEM_CHANDELURITE] =
     {
         .name = ITEM_NAME("Chandelurite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6614,14 +6614,14 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Chandelurite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Chandelurite,
+        .iconPic = gItemIcon_Audinite,
+        .iconPalette = gItemIconPalette_Audinite,
     },
 
     [ITEM_CHESNAUGHTITE] =
     {
         .name = ITEM_NAME("Chesnaughtite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6632,14 +6632,14 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Chesnaughtite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Chesnaughtite,
+        .iconPic = gItemIcon_Audinite,
+        .iconPalette = gItemIconPalette_Audinite,
     },
 
     [ITEM_DELPHOXITE] =
     {
         .name = ITEM_NAME("Delphoxite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6650,14 +6650,14 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Delphoxite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Delphoxite,
+        .iconPic = gItemIcon_Audinite,
+        .iconPalette = gItemIconPalette_Audinite,
     },
 
     [ITEM_GRENINJITE] =
     {
         .name = ITEM_NAME("Greninjite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6668,14 +6668,14 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Greninjite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Greninjite,
+        .iconPic = gItemIcon_Audinite,
+        .iconPalette = gItemIconPalette_Audinite,
     },
 
     [ITEM_PYROARITE] =
     {
         .name = ITEM_NAME("Pyroarite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6693,7 +6693,7 @@ const struct Item gItemsInfo[] =
     [ITEM_FLOETTITE] =
     {
         .name = ITEM_NAME("Floettite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6711,7 +6711,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MALAMARITE] =
     {
         .name = ITEM_NAME("Malamarite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6729,7 +6729,7 @@ const struct Item gItemsInfo[] =
     [ITEM_BARBARACITE] =
     {
         .name = ITEM_NAME("Barbaracite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6747,7 +6747,7 @@ const struct Item gItemsInfo[] =
     [ITEM_DRAGALGITE] =
     {
         .name = ITEM_NAME("Dragalgite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6758,14 +6758,14 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Dragalgite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Dragalgite,
+        .iconPic = gItemIcon_Audinite,
+        .iconPalette = gItemIconPalette_Audinite,
     },
 
     [ITEM_HAWLUCHANITE] =
     {
         .name = ITEM_NAME("Hawluchanite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6783,7 +6783,7 @@ const struct Item gItemsInfo[] =
     [ITEM_ZYGARDITE] =
     {
         .name = ITEM_NAME("Zygardite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6801,7 +6801,7 @@ const struct Item gItemsInfo[] =
     [ITEM_DRAMPANITE] =
     {
         .name = ITEM_NAME("Drampanite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
@@ -6819,7 +6819,7 @@ const struct Item gItemsInfo[] =
     [ITEM_FALINKSITE] =
     {
         .name = ITEM_NAME("Falinksite"),
-        .price = 0,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"

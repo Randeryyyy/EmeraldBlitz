@@ -306,8 +306,10 @@ LittlerootTown_MaysHouse_2F_EventScript_CheckPlayersPC::
 	special DoPCTurnOnEffect
 	playse SE_PC_ON
 	msgbox gText_PlayerHouseBootPC, MSGBOX_DEFAULT
-	special BedroomPC
-	waitstate
+	playse SE_PC_OFF
+	special DoPCTurnOffEffect
+	//special BedroomPC
+	//waitstate
 	releaseall
 	end
 

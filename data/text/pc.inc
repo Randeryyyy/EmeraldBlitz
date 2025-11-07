@@ -11,7 +11,8 @@ gText_StorageSystemOpened::
 	.string "POKéMON Storage System opened.$"
 
 gText_AccessedPlayersPC::
-	.string "Accessed {PLAYER}'s PC.$"
+	.string "Accessed SANDBOX MODE. Here, you can\n"
+	.string "withdraw items to assist with practice.$"
 
 gText_AccessedLanettesPC::
 	.string "Accessed LANETTE's PC.$"

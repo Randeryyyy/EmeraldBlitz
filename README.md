@@ -39,12 +39,12 @@ A game built on Pokémon Emerald Expansion specifically for draft auction races
 - **Fairy Types:** Fairy Type has been added to the game. Pokémon have had their typing and learnsets updated to generation VII.
 - **Generation IX Pokémon and Items:** The auction pool includes Pokémon and items all the way up to additions from Pokémon Legends ZA.
 - **Physical/Special Split:** Moves now calculate damage based on the split introduced in generation IV. Thunder Punch, for example, calculates its damage based on your Pokémon’s attack stat. In Emerald, it originally would have used the Special Attack stat, since Thunder Punch is an electric-type move.
-- **Physical/Special Split:** TMs from generation 6 including Hone Claws, Dazzling Gleam, X-Scissor and Dark Pulse help even out coverage for your team.
+- **New TMs:** TMs from generation 6 including Hone Claws, Dazzling Gleam, X-Scissor and Trick Room help even out coverage for your team.
 
 ## New Unique Tools
 - **Milk Drink:** Skiddo and Mareep's Milk Drink can now be used in the overworld to increase a Pokemon's level by one, ignoring the level cap. Choose carefully--you can only use it once!
 - **Forecast:** Castform's Forecast ability now sets rain, sun or hail depending on the type of the first move in its movelist.
-- **Last Respects:** Last Respects' power is now determined by how many deaths you've had over the course of your run, gaining 30 Base Power each time a Pokemon faints. Your Houndstone only growws more powerful as its allies fall.
+- **Last Respects:** Last Respects' power is now determined by how many deaths you've had over the course of your run, gaining 15 Base Power each time a Pokemon faints. Your Houndstone only growws more powerful as its allies fall.
 - **Seed Sower:** Arboliva's signiture ability now sets Leech Seed when an enemy Pokemon attacks it.
 - **Undead Corsola:** Upon fainting, Corsola is revived at the end of the battle as Galarian Corsola.
 - **Applin Evolution:** Applin's split evolution path is now determined by what gym you reach first: Fortree for Flapple, Lavaridge for Appletun, and Rustboro for Dipplin.

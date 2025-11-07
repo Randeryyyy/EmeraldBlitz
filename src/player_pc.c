@@ -193,7 +193,7 @@ static const u8 sText_TooImportantToToss[] = _("That's much too\nimportant to to
 
 static const u8 *const sItemStorage_OptionDescriptions[] =
 {
-    [MENU_WITHDRAW] = COMPOUND_STRING("Take out items from the PC."),
+    [MENU_WITHDRAW] = COMPOUND_STRING("Take out items to assist with practice.\nNot for use in races!"),
     [MENU_DEPOSIT]  = COMPOUND_STRING("Store items in the PC."),
     [MENU_TOSS]     = COMPOUND_STRING("Throw away items stored in the PC."),
     [MENU_EXIT]     = gText_GoBackPrevMenu,
@@ -237,25 +237,53 @@ static const u16 sNewGamePCItems[][2] =
     { ITEM_ABILITY_CAPSULE, 50 },
     { ITEM_ABILITY_PATCH, 50 },
     { ITEM_MAX_REVIVE, 50 },
-    { ITEM_TM_HONE_CLAWS, 20 },
-    { ITEM_TM_CALM_MIND, 20 },
+    { ITEM_TM_BRICK_BREAK, 20 },
     { ITEM_TM_BULK_UP, 20 },
-    { ITEM_TM_DRAGON_CLAW, 20 },
-    { ITEM_TM_ICE_BEAM, 20 },
-    { ITEM_TM_GIGA_DRAIN, 20 },
+    { ITEM_TM_CALM_MIND, 20 },
     { ITEM_TM_DAZZLING_GLEAM, 20 },
-    { ITEM_TM_THUNDERBOLT, 20 },
-    { ITEM_TM_THUNDER, 20 },
     { ITEM_TM_EARTHQUAKE, 20 },
+    { ITEM_TM_FACADE, 20 },
+    { ITEM_TM_FLAMETHROWER, 20 },
+    { ITEM_TM_GIGA_DRAIN, 20 },
+    { ITEM_TM_HONE_CLAWS, 20 },
+    { ITEM_TM_ICE_BEAM, 20 },
+    { ITEM_TM_IRON_TAIL, 20 },
+    { ITEM_TM_OVERHEAT, 20 },
     { ITEM_TM_PSYCHIC, 20 },
     { ITEM_TM_SHADOW_BALL, 20 },
-    { ITEM_TM_BRICK_BREAK, 20 },
-    { ITEM_TM_FLAMETHROWER, 20 },
-    { ITEM_TM_OVERHEAT, 20 },
     { ITEM_TM_SLUDGE_BOMB, 20 },
+    { ITEM_TM_THUNDER, 20 },
+    { ITEM_TM_THUNDERBOLT, 20 },
     { ITEM_TM_X_SCISSOR, 20 },
-    { ITEM_TM_IRON_TAIL, 20 },
-    { ITEM_AGGRONITE, 10 },
+    { ITEM_AGGRONITE, 1 },
+    { ITEM_AMPHAROSITE, 1 },
+    { ITEM_BANETTITE, 1 },
+	{ ITEM_BLAZIKENITE, 1 },
+	{ ITEM_CAMERUPTITE, 1 },
+	{ ITEM_CHANDELURITE, 1 },
+	{ ITEM_CHESNAUGHTITE, 1 },
+	{ ITEM_DELPHOXITE, 1 },
+	{ ITEM_DRAGALGITE, 1 },
+	{ ITEM_EXCADRITE, 1 },
+	{ ITEM_FERALIGITE, 1 },
+	{ ITEM_FROSLASSITE, 1 },
+	{ ITEM_GALLADITE, 1 },
+	{ ITEM_GARCHOMPITE, 1 },
+	{ ITEM_GARDEVOIRITE, 1 },
+	{ ITEM_GLALITITE, 1 },
+	{ ITEM_GRENINJITE, 1 },
+	{ ITEM_HOUNDOOMINITE, 1 },
+	{ ITEM_LOPUNNITE, 1 },
+	{ ITEM_MANECTITE, 1 },
+	{ ITEM_MAWILITE, 1 },
+	{ ITEM_SABLENITE, 1 },
+	{ ITEM_SALAMENCITE, 1 },
+	{ ITEM_SCEPTILITE, 1 },
+	{ ITEM_SCIZORITE, 1 },
+	{ ITEM_SCOLIPITE, 1 },
+	{ ITEM_SHARPEDONITE, 1 },
+	{ ITEM_STARMINITE, 1 },
+	{ ITEM_SWAMPERTITE, 1 },
     { ITEM_NONE, 0 }
 };
 
@@ -404,18 +432,15 @@ void NewGameInitPCItems(void)
 
 void BedroomPC(void)
 {
-    sTopMenuOptionOrder = sBedroomPC_OptionOrder;
-    sTopMenuNumOptions = NUM_BEDROOM_PC_OPTIONS;
-    DisplayItemMessageOnField(CreateTask(TaskDummy, 0), gText_WhatWouldYouLike, InitPlayerPCMenu);
+    // Directly go to Item Storage, skipping the top-level menu.
+    PlayerPC_ItemStorage(CreateTask(TaskDummy, 0));
 }
 
 void PlayerPC(void)
 {
-    sTopMenuOptionOrder = sPlayerPC_OptionOrder;
-    sTopMenuNumOptions = NUM_PLAYER_PC_OPTIONS;
-    DisplayItemMessageOnField(CreateTask(TaskDummy, 0), gText_WhatWouldYouLike, InitPlayerPCMenu);
+    // Directly go to Item Storage, skipping the top-level menu.
+    PlayerPC_ItemStorage(CreateTask(TaskDummy, 0));
 }
-
 #define tUsedSlots  data[1]
 #define tQuantity   data[2]
 #define tInTossMenu data[3]
@@ -676,7 +701,8 @@ static void ItemStorage_Enter(u8 taskId, bool8 toss)
 static void ItemStorage_Exit(u8 taskId)
 {
     ItemStorage_EraseMainMenu(taskId);
-    ReshowPlayerPC(taskId);
+    ScriptContext_Enable();
+    DestroyTask(taskId);
 }
 
 // Used by Item Storage and the Mailbox
@@ -1105,6 +1131,8 @@ static void ItemStorage_RemoveScrollIndicator(void)
 {
     if (gPlayerPCItemPageInfo.scrollIndicatorTaskId != TASK_NONE)
     {
+        FreeSpriteTilesByTag(TAG_SCROLL_ARROW);
+        FreeSpritePaletteByTag(TAG_SCROLL_ARROW);
         RemoveScrollIndicatorArrowPair(gPlayerPCItemPageInfo.scrollIndicatorTaskId);
         gPlayerPCItemPageInfo.scrollIndicatorTaskId = TASK_NONE;
     }

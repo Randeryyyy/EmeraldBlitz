@@ -10759,7 +10759,6 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_GEN_4_CROSS_EVOS
-#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_SNORUNT
 
 #if P_FAMILY_SPHEAL

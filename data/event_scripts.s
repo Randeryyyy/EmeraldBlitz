@@ -923,7 +923,11 @@ gText_PokemonTrainerSchoolEmail::
 	.string "… … … … … …$"
 
 gText_PlayerHouseBootPC::
-	.string "{PLAYER} booted up the PC.$"
+	.string "{PLAYER} booted up the PC.\p"
+	.string "It's open to an interesting website…\n"
+	.string "auction.emeraldblitz.workers.dev\p"
+	.string "… … … … … …\p"
+	.string "Wow, what a useful resource!$"
 
 gText_PokeblockLinkCanceled::
 	.string "The link was canceled.$"

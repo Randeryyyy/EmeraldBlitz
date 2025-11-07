@@ -4897,7 +4897,7 @@ u32 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
                         const struct Evolution *targetEvolutions = GetSpeciesEvolutions(evolutions[i].targetSpecies);
                         if (targetEvolutions != NULL && targetEvolutions[0].method != EVOLUTIONS_END) // Does the targetPokemon evolve again?
                         {
-                            conditionMet = TRUE;
+                            conditionsMet = TRUE;
                         }
                     }
                 }

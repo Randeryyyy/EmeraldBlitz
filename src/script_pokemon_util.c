@@ -583,8 +583,8 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     u8 teraType              = PARSE_FLAG(23, NUMBER_OF_MON_TYPES);
     u8 dmaxLevel             = PARSE_FLAG(24, 0);
 
-    if (Random() % 100 < 1)
-        {isShiny = TRUE;}
+    //if (Random() % 100 < 1)
+        //{isShiny = TRUE;}
 
     u8 evs[NUM_STATS]        = {hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv};
     u8 ivs[NUM_STATS]        = {hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv};

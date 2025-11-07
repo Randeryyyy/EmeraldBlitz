@@ -44525,7 +44525,7 @@ F_TRAINER_FEMALE |
 #line 17551
             .ability = ABILITY_SAND_VEIL,
 #line 17548
-            .lvl = 46,
+            .lvl = 52,
 #line 17550
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -44546,7 +44546,7 @@ F_TRAINER_FEMALE |
 #line 17561
             .ability = ABILITY_TORRENT,
 #line 17558
-            .lvl = 48,
+            .lvl = 54,
 #line 17560
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -44567,7 +44567,7 @@ F_TRAINER_FEMALE |
 #line 17571
             .ability = ABILITY_CHLOROPHYLL,
 #line 17568
-            .lvl = 46,
+            .lvl = 53,
 #line 17570
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -44588,7 +44588,7 @@ F_TRAINER_FEMALE |
 #line 17581
             .ability = ABILITY_HYPER_CUTTER,
 #line 17578
-            .lvl = 48,
+            .lvl = 53,
 #line 17580
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -44611,7 +44611,7 @@ F_TRAINER_FEMALE |
 #line 17591
             .ability = ABILITY_SUPER_LUCK,
 #line 17588
-            .lvl = 49,
+            .lvl = 55,
 #line 17590
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -44626,14 +44626,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 17597
-    [DIFFICULTY_NORMAL][TRAINER_BRANDON] =
+    [DIFFICULTY_NORMAL][TRAINER_SPENSER] =
     {
 #line 17598
-        .trainerName = _("BRANDON"),
+        .trainerName = _("SPENSER"),
 #line 17599
-        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
+        .trainerClass = TRAINER_CLASS_PALACE_MAVEN,
 #line 17600
-        .trainerPic = TRAINER_PIC_PYRAMID_KING_BRANDON,
+        .trainerPic = TRAINER_PIC_PALACE_MAVEN_SPENSER,
         .encounterMusic_gender =
 #line 17602
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -44642,119 +44642,119 @@ F_TRAINER_FEMALE |
 #line 17604
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17605
-        .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_RISKY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 17606
-        .mugshotColor = MUGSHOT_COLOR_YELLOW,
+        .mugshotColor = MUGSHOT_COLOR_GREEN,
 #line 0
-        .trainerBackPic = TRAINER_PIC_PYRAMID_KING_BRANDON,
+        .trainerBackPic = TRAINER_PIC_PALACE_MAVEN_SPENSER,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
             {
 #line 17608
-            .species = SPECIES_DUGTRIO_ALOLA,
+            .species = SPECIES_ROSERADE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17610
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 17612
-            .ability = ABILITY_TANGLING_HAIR,
+            .ability = ABILITY_POISON_POINT,
 #line 17609
-            .lvl = 46,
+            .lvl = 52,
 #line 17611
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17613
-                MOVE_EARTHQUAKE,
-                MOVE_TRI_ATTACK,
-                MOVE_DIG,
-                MOVE_IRON_HEAD,
+                MOVE_TOXIC_SPIKES,
+                MOVE_GIGA_DRAIN,
+                MOVE_LEECH_SEED,
+                MOVE_SLUDGE_BOMB,
             },
             },
             {
 #line 17618
-            .species = SPECIES_SWAMPERT,
+            .species = SPECIES_DECIDUEYE_HISUI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17620
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 17622
-            .ability = ABILITY_TORRENT,
+            .ability = ABILITY_OVERGROW,
 #line 17619
-            .lvl = 48,
+            .lvl = 54,
 #line 17621
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17623
-                MOVE_EARTHQUAKE,
-                MOVE_MUDDY_WATER,
-                MOVE_PROTECT,
-                MOVE_MUD_SHOT,
+                MOVE_LEAF_BLADE,
+                MOVE_AERIAL_ACE,
+                MOVE_FEATHER_DANCE,
+                MOVE_TRIPLE_ARROWS,
             },
             },
             {
 #line 17628
-            .species = SPECIES_FLYGON,
+            .species = SPECIES_SCEPTILE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17630
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 17632
-            .ability = ABILITY_LEVITATE,
+            .ability = ABILITY_OVERGROW,
 #line 17629
-            .lvl = 46,
+            .lvl = 53,
 #line 17631
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17633
-                MOVE_SANDSTORM,
-                MOVE_ROCK_SLIDE,
-                MOVE_DRAGON_CLAW,
-                MOVE_EARTHQUAKE,
+                MOVE_LEAF_BLADE,
+                MOVE_X_SCISSOR,
+                MOVE_AGILITY,
+                MOVE_DUAL_CHOP,
             },
             },
             {
 #line 17638
-            .species = SPECIES_RHYPERIOR,
+            .species = SPECIES_LUDICOLO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17640
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 17642
-            .ability = ABILITY_SOLID_ROCK,
+            .ability = ABILITY_OWN_TEMPO,
 #line 17639
-            .lvl = 48,
+            .lvl = 53,
 #line 17641
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17643
-                MOVE_STONE_EDGE,
-                MOVE_MEGAHORN,
-                MOVE_EARTHQUAKE,
-                MOVE_HAMMER_ARM,
+                MOVE_GIGA_DRAIN,
+                MOVE_HYDRO_PUMP,
+                MOVE_ICE_BEAM,
+                MOVE_ASTONISH,
             },
             },
             {
 #line 17648
-            .species = SPECIES_REGIROCK,
+            .species = SPECIES_BRELOOM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17648
             .heldItem = ITEM_SITRUS_BERRY,
 #line 17650
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 17652
-            .ability = ABILITY_CLEAR_BODY,
+            .ability = ABILITY_TECHNICIAN,
 #line 17649
-            .lvl = 49,
+            .lvl = 55,
 #line 17651
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17653
-                MOVE_STONE_EDGE,
-                MOVE_HAMMER_ARM,
-                MOVE_ANCIENTPOWER,
-                MOVE_EXPLOSION,
+                MOVE_MACH_PUNCH,
+                MOVE_BULLET_SEED,
+                MOVE_BULK_UP,
+                MOVE_SPORE,
             },
             },
         },
@@ -44795,7 +44795,7 @@ F_TRAINER_FEMALE |
 #line 17673
             .ability = ABILITY_PRESSURE,
 #line 17670
-            .lvl = 48,
+            .lvl = 52,
 #line 17672
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -44804,7 +44804,7 @@ F_TRAINER_FEMALE |
                 MOVE_SHADOW_PUNCH,
                 MOVE_CONFUSE_RAY,
                 MOVE_WILL_O_WISP,
-                MOVE_PAYBACK,
+                MOVE_EARTHQUAKE,
             },
             },
             {
@@ -44816,7 +44816,7 @@ F_TRAINER_FEMALE |
 #line 17683
             .ability = ABILITY_BLAZE,
 #line 17680
-            .lvl = 49,
+            .lvl = 54,
 #line 17682
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -44837,7 +44837,7 @@ F_TRAINER_FEMALE |
 #line 17693
             .ability = ABILITY_KEEN_EYE,
 #line 17690
-            .lvl = 50,
+            .lvl = 53,
 #line 17692
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -44858,7 +44858,7 @@ F_TRAINER_FEMALE |
 #line 17703
             .ability = ABILITY_CURSED_BODY,
 #line 17700
-            .lvl = 49,
+            .lvl = 53,
 #line 17702
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -44881,13 +44881,13 @@ F_TRAINER_FEMALE |
 #line 17713
             .ability = ABILITY_PRESSURE,
 #line 17710
-            .lvl = 51,
+            .lvl = 55,
 #line 17712
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17714
-                MOVE_HEX,
+                MOVE_SHADOW_BALL,
                 MOVE_ICE_PUNCH,
                 MOVE_FIRE_PUNCH,
                 MOVE_THUNDER_PUNCH,
@@ -44933,7 +44933,7 @@ F_TRAINER_FEMALE |
 #line 17734
             .ability = ABILITY_SHED_SKIN,
 #line 17731
-            .lvl = 48,
+            .lvl = 52,
 #line 17733
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -44954,7 +44954,7 @@ F_TRAINER_FEMALE |
 #line 17744
             .ability = ABILITY_POISON_POINT,
 #line 17741
-            .lvl = 50,
+            .lvl = 54,
 #line 17743
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -44963,7 +44963,7 @@ F_TRAINER_FEMALE |
                 MOVE_SLUDGE_BOMB,
                 MOVE_PIN_MISSILE,
                 MOVE_CRUNCH,
-                MOVE_BRINE,
+                MOVE_WATERFALL,
             },
             },
             {
@@ -44975,7 +44975,7 @@ F_TRAINER_FEMALE |
 #line 17754
             .ability = ABILITY_LIQUID_OOZE,
 #line 17751
-            .lvl = 49,
+            .lvl = 53,
 #line 17753
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -44996,7 +44996,7 @@ F_TRAINER_FEMALE |
 #line 17764
             .ability = ABILITY_COMPOUND_EYES,
 #line 17761
-            .lvl = 49,
+            .lvl = 43,
 #line 17763
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45019,7 +45019,7 @@ F_TRAINER_FEMALE |
 #line 17774
             .ability = ABILITY_INNER_FOCUS,
 #line 17771
-            .lvl = 51,
+            .lvl = 55,
 #line 17773
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45069,7 +45069,7 @@ F_TRAINER_FEMALE |
 #line 17795
             .ability = ABILITY_SNOW_CLOAK,
 #line 17792
-            .lvl = 50,
+            .lvl = 52,
 #line 17794
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45090,7 +45090,7 @@ F_TRAINER_FEMALE |
 #line 17805
             .ability = ABILITY_SNOW_WARNING,
 #line 17802
-            .lvl = 50,
+            .lvl = 54,
 #line 17804
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45111,7 +45111,7 @@ F_TRAINER_FEMALE |
 #line 17815
             .ability = ABILITY_SNOW_CLOAK,
 #line 17812
-            .lvl = 52,
+            .lvl = 53,
 #line 17814
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45132,7 +45132,7 @@ F_TRAINER_FEMALE |
 #line 17825
             .ability = ABILITY_INNER_FOCUS,
 #line 17822
-            .lvl = 52,
+            .lvl = 53,
 #line 17824
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45155,7 +45155,7 @@ F_TRAINER_FEMALE |
 #line 17835
             .ability = ABILITY_THICK_FAT,
 #line 17832
-            .lvl = 53,
+            .lvl = 55,
 #line 17834
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45203,7 +45203,7 @@ F_TRAINER_FEMALE |
 #line 17856
             .ability = ABILITY_CUTE_CHARM,
 #line 17853
-            .lvl = 50,
+            .lvl = 52,
 #line 17855
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45217,44 +45217,44 @@ F_TRAINER_FEMALE |
             },
             {
 #line 17862
-            .species = SPECIES_AZUMARILL,
+            .species = SPECIES_RAPIDASH_GALAR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17864
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 17866
-            .ability = ABILITY_THICK_FAT,
+            .ability = ABILITY_PASTEL_VEIL,
 #line 17863
-            .lvl = 52,
+            .lvl = 54,
 #line 17865
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17867
-                MOVE_PLAY_ROUGH,
-                MOVE_AQUA_TAIL,
-                MOVE_BRICK_BREAK,
-                MOVE_DOUBLE_EDGE,
+                MOVE_PSYCHO_CUT,
+                MOVE_BOUNCE,
+                MOVE_MEGAHORN,
+                MOVE_DAZZLING_GLEAM,
             },
             },
             {
 #line 17872
-            .species = SPECIES_RAPIDASH_GALAR,
+            .species = SPECIES_AZUMARILL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17874
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 17876
-            .ability = ABILITY_PASTEL_VEIL,
+            .ability = ABILITY_THICK_FAT,
 #line 17873
-            .lvl = 52,
+            .lvl = 53,
 #line 17875
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17877
-                MOVE_PSYCHO_CUT,
-                MOVE_BOUNCE,
-                MOVE_MEGAHORN,
-                MOVE_DAZZLING_GLEAM,
+                MOVE_PLAY_ROUGH,
+                MOVE_AQUA_TAIL,
+                MOVE_BRICK_BREAK,
+                MOVE_DOUBLE_EDGE,
             },
             },
             {
@@ -45266,7 +45266,7 @@ F_TRAINER_FEMALE |
 #line 17886
             .ability = ABILITY_INTIMIDATE,
 #line 17883
-            .lvl = 50,
+            .lvl = 53,
 #line 17885
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45289,7 +45289,7 @@ F_TRAINER_FEMALE |
 #line 17896
             .ability = ABILITY_SYNCHRONIZE,
 #line 17893
-            .lvl = 53,
+            .lvl = 55,
 #line 17895
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45440,14 +45440,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 17963
-    [DIFFICULTY_NORMAL][TRAINER_SPENSER] =
+    [DIFFICULTY_NORMAL][TRAINER_BRANDON] =
     {
 #line 17964
-        .trainerName = _("SPENSER"),
+        .trainerName = _("BRANDON"),
 #line 17965
-        .trainerClass = TRAINER_CLASS_PALACE_MAVEN,
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
 #line 17966
-        .trainerPic = TRAINER_PIC_PALACE_MAVEN_SPENSER,
+        .trainerPic = TRAINER_PIC_PYRAMID_KING_BRANDON,
         .encounterMusic_gender =
 #line 17968
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -45456,22 +45456,22 @@ F_TRAINER_FEMALE |
 #line 17970
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17971
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_RISKY,
 #line 17972
-        .mugshotColor = MUGSHOT_COLOR_GREEN,
+        .mugshotColor = MUGSHOT_COLOR_YELLOW,
 #line 0
-        .trainerBackPic = TRAINER_PIC_PALACE_MAVEN_SPENSER,
+        .trainerBackPic = TRAINER_PIC_PYRAMID_KING_BRANDON,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
             {
 #line 17974
-            .species = SPECIES_ROSERADE,
+            .species = SPECIES_DUGTRIO_ALOLA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17976
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 17978
-            .ability = ABILITY_POISON_POINT,
+            .ability = ABILITY_TANGLING_HAIR,
 #line 17975
             .lvl = 52,
 #line 17977
@@ -45479,20 +45479,20 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17979
-                MOVE_TOXIC_SPIKES,
-                MOVE_GIGA_DRAIN,
-                MOVE_LEECH_SEED,
-                MOVE_SLUDGE_BOMB,
+                MOVE_EARTHQUAKE,
+                MOVE_TRI_ATTACK,
+                MOVE_DIG,
+                MOVE_IRON_HEAD,
             },
             },
             {
 #line 17984
-            .species = SPECIES_DECIDUEYE_HISUI,
+            .species = SPECIES_SWAMPERT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17986
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 17988
-            .ability = ABILITY_OVERGROW,
+            .ability = ABILITY_TORRENT,
 #line 17985
             .lvl = 54,
 #line 17987
@@ -45500,20 +45500,20 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17989
-                MOVE_LEAF_BLADE,
-                MOVE_AERIAL_ACE,
-                MOVE_FEATHER_DANCE,
-                MOVE_TRIPLE_ARROWS,
+                MOVE_EARTHQUAKE,
+                MOVE_MUDDY_WATER,
+                MOVE_PROTECT,
+                MOVE_ROCK_SLIDE,
             },
             },
             {
 #line 17994
-            .species = SPECIES_SCEPTILE,
+            .species = SPECIES_FLYGON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17996
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 17998
-            .ability = ABILITY_OVERGROW,
+            .ability = ABILITY_LEVITATE,
 #line 17995
             .lvl = 53,
 #line 17997
@@ -45521,20 +45521,20 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17999
-                MOVE_LEAF_BLADE,
-                MOVE_X_SCISSOR,
-                MOVE_AGILITY,
-                MOVE_DUAL_CHOP,
+                MOVE_SANDSTORM,
+                MOVE_ROCK_SLIDE,
+                MOVE_DRAGON_CLAW,
+                MOVE_EARTHQUAKE,
             },
             },
             {
 #line 18004
-            .species = SPECIES_LUDICOLO,
+            .species = SPECIES_RHYPERIOR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 18006
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 18008
-            .ability = ABILITY_OWN_TEMPO,
+            .ability = ABILITY_SOLID_ROCK,
 #line 18005
             .lvl = 53,
 #line 18007
@@ -45542,22 +45542,22 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 18009
-                MOVE_GIGA_DRAIN,
-                MOVE_HYDRO_PUMP,
-                MOVE_ICE_BEAM,
-                MOVE_ASTONISH,
+                MOVE_STONE_EDGE,
+                MOVE_MEGAHORN,
+                MOVE_EARTHQUAKE,
+                MOVE_HAMMER_ARM,
             },
             },
             {
 #line 18014
-            .species = SPECIES_BRELOOM,
+            .species = SPECIES_REGIROCK,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 18014
             .heldItem = ITEM_SITRUS_BERRY,
 #line 18016
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 18018
-            .ability = ABILITY_TECHNICIAN,
+            .ability = ABILITY_CLEAR_BODY,
 #line 18015
             .lvl = 55,
 #line 18017
@@ -45565,10 +45565,10 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 18019
-                MOVE_MACH_PUNCH,
-                MOVE_BULLET_SEED,
-                MOVE_BULK_UP,
-                MOVE_SPORE,
+                MOVE_STONE_EDGE,
+                MOVE_HAMMER_ARM,
+                MOVE_ANCIENTPOWER,
+                MOVE_EXPLOSION,
             },
             },
         },
@@ -45607,7 +45607,7 @@ F_TRAINER_FEMALE |
 #line 18039
             .ability = ABILITY_STURDY,
 #line 18036
-            .lvl = 58,
+            .lvl = 57,
 #line 18038
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45628,7 +45628,7 @@ F_TRAINER_FEMALE |
 #line 18049
             .ability = ABILITY_HYDRATION,
 #line 18046
-            .lvl = 57,
+            .lvl = 56,
 #line 18048
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45649,7 +45649,7 @@ F_TRAINER_FEMALE |
 #line 18059
             .ability = ABILITY_STURDY,
 #line 18056
-            .lvl = 56,
+            .lvl = 55,
 #line 18058
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45670,7 +45670,7 @@ F_TRAINER_FEMALE |
 #line 18069
             .ability = ABILITY_STORM_DRAIN,
 #line 18066
-            .lvl = 57,
+            .lvl = 56,
 #line 18068
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45691,7 +45691,7 @@ F_TRAINER_FEMALE |
 #line 18079
             .ability = ABILITY_SWIFT_SWIM,
 #line 18076
-            .lvl = 57,
+            .lvl = 56,
 #line 18078
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -45714,7 +45714,7 @@ F_TRAINER_FEMALE |
 #line 18089
             .ability = ABILITY_CLEAR_BODY,
 #line 18086
-            .lvl = 59,
+            .lvl = 58,
 #line 18088
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,

@@ -9,16 +9,15 @@ u32 GetCurrentLevelCap(void)
 {
     static const u32 sLevelCapFlagMap[] =
     {
-        15, // After Badge 1
-        19, // After Badge 2
-        24, // After Badge 3
-        29, // After Badge 4
-        32, // After Badge 5
-        35, // After Badge 6
-        42, // After Badge 7
-        48, // After Badge 8
-        55, // After Elite 4 Drake
-        59, // After Champion
+        15, // Badge 1
+        19, // Badge 2
+        24, // Badge 3
+        29, // Badge 4
+        32, // Badge 5
+        35, // Badge 6
+        42, // Badge 7
+        48, // Badge 8
+        58, // Elite 4 and Champion
     };
 
     u32 badgeCount = 0;
@@ -39,11 +38,9 @@ u32 GetCurrentLevelCap(void)
         return sLevelCapFlagMap[badgeCount];  // Level cap based on the number of badges
     }
 
-    // If all badges are obtained, check other flags (Wally, Elite 4, Champion)
-    if (!FlagGet(FLAG_DEFEATED_ELITE_4_DRAKE))
-        return sLevelCapFlagMap[8];
+    // If all badges are obtained, use the final cap
     if (!FlagGet(FLAG_IS_CHAMPION))
-        return sLevelCapFlagMap[9];
+        return sLevelCapFlagMap[8];
 
     // If everything is complete, return the max level
     return MAX_LEVEL;

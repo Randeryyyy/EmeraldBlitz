@@ -28,14 +28,14 @@ EverGrandeCity_DrakesRoom_OnLoad:
 	call_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom
 	call_if_eq VAR_ELITE_4_STATE, 4, EverGrandeCity_DrakesRoom_EventScript_CloseDoor
 	goto_if_eq VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_DRAKE, EverGrandeCity_DrakesRoom_End
-	goto_if_eq VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPENSER, EverGrandeCity_DrakesRoom_End
+	goto_if_eq VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_BRANDON, EverGrandeCity_DrakesRoom_End
 	random 2
-	goto_if_eq VAR_RESULT, 1, EverGrandeCity_SpenserAppears
+	goto_if_eq VAR_RESULT, 1, EverGrandeCity_BrandonAppears
     setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_DRAKE
 	end
 
-EverGrandeCity_SpenserAppears:
-    setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPENSER
+EverGrandeCity_BrandonAppears:
+    setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_BRANDON
     setflag FLAG_BOSS_FLIP
     end
 
@@ -57,13 +57,13 @@ EverGrandeCity_DrakesRoom_EventScript_Drake::
 	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
-	goto_if_set FLAG_BOSS_FLIP, EverGrandeCity_DrakesRoom_EventScript_Spenser
+	goto_if_set FLAG_BOSS_FLIP, EverGrandeCity_DrakesRoom_EventScript_Brandon
 	trainerbattle_no_intro TRAINER_DRAKE, EverGrandeCity_DrakesRoom_Text_Defeat
 	goto EverGrandeCity_DrakesRoom_EventScript_Defeated
 	end
 
-EverGrandeCity_DrakesRoom_EventScript_Spenser::
-	trainerbattle_no_intro TRAINER_SPENSER, EverGrandeCity_DrakesRoom_Text_Defeat
+EverGrandeCity_DrakesRoom_EventScript_Brandon::
+	trainerbattle_no_intro TRAINER_BRANDON, EverGrandeCity_DrakesRoom_Text_Defeat
 	goto EverGrandeCity_DrakesRoom_EventScript_Defeated
 	end
 
