@@ -1322,7 +1322,7 @@ static const struct LevelUpMove sMeowthGalarLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_FAKE_OUT),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
     LEVEL_UP_MOVE( 4, MOVE_HONE_CLAWS),
-    LEVEL_UP_MOVE( 8, MOVE_SCRATCH),
+    //LEVEL_UP_MOVE( 8, MOVE_SCRATCH),
     LEVEL_UP_MOVE(12, MOVE_PAY_DAY),
     LEVEL_UP_MOVE(16, MOVE_METAL_CLAW),
     LEVEL_UP_MOVE(20, MOVE_TAUNT),
@@ -7287,8 +7287,7 @@ static const struct LevelUpMove sSwampertLevelUpLearnset[] = {
 
 #if P_FAMILY_POOCHYENA
 static const struct LevelUpMove sPoochyenaLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_ENDURE),
-    LEVEL_UP_MOVE( 1, MOVE_PROTECT),
+    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 4, MOVE_HOWL),
     LEVEL_UP_MOVE( 7, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE(10, MOVE_BITE),

@@ -3217,9 +3217,9 @@ void SetMoveEffect(u32 battler, u32 effectBattler, bool32 primary, bool32 certai
         {
             u16 payday = gPaydayMoney;
             u16 moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove);
-            gPaydayMoney += (gBattleMons[gBattlerAttacker].level * 5);
-            if (payday > gPaydayMoney)
-                gPaydayMoney = 0xFFFF;
+                gPaydayMoney += (gBattleMons[gBattlerAttacker].level * 20);
+                if (gPaydayMoney > 2000)
+                    gPaydayMoney = 2000;
 
             // For a move that hits multiple targets (i.e. Make it Rain)
             // we only want to print the message on the final hit
@@ -8424,7 +8424,7 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 5;
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-            moneyReward = 8 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
+            moneyReward = 10 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
         // else if (IsDoubleBattle())
             // moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * trainerMoney;
         else
@@ -10983,7 +10983,8 @@ static void Cmd_givepaydaymoney(void)
 {
     CMD_ARGS();
 
-    if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)) && gPaydayMoney != 0)
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)) && gPaydayMoney != 0
+        && (gBattleTypeFlags & BATTLE_TYPE_TRAINER) && IsGymLeader(TRAINER_BATTLE_PARAM.opponentA))
     {
         u32 bonusMoney = gPaydayMoney * gBattleStruct->moneyMultiplier;
         AddMoney(&gSaveBlock1Ptr->money, bonusMoney);

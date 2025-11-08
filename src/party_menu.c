@@ -2988,13 +2988,13 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         if (species == SPECIES_MAREEP)
             used = FlagGet(FLAG_MAREEP_USED_MILK_DRINK);
         else if (species == SPECIES_FLAAFFY)
-            used = FlagGet(FLAG_FLAAFFY_USED_MILK_DRINK);
+            used = FlagGet(FLAG_MAREEP_USED_MILK_DRINK);
         else if (species == SPECIES_AMPHAROS)
-            used = FlagGet(FLAG_AMPHAROS_USED_MILK_DRINK);
+            used = FlagGet(FLAG_MAREEP_USED_MILK_DRINK);
         else if (species == SPECIES_SKIDDO)
             used = FlagGet(FLAG_SKIDDO_USED_MILK_DRINK);
         else if (species == SPECIES_GOGOAT)
-            used = FlagGet(FLAG_GOGOAT_USED_MILK_DRINK);
+            used = FlagGet(FLAG_SKIDDO_USED_MILK_DRINK);
 
         if (!used)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_MILK_DRINK);
