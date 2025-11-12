@@ -1237,6 +1237,7 @@ EventScript_WarpHomeSootopolis::
 	lockall
 	addvar VAR_BADGE_COUNT, 1
 	call_if_eq VAR_BADGE_COUNT, 8, EventScript_SetEverGrandeVisited
+	setvar VAR_SOOTOPOLIS_CITY_STATE, 7
     setvar VAR_SOOTOPOLIS_LOCKED, 1
 	giveitem ITEM_MAX_REVIVE
 	warp MAP_SOOTOPOLIS_CITY, 31, 32

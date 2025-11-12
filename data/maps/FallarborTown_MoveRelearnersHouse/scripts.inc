@@ -5,6 +5,12 @@ FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
 	lockall
 	applymovement LOCALID_MOVE_RELEARNER, Common_Movement_FacePlayer
 	waitmovement 0
+	goto_if_ge VAR_BADGE_COUNT, 4 FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearnerStart
+	msgbox FallarborTown_MoveRelearnersHouse_Text_ComeBackLater, MSGBOX_DEFAULT
+	releaseall
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearnerStart::
 	goto_if_set FLAG_TEMP_1, FallarborTown_MoveRelearnersHouse_EventScript_AskTeachMove
 	msgbox FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor, MSGBOX_DEFAULT
 	setflag FLAG_TEMP_1
@@ -95,3 +101,8 @@ FallarborTown_MoveRelearnersHouse_Text_CantTeachEgg:
 	.string "Hunh? There isn't a single move that\n"
 	.string "I can teach an EGG.$"
 
+FallarborTown_MoveRelearnersHouse_Text_ComeBackLater:
+	.string "Wow, I wasn't expecting a trainer of\n"
+	.string "your calliber so soon!\p"
+	.string "Try coming back once you have four\n"
+	.string "badges and we can make a deal…$"

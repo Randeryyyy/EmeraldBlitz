@@ -220,13 +220,13 @@ Route101_EventScript_BirchsBag::
 	faceplayer
 	// setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RESCUED_BIRCH
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_ROUTE101_ZIGZAGOON
 	hidefollower 0
 	setobjectxy LOCALID_PLAYER, 6, 13
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	fadescreen FADE_FROM_BLACK  
+	fadescreenswapbuffers FADE_FROM_BLACK
 	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchApproachPlayer
 	waitmovement 0
 	msgbox Route101_Text_YouSavedMe, MSGBOX_DEFAULT
@@ -296,4 +296,3 @@ Route101_Text_WildPokemonInTallGrass:
 Route101_Text_RouteSign:
 	.string "ROUTE 101\n"
 	.string "{UP_ARROW} OLDALE TOWN$"
-

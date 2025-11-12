@@ -1,6 +1,6 @@
 <!-- title -->
 # Pokémon Emerald Blitz
-A game built on Pokémon Emerald Expansion specifically for draft auction races
+A game built on Pokémon Emerald Expansion specifically for draft auction nuzlocke races
 
 <!-- CONTENT -->
 # Key Features
@@ -45,7 +45,7 @@ A game built on Pokémon Emerald Expansion specifically for draft auction races
 - **Milk Drink:** Skiddo and Mareep's Milk Drink can now be used in the overworld to increase a Pokemon's level by one, ignoring the level cap. Choose carefully--you can only use it once!
 - **Forecast:** Castform's Forecast ability now sets rain, sun or hail depending on the type of the first move in its movelist.
 - **Last Respects:** Last Respects' power is now determined by how many deaths you've had over the course of your run, gaining 15 Base Power each time a Pokemon faints. Your Houndstone only growws more powerful as its allies fall.
-- **Seed Sower:** Arboliva's signiture ability now sets Leech Seed when an enemy Pokemon attacks it.
+- **Seed Sower:** Arboliva's signiture ability now sets Leech Seed when another Pokemon's attack makes contact with it.
 - **Undead Corsola:** Upon fainting, Corsola is revived at the end of the battle as Galarian Corsola.
 - **Applin Evolution:** Applin's split evolution path is now determined by what gym you reach first: Fortree for Flapple, Lavaridge for Appletun, and Rustboro for Dipplin.
 

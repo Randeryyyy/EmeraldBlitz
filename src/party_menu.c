@@ -2569,6 +2569,8 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_ARON
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_GOOMY
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_HONEDGE
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_DEINO
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SWINUB
         )) || (VarGet(VAR_BADGE_COUNT) >= 0 && (
             GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_AZURILL
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SCATTERBUG

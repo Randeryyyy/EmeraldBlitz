@@ -16,7 +16,7 @@ Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner::
 Route104_PrettyPetalFlowerShop_EventScript_ShopOwner::
 	lock
 	faceplayer
-	goto_if_eq VAR_BADGE_COUNT, 8, Route104_PrettyPetalFlowerShop_EventScript_SellAllBerries
+	goto_if_ge VAR_BADGE_COUNT, 6, Route104_PrettyPetalFlowerShop_EventScript_SellAllBerries
 	goto_if_set FLAG_LANDMARK_FLOWER_SHOP, Route104_PrettyPetalFlowerShop_EventScript_SellBerries
 	//goto_if_set FLAG_TEMP_1, Route104_PrettyPetalFlowerShop_EventScript_SellDecorations
 	msgbox Route104_PrettyPetalFlowerShop_Text_ThisIsPrettyPetalFlowerShop, MSGBOX_DEFAULT

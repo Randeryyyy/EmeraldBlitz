@@ -3570,7 +3570,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     }
                 }
 
-                if (moveFound == 1 && TryChangeBattleWeather(battler, weatherToSet, TRUE))
+                if (moveFound == 1 && gBattleMons[battler].level >= 20 && TryChangeBattleWeather(battler, weatherToSet, TRUE))
                 {
                     if (weatherToSet == BATTLE_WEATHER_SUN)
                         BattleScriptPushCursorAndCallback(BattleScript_DroughtActivates);
@@ -4952,8 +4952,9 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         case ABILITY_SEED_SOWER:
             if (IsBattlerAlive(gBattlerAttacker)
              && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-             && IsBattlerTurnDamaged(gBattlerTarget)
-             && IsBattlerAlive(gBattlerTarget))
+             && IsBattlerAlive(gBattlerTarget)
+             && IsBattlerTurnDamaged(gBattlerTarget) // Ensure the attacking Pokémon actually hit the target
+             && IsMoveMakingContact(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker, TRUE), gCurrentMove)) // Ensure the move makes contact
             {
                 if (!IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GRASS)
                  && !gBattleMons[gBattlerAttacker].volatiles.leechSeed
@@ -5242,6 +5243,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         {
         case ABILITY_FORECAST:
         case ABILITY_FLOWER_GIFT:
+            if (IsBattlerAlive(battler))
             if ((IsBattlerWeatherAffected(battler, gBattleWeather)
              || gBattleWeather == B_WEATHER_NONE
              || !HasWeatherEffect()) // Air Lock active
@@ -8116,7 +8118,7 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         break;
     case EFFECT_RAGE_FIST:
         basePower += 50 * GetBattlerPartyState(battlerAtk)->timesGotHit;
-        basePower = (basePower > 350) ? 350 : basePower;
+        basePower = (basePower > 150) ? 150 : basePower;
         break;
     case EFFECT_FICKLE_BEAM:
         if (gBattleStruct->fickleBeamBoosted)

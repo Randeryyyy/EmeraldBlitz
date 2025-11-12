@@ -692,6 +692,7 @@ SlateportCity_EventScript_PowerTMClerk::
 	lock
 	setvar VAR_POWER_TM_CLERK, 1
 	faceplayer
+	goto_if_lt VAR_BADGE_COUNT, 1, SlateportCity_Pokemart_PowerTMs_NotYet
 	message gText_HowMayIServeYou
 	waitmessage
 	goto_if_ge VAR_BADGE_COUNT, 4, SlateportCity_Pokemart_PowerTMs_Badge7TMs
@@ -700,6 +701,12 @@ SlateportCity_EventScript_PowerTMClerk::
 	pokemart SlateportCity_Pokemart_PowerTMs_Badge5TMsItems
 	setvar VAR_POWER_TM_CLERK, 0
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_Pokemart_PowerTMs_NotYet::
+	msgbox SlateportCity_Text_NotSellingYet, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
 
@@ -718,6 +725,7 @@ SlateportCity_Pokemart_PowerTMs_Badge2TMsItems:
 	.2byte ITEM_TM_SANDSTORM
 	.2byte ITEM_TM_SKILL_SWAP
 	.2byte ITEM_TM_STEEL_WING
+	.2byte ITEM_TM_TAUNT
 	.2byte ITEM_TM_THIEF
 	.2byte ITEM_TM_TORMENT
 	.2byte ITEM_TM_TOXIC
@@ -786,6 +794,7 @@ SlateportCity_Pokemart_PowerTMs_Badge7TMsItems:
 	.2byte ITEM_TM_SAFEGUARD
 	.2byte ITEM_TM_SANDSTORM
 	.2byte ITEM_TM_SKILL_SWAP
+	.2byte ITEM_TM_TAUNT
 	.2byte ITEM_TM_STEEL_WING
 	.2byte ITEM_TM_THIEF
 	.2byte ITEM_TM_TORMENT
@@ -824,9 +833,10 @@ SlateportCity_Pokemart_PowerTMs_Badge7TMsItems:
 SlateportCity_EventScript_MegaSalesman::
 	lock
 	faceplayer
-	msgbox SlateportCity_Text_MegaSalesmanIntro, MSGBOX_DEFAULT
+	message gText_HowMayIServeYou
+	waitmessage
 	compare VAR_BADGE_COUNT, 6
-	goto_if_lt SlateportCity_EventScript_NotSellingYet
+	goto_if_lt SlateportCity_EventScript_SellStageOneStones
 	compare VAR_BADGE_COUNT, 8
 	goto_if_lt SlateportCity_EventScript_SellStageTwoStones
 	pokemart SlateportCity_Pokemart_StageThreeMegas
@@ -834,8 +844,9 @@ SlateportCity_EventScript_MegaSalesman::
 	release
 	end
 
-SlateportCity_EventScript_NotSellingYet::
-	msgbox SlateportCity_Text_NotSellingYet, MSGBOX_DEFAULT
+SlateportCity_EventScript_SellStageOneStones::
+	pokemart SlateportCity_Pokemart_StageOneMegas
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
@@ -844,6 +855,12 @@ SlateportCity_EventScript_SellStageTwoStones::
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
+
+	.align 2
+SlateportCity_Pokemart_StageOneMegas:
+	.2byte ITEM_MAWILITE
+	.2byte ITEM_SABLENITE
+	pokemartlistend
 
 	.align 2
 SlateportCity_Pokemart_StageTwoMegas:
@@ -1733,4 +1750,6 @@ SlateportCity_Text_MegaSalesmanIntro:
 	.string "Psst… Kid. Looking for a good deal?$"
 
 SlateportCity_Text_NotSellingYet:
-	.string "Eh, nevermind… You don't look ready yet.$"
+	.string "Hello! I sell TMs to players\n"
+	.string "completing the gym challenge.\p"
+	.string "Come back once you have a badge!$"

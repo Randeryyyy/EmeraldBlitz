@@ -7669,7 +7669,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sPrimeapeLevelUpLearnset,
         .teachableLearnset = sPrimeapeTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_ANNIHILAPE, CONDITIONS({IF_KNOWS_MOVE, MOVE_RAGE_FIST})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 48, SPECIES_ANNIHILAPE}),
     },
 
 #if P_GEN_9_CROSS_EVOS
