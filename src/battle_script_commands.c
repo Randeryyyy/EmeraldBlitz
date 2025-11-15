@@ -1,6 +1,7 @@
 #include "global.h"
 #include "battle.h"
 #include "battle_message.h"
+#include "battle_gimmick.h"
 #include "battle_anim.h"
 #include "battle_ai_main.h"
 #include "battle_ai_util.h"
@@ -51,10 +52,12 @@
 #include "constants/abilities.h"
 #include "constants/battle_anim.h"
 #include "constants/battle_move_effects.h"
+#include "constants/battle.h"
 #include "constants/battle_string_ids.h"
 #include "constants/battle_partner.h"
 #include "constants/hold_effects.h"
 #include "constants/items.h"
+#include "constants/battle_script_commands.h"
 #include "constants/item_effects.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
@@ -528,7 +531,7 @@ static void Cmd_tryrestorehpberry(void);
 static void Cmd_halvehp(void);
 static void Cmd_copyfoestats(void);
 static void Cmd_rapidspinfree(void);
-static void Cmd_unused_0xBF(void);
+static void Cmd_undomegas(void);
 static void Cmd_recoverbasedonsunlight(void);
 static void Cmd_setstickyweb(void);
 static void Cmd_selectfirstvalidtarget(void);
@@ -787,7 +790,7 @@ void (*const gBattleScriptingCommandsTable[])(void) =
     Cmd_halvehp,                                 //0xBC
     Cmd_copyfoestats,                            //0xBD
     Cmd_rapidspinfree,                           //0xBE
-    Cmd_unused_0xBF,                             //0xBF
+    Cmd_undomegas,                               //0xBF
     Cmd_recoverbasedonsunlight,                  //0xC0
     Cmd_setstickyweb,                            //0xC1
     Cmd_selectfirstvalidtarget,                  //0xC2
@@ -10640,6 +10643,21 @@ static void Cmd_normalisebuffs(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
+static void Cmd_undomegas(void)
+{
+    CMD_ARGS(u8 battler);
+    u32 battler = GetBattlerForBattleScript(cmd->battler);
+
+    if (GetActiveGimmick(battler) == GIMMICK_MEGA)
+    {
+        UndoMega(battler);
+        gBattleScripting.battler = battler;
+        BattleScriptCall(BattleScript_MegaEvolutionEnds_Ret);
+        return;
+    }
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
 static void Cmd_setbide(void)
 {
     CMD_ARGS();
@@ -12501,10 +12519,6 @@ static void Cmd_rapidspinfree(void)
     {
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
-}
-
-static void Cmd_unused_0xBF(void)
-{
 }
 
 static void Cmd_recoverbasedonsunlight(void)
@@ -18534,4 +18548,20 @@ void BS_JumpIfGenConfigLowerThan(void)
         gBattlescriptCurrInstr = cmd->jumpInstr;
     else
         gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+void BS_UndoMega(void)
+{
+    NATIVE_ARGS(u8 battler);
+    u32 battler = GetBattlerForBattleScript(cmd->battler);
+
+    if (GetActiveGimmick(battler) == GIMMICK_MEGA)
+    {
+        UndoMega(battler);
+        gBattleScripting.battler = battler;
+        BattleScriptCall(BattleScript_MegaEvolutionEnds_Ret);
+        return;
+    }
+
+    gBattlescriptCurrInstr = cmd->nextInstr;
 }

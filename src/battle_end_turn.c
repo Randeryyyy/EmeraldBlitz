@@ -63,6 +63,7 @@ enum EndTurnResolutionOrder
     ENDTURN_EMERGENCY_EXIT_4,
     ENDTURN_FORM_CHANGE_ABILITIES,
     ENDTURN_EJECT_PACK,
+    ENDTURN_MEGA_EVOLUTION, // This is a placeholder for now
     ENDTURN_DYNAMAX,
     ENDTURN_COUNT,
 };
@@ -1506,6 +1507,22 @@ static bool32 HandleEndTurnDynamax(u32 battler)
     return effect;
 }
 
+static bool32 HandleEndTurnMegaEvolution(u32 battler)
+{
+    bool32 effect = FALSE;
+
+    gBattleStruct->turnEffectsBattlerId++;
+
+    if (GetActiveGimmick(battler) == GIMMICK_MEGA && gBattleStruct->mega.megaTurns[battler] == gBattleTurnCounter)
+    {
+        gBattleScripting.battler = battler;
+        UndoMega(battler);
+        BattleScriptExecute(BattleScript_MegaEvolutionEnds);
+        effect = TRUE;
+    }
+    return effect;
+}
+
 static bool32 (*const sEndTurnEffectHandlers[])(u32 battler) =
 {
     [ENDTURN_ORDER] = HandleEndTurnOrder,
@@ -1555,6 +1572,7 @@ static bool32 (*const sEndTurnEffectHandlers[])(u32 battler) =
     [ENDTURN_EMERGENCY_EXIT_4] = HandleEndTurnEmergencyExit,
     [ENDTURN_FORM_CHANGE_ABILITIES] = HandleEndTurnFormChangeAbilities,
     [ENDTURN_EJECT_PACK] = HandleEndTurnEjectPack,
+    [ENDTURN_MEGA_EVOLUTION] = HandleEndTurnMegaEvolution,
     [ENDTURN_DYNAMAX] = HandleEndTurnDynamax,
 };
 

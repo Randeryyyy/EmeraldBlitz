@@ -5178,6 +5178,7 @@ static bool32 TryActivateGimmick(u32 battler)
         if (gGimmicksInfo[gBattleStruct->gimmick.usableGimmick[battler]].ActivateGimmick != NULL)
         {
             gGimmicksInfo[gBattleStruct->gimmick.usableGimmick[battler]].ActivateGimmick(battler);
+                gBattleStruct->mega.megaTurns[battler] = gBattleTurnCounter + 3;
             return TRUE;
         }
     }

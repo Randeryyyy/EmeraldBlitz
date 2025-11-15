@@ -1613,6 +1613,11 @@
 	.byte \battler
 	.endm
 
+	.macro undomegas battler:req
+	callnative BS_UndoMega
+	.byte \battler
+	.endm
+
 	.macro trytrainerslidezmovemsg
 	callnative BS_TryTrainerSlideZMoveMsg
 	.endm

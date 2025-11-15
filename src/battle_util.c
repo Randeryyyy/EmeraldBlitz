@@ -11923,3 +11923,16 @@ static bool32 IsOpposingSideEmpty(u32 battler)
         return FALSE;
     return TRUE;
 }
+
+// Unsets the flags used for Mega Evolution.
+void UndoMega(u32 battler)
+{
+    // Revert form change if needed.
+    if (IsBattlerMegaEvolved(battler))
+        TryBattleFormChange(battler, FORM_CHANGE_END_BATTLE);
+
+    // Makes sure there are no Mega Evolution flags set, including on switch / faint.
+    SetActiveGimmick(battler, GIMMICK_NONE);
+    UpdateIndicatorVisibilityAndType(gHealthboxSpriteIds[battler], TRUE);
+    UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], GetBattlerMon(battler), HEALTHBOX_LEVEL);
+}

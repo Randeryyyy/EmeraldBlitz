@@ -5416,6 +5416,7 @@ BattleScript_ActionSwitch::
 BattleScript_DoSwitchOut::
 	switchoutabilities BS_ATTACKER
 	undodynamax BS_ATTACKER
+	undomegas BS_SCRIPTING
 	waitstate
 	returnatktoball
 	waitstate
@@ -9619,6 +9620,23 @@ BattleScript_DynamaxEnds_Ret::
 	flushtextbox
 	setspriteignore0hp TRUE
 	updatedynamax
+	playanimation BS_SCRIPTING, B_ANIM_FORM_CHANGE
+	waitanimation
+	setspriteignore0hp FALSE
+	pause B_WAIT_TIME_SHORT
+	return
+
+BattleScript_MegaEvolutionEnds::
+	flushtextbox
+	undomegas BS_SCRIPTING
+	playanimation BS_SCRIPTING, B_ANIM_FORM_CHANGE
+	waitanimation
+	end2
+
+BattleScript_MegaEvolutionEnds_Ret::
+	flushtextbox
+	setspriteignore0hp TRUE
+	undomegas BS_SCRIPTING
 	playanimation BS_SCRIPTING, B_ANIM_FORM_CHANGE
 	waitanimation
 	setspriteignore0hp FALSE
