@@ -532,7 +532,7 @@ SlateportCity_EventScript_DollClerk::
 	goto_if_eq VAR_BADGE_COUNT, 2, SlateportCity_PokemartDecor_Badge2
 	goto_if_eq VAR_BADGE_COUNT, 3, SlateportCity_PokemartDecor_Badge3
 	goto_if_eq VAR_BADGE_COUNT, 4, SlateportCity_PokemartDecor_Badge4
-	goto_if_eq VAR_BADGE_COUNT, 5, SlateportCity_PokemartDecor_Badge5
+	goto_if_eq VAR_BADGE_COUNT, 5, SlateportCity_PokemartDecor_Badge4
 	goto_if_ge VAR_BADGE_COUNT, 6, SlateportCity_PokemartDecor_Badge6
 	pokemart SlateportCity_PokemartDecor_Basic
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
@@ -606,7 +606,6 @@ SlateportCity_PokemartDecor_Badge5::
 
 	.align 2
 SlateportCity_Pokemart_Badge5Items:
-	.2byte ITEM_LINKING_CORD
 	.2byte ITEM_FIRE_STONE
 	.2byte ITEM_WATER_STONE
 	.2byte ITEM_THUNDER_STONE
@@ -1306,7 +1305,7 @@ SlateportCity_Text_CookWhichPokemon:
 	.string "And for which POKéMON?$"
 
 SlateportCity_Text_CookDone:
-	.string "There you go! All done!$"
+	.string "Voila! All done!$"
 
 SlateportCity_Text_CookComeAgain:
 	.string "Oh? Changed your mind?\n"

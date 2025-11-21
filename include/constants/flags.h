@@ -1227,7 +1227,7 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
+#define FLAG_FOUR_BADGES                                            0x493 // Do we have 4 badges? (Used for move tutors)
 #define FLAG_NUZLOCKE	                                            0x494 // Are we nuzlocking?
 #define FLAG_RECEIVED_NECTAR                                        0x495 // Did you get Oricorio's nectar?
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag

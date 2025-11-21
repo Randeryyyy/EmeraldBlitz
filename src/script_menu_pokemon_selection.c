@@ -1,5 +1,6 @@
 #include "global.h"
 #include "script.h"
+#include "random.h"
 #include "script_menu.h"
 #include "string_util.h"
 #include "strings.h"
@@ -12,6 +13,7 @@ static const u8 sText_MysteryEgg[] = _("Mystery Egg");
 
 static const u16 sGiftPokemonList[] = {
     SPECIES_APPLIN, 
+    SPECIES_ARCHEN,
     SPECIES_ARON, 
     SPECIES_BAGON, 
     SPECIES_BUIZEL,
@@ -26,7 +28,7 @@ static const u16 sGiftPokemonList[] = {
     SPECIES_CORPHISH, 
     SPECIES_CORSOLA,
     SPECIES_CUBONE, 
-    SPECIES_CUTIEFLY, 
+    SPECIES_CUTIEFLY,
     SPECIES_DEWPIDER,
     SPECIES_DIGLETT, 
     SPECIES_DRILBUR, 
@@ -48,7 +50,7 @@ static const u16 sGiftPokemonList[] = {
     SPECIES_GRUBBIN, 
     SPECIES_HATENNA,
     SPECIES_HELIOPTILE, 
-    SPECIES_HONEDGE, 
+    SPECIES_HONEDGE,
     SPECIES_HORSEA,
     SPECIES_HOUNDOUR,
     SPECIES_JANGMO_O,
@@ -58,11 +60,11 @@ static const u16 sGiftPokemonList[] = {
     SPECIES_MAGNEMITE,
     SPECIES_MAKUHITA, 
     SPECIES_MANKEY, 
-    SPECIES_MAREEP, 
+    SPECIES_MAREEP,
     SPECIES_MAWILE,
     SPECIES_MEOWTH_GALAR, 
     SPECIES_MINCCINO,
-    SPECIES_MINIOR_METEOR_RED, 
+    SPECIES_MINIOR_CORE,
     SPECIES_MORELULL, 
     SPECIES_MUDBRAY, 
     SPECIES_MUDKIP,
@@ -129,17 +131,22 @@ static const u16 sGiftPokemonList[] = {
 void BuildGiftPokemonMenu(void)
 {
     u32 i;
+    u16 species;
 
     ScriptMenu_ClearDynMultichoice();
 
     for (i = 0; i < ARRAY_COUNT(sGiftPokemonList); i++)
     {
-        // This will add all Pokémon from the list to the menu every time.
-        // This allows the player to receive the same Pokémon multiple times.
-        if (sGiftPokemonList[i] == SPECIES_EGG)
-            ScriptMenu_AddDynmultichoice(sText_MysteryEgg, sGiftPokemonList[i], 0);
+        species = sGiftPokemonList[i];
+        if (species == SPECIES_MINIOR_CORE)
+        {
+            species = SPECIES_MINIOR_CORE_RED + (Random() % (SPECIES_MINIOR_CORE_VIOLET - SPECIES_MINIOR_CORE_RED + 1));
+            ScriptMenu_AddDynmultichoice(gSpeciesInfo[SPECIES_MINIOR].speciesName, species, 0);
+        }
+        else if (species == SPECIES_EGG)
+            ScriptMenu_AddDynmultichoice(sText_MysteryEgg, species, 0);
         else
-            ScriptMenu_AddDynmultichoice(gSpeciesInfo[sGiftPokemonList[i]].speciesName, sGiftPokemonList[i], 0);
+            ScriptMenu_AddDynmultichoice(gSpeciesInfo[species].speciesName, species, 0);
     }
 
     ScriptMenu_AddDynmultichoice(gText_Finished, 999, -1);

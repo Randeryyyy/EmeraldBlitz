@@ -719,6 +719,7 @@ Common_ShowEasyChatScreen::
 
 Common_EventScript_ReadyPetalburgGymForBattle::
 	setflag FLAG_HIDE_PETALBURG_BOY //Remove boy blocking Petalburg gym's entrance
+	clearflag FLAG_FOUR_BADGES //Move Tutors appear
 	return
 
 Common_EventScript_BufferTrendyPhrase::
@@ -1239,7 +1240,7 @@ EventScript_WarpHomeSootopolis::
 	call_if_eq VAR_BADGE_COUNT, 8, EventScript_SetEverGrandeVisited
 	setvar VAR_SOOTOPOLIS_CITY_STATE, 7
     setvar VAR_SOOTOPOLIS_LOCKED, 1
-	giveitem ITEM_MAX_REVIVE
+	@ giveitem ITEM_MAX_REVIVE
 	warp MAP_SOOTOPOLIS_CITY, 31, 32
 	waitstate
 	releaseall
