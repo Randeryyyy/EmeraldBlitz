@@ -43,7 +43,7 @@ u32 GetCurrentLevelCap(void)
         return sLevelCapFlagMap[8];
 
     // If everything is complete, return the max level
-    return MAX_LEVEL;
+    return sLevelCapFlagMap[8];
 }
 
 

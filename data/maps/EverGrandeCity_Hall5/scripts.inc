@@ -8,5 +8,6 @@ EverGrandeCity_Hall5_OnWarp:
 
 EverGrandeCity_Hall5_EventScript_TurnPlayerNorth::
 	turnobject LOCALID_PLAYER, DIR_NORTH
+	special SwapRegisteredKit
 	end
 

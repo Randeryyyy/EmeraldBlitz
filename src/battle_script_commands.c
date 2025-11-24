@@ -951,6 +951,8 @@ static bool8 IsGymLeader(u16 trainerId)
     case TRAINER_VIOLA_6:
     case TRAINER_VIOLA_7:
     case TRAINER_VIOLA_8:
+    case TRAINER_ARCHIE:
+    case TRAINER_MAXIE_MAGMA_HIDEOUT:
         return TRUE;
     default:
         return FALSE;

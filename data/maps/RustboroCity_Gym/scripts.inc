@@ -43,8 +43,8 @@ RustboroCity_Gym_EventScript_Roxanne_Trainer1::
 
 RustboroCity_Gym_EventScript_Roxanne_Trainer2::
 	goto_if_set FLAG_BOSS_FLIP, RustboroCity_Gym_EventScript_Viola_Trainer2
-	trainerbattle_single TRAINER_SAWYER_5, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
-	goto RustboroCity_Gym_EventScript_PostBattle //Not sure why, but TRAINER_ROXANNE_2 breaks, so Sawyer5 is a duplicate copy of Roxanne2
+	trainerbattle_single TRAINER_ROXANNE_2, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
+	goto RustboroCity_Gym_EventScript_PostBattle
 
 RustboroCity_Gym_EventScript_Roxanne_Trainer3::
 	goto_if_set FLAG_BOSS_FLIP, RustboroCity_Gym_EventScript_Viola_Trainer3

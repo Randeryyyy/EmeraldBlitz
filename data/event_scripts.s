@@ -1142,7 +1142,6 @@ EventScript_WarpHomeRustboro::
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY	
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
 	setvar VAR_BRINEY_LOCATION, 1
-	setflag 2050 @ get rid of first roxanne rematch
 	setvar VAR_DEVON_CORP_3F_STATE, 1
     setvar VAR_RUSTBORO_LOCKED, 1
     call_if_eq VAR_BADGE_COUNT, 4, Common_EventScript_ReadyPetalburgGymForBattle

@@ -6,6 +6,7 @@
 #include "strings.h"
 #include "pokemon.h"
 #include "constants/species.h"
+#include "data/pokemon/form_species_tables.h"
 #include "constants/flags.h"
 #include "event_data.h"
 
@@ -142,6 +143,11 @@ void BuildGiftPokemonMenu(void)
         {
             species = SPECIES_MINIOR_CORE_RED + (Random() % (SPECIES_MINIOR_CORE_VIOLET - SPECIES_MINIOR_CORE_RED + 1));
             ScriptMenu_AddDynmultichoice(gSpeciesInfo[SPECIES_MINIOR].speciesName, species, 0);
+        }
+        else if (species == SPECIES_SCATTERBUG)
+        {
+            species = sScatterbugFormSpeciesIdTable[Random() % (ARRAY_COUNT(sScatterbugFormSpeciesIdTable) - 1)];
+            ScriptMenu_AddDynmultichoice(gSpeciesInfo[SPECIES_SCATTERBUG].speciesName, species, 0);
         }
         else if (species == SPECIES_EGG)
             ScriptMenu_AddDynmultichoice(sText_MysteryEgg, species, 0);

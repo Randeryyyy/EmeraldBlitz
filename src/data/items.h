@@ -4429,7 +4429,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Whipped Dream"),
         .pluralName = ITEM_PLURAL_NAME("Whipped Dream"),
-        .price = 1000,
+        .price = 2000,
         .description = COMPOUND_STRING(
             "A soft and sweet\n"
             "treat loved by\n"
