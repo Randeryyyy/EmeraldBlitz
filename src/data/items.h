@@ -11408,7 +11408,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_HONE_CLAWS] =
     {
         .name = ITEM_NAME("Hone Claws"),
-        .price = 10000,
+        .price = 8000,
         .description = COMPOUND_STRING(
             "The user sharpens\n"
             "its claws in\n"
@@ -11602,7 +11602,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_BLIZZARD] =
     {
         .name = ITEM_NAME("Blizzard"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
         #if B_USE_FROSTBITE == TRUE
             "A snow-and-wind\n"
@@ -11721,7 +11721,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_SOLAR_BEAM] =
     {
         .name = ITEM_NAME("Solar Beam"),
-        .price = 2000,
+        .price = 3000,
         .description = COMPOUND_STRING(
             "Absorbs sunlight in\n"
             "the 1st turn, then\n"
@@ -11763,7 +11763,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_THUNDER] =
     {
         .name = ITEM_NAME("Thunder"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Strikes the foe\n"
             "with a thunderbolt.\n"
@@ -11777,7 +11777,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_EARTHQUAKE] =
     {
         .name = ITEM_NAME("Earthquake"),
-        .price = 10000,
+        .price = 8000,
         .description = COMPOUND_STRING(
             "Causes a quake\n"
             "that has no effect\n"
@@ -11945,7 +11945,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_FIRE_BLAST] =
     {
         .name = ITEM_NAME("Fire Blast"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "A powerful fire\n"
             "attack that may\n"

@@ -5,6 +5,7 @@ Route109_MapScripts::
 	.byte 0
 
 Route109_EventScript_StartDepartForDewford::
+	special GetOffBike
 	call EventScript_BackupMrBrineyLocation
 	setobjectsubpriority LOCALID_ROUTE109_BRINEY, MAP_ROUTE109, 0
 	setobjectsubpriority LOCALID_PLAYER, MAP_ROUTE109, 0
