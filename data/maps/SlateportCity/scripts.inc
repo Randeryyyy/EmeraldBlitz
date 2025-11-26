@@ -864,7 +864,6 @@ SlateportCity_Pokemart_StageOneMegas:
 SlateportCity_Pokemart_StageTwoMegas:
 	.2byte ITEM_BANETTITE
 	.2byte ITEM_CAMERUPTITE
-	.2byte ITEM_CLEFABLITE
 	.2byte ITEM_DRAGALGITE
 	.2byte ITEM_EXCADRITE
 	.2byte ITEM_FROSLASSITE

@@ -1,7 +1,7 @@
 ShoalCave_LowTideEntranceRoom_Text_AreYouPlanningOnGoingInThere:
 	.string "Are you planning on going deep\n"
 	.string "in there?\p"
-	.string "I hear there's a nice item for\n
+	.string "I hear there's a nice item for\n"
 	.string "ICE-type POKéMON.$"
 
 ShoalCave_LowTideEntranceRoom_Text_BringMe4ShoalSaltAndShells:
