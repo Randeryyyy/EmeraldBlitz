@@ -1826,7 +1826,7 @@ u16 GiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move)
             SetBoxMonData(boxMon, MON_DATA_PP1 + i, &pp);
             return move;
         }
-        if (existingMove == move)
+        if (existingMove == move && move != MOVE_SKETCH)
             return MON_ALREADY_KNOWS_MOVE;
     }
     return MON_HAS_MAX_MOVES;
@@ -1906,7 +1906,7 @@ void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon) //Credit: AsparagusEdua
             }
         }
 
-        if (!alreadyKnown)
+        if (!alreadyKnown || (learnset[i].move == MOVE_SKETCH))
         {
             if (addedMoves < MAX_MON_MOVES)
             {
@@ -5737,6 +5737,9 @@ u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)
 
         if (moveLevel <= level)
         {
+            if (learnset[i].move == MOVE_SKETCH)
+                continue;
+
             for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != learnset[i].move; j++)
                 ;
 
