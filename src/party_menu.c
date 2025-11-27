@@ -81,6 +81,8 @@
 #include "constants/vars.h"
 #include "battle_setup.h"
 
+extern const u8 gText_SketchWhichMove[]; // Declared to resolve "undeclared" error
+
 enum {
     MENU_SUMMARY,
     MENU_SWITCH,
@@ -325,6 +327,7 @@ static const u8 *GetFacilityCancelString(void);
 static void Task_CancelChooseMonYesNo(u8);
 static void PartyMenuDisplayYesNoMenu(void);
 static void Task_HandleCancelChooseMonYesNoInput(u8);
+static void Task_InitSketchMoveMenu(u8 taskId);
 static void Task_ReturnToChooseMonAfterText(u8);
 static void UpdateCurrentPartySelection(s8 *, s8);
 static void UpdatePartySelectionSingleLayout(s8 *, s8);
@@ -2808,6 +2811,8 @@ static void PartyMenuRemoveWindow(u8 *ptr)
     }
 }
 
+static const u8 *const sSketchActionStringTable[] = {gText_SketchWhichMove};
+
 void DisplayPartyMenuStdMessage(u32 stringId)
 {
     u8 *windowPtr = &sPartyMenuInternal->windowId[1];
@@ -2903,7 +2908,7 @@ static u8 DisplaySelectionWindow(u8 windowType)
     case SELECTWINDOW_ZYGARDECUBE:
         window = sZygardeCubeSelectWindowTemplate;
         break;
-    default: // SELECTWINDOW_MOVES
+    case SELECTWINDOW_MOVES:
         window = sMoveSelectWindowTemplate;
         break;
     }
@@ -2919,6 +2924,11 @@ static u8 DisplaySelectionWindow(u8 windowType)
     {
         const u8 *text;
         u8 fontColorsId = (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) ? 4 : 3;
+        if (windowType == SELECTWINDOW_MOVES)
+        {
+            window.width = 19;
+            window.tilemapLeft = 16;
+        }
         if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
             text = GetMoveName(FieldMove_GetMoveId(sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES));
         else
@@ -2995,6 +3005,10 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     if (MonKnowsMove(&mons[slotId], MOVE_FLASH))
     {
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLASH);
+    }
+    if (MonKnowsMove(&mons[slotId], MOVE_SKETCH))
+    {
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_SKETCH);
     }
     if (MonKnowsMove(&mons[slotId], MOVE_MILK_DRINK))
     {
@@ -4162,6 +4176,9 @@ static void CursorCb_FieldMove(u8 taskId)
                 DisplayFieldMoveExitAreaMessage(taskId);
                 sPartyMenuInternal->data[0] = fieldMove;
                 break;
+            case FIELD_MOVE_SKETCH:
+                gTasks[taskId].func = Task_InitSketchMoveMenu;
+                break;
             case FIELD_MOVE_FLY:
                 gPartyMenu.exitCallback = CB2_OpenFlyMap;
                 Task_ClosePartyMenu(taskId);
@@ -4418,6 +4435,12 @@ bool32 SetUpFieldMove_Dive(void)
         return TRUE;
     }
     return FALSE;
+}
+
+bool32 SetUpFieldMove_Sketch(void)
+{
+    gPartyMenu.task = Task_InitSketchMoveMenu;
+    return TRUE;
 }
 
 static void CreatePartyMonIconSprite(struct Pokemon *mon, struct PartyMenuBox *menuBox, u32 slot)
@@ -8171,6 +8194,104 @@ void IsLastMonThatKnowsSurf(void)
         }
         if (AnyStorageMonWithMove(move) != TRUE)
             gSpecialVar_Result = !P_CAN_FORGET_HIDDEN_MOVE;
+    }
+}
+
+static const u16 sSketchMovePool[] = {
+    MOVE_ACID_SPRAY,
+    MOVE_BOOMBURST,
+    MOVE_DRAGON_RAGE,
+    MOVE_EERIE_IMPULSE,
+    MOVE_ELECTROWEB,
+    MOVE_ENDEAVOR,
+    MOVE_EXPLOSION,
+    MOVE_EXTREME_SPEED,
+    MOVE_FEATHER_DANCE,
+    MOVE_FOUL_PLAY,
+    MOVE_PARTING_SHOT,
+    MOVE_GIGATON_HAMMER,
+    MOVE_KINGS_SHIELD,
+    MOVE_LEECH_SEED,
+    MOVE_MILK_DRINK,
+    MOVE_OBSTRUCT,
+    MOVE_PLUCK,
+    MOVE_SPORE,
+    MOVE_STICKY_WEB,
+    MOVE_STONE_AXE,
+    MOVE_STRENGTH_SAP
+    MOVE_SUPER_FANG,
+    MOVE_TOXIC_SPIKES,
+    MOVE_VOLT_SWITCH,
+    MOVE_U_TURN,
+};
+
+#define SKETCH_MENU_MOVES 4
+
+static void Task_HandleSketchMoveInput_Loop(u8 taskId);
+
+static void Task_InitSketchMoveMenu(u8 taskId)
+{
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[2]);
+    DisplayPartyMenuMessage(gText_SketchWhichMove, TRUE);
+    sPartyMenuInternal->windowId[0] = DisplaySelectionWindow(SELECTWINDOW_MOVES);
+
+    // Generate 4 unique random moves from the pool
+    for (u8 i = 0; i < 4; i++)
+    {
+        bool32 unique;
+        do
+        {
+            unique = TRUE;
+            sPartyMenuInternal->data[i] = sSketchMovePool[Random() % ARRAY_COUNT(sSketchMovePool)];
+            for (u8 j = 0; j < i; j++)
+            {
+                if (sPartyMenuInternal->data[j] == sPartyMenuInternal->data[i])
+                {
+                    unique = FALSE;
+                    break;
+                }
+            }
+        } while (!unique);
+        AddTextPrinterParameterized(sPartyMenuInternal->windowId[0], FONT_NORMAL, GetMoveName(sPartyMenuInternal->data[i]), 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL);
+    }
+    InitMenuInUpperLeftCornerNormal(sPartyMenuInternal->windowId[0], 4, 0);
+    ScheduleBgCopyTilemapToVram(2);
+
+    gTasks[taskId].func = Task_HandleSketchMoveInput_Loop;
+}
+
+static void Task_HandleSketchMoveInput_Loop(u8 taskId)
+{
+    s8 input = Menu_ProcessInput();
+
+    switch (input)
+    {
+    case MENU_NOTHING_CHOSEN:
+        break;
+    case MENU_B_PRESSED:
+        // B button does nothing
+        break;
+    default: // A button pressed
+        {
+            s16 chosenMove = input;
+            u8 i;
+            for (i = 0; i < MAX_MON_MOVES; i++)
+            {
+                if (GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_MOVE1 + i) == MOVE_SKETCH)
+                {
+                    sPartyMenuInternal->data[5] = i;
+                    break;
+                }
+            }
+            SetMonMoveSlot(&gPlayerParty[gPartyMenu.slotId], sPartyMenuInternal->data[chosenMove], sPartyMenuInternal->data[5]);
+            GetMonNickname(&gPlayerParty[gPartyMenu.slotId], gStringVar1);
+            StringCopy(gStringVar2, GetMoveName(sPartyMenuInternal->data[chosenMove]));
+            StringExpandPlaceholders(gStringVar4, gText_PkmnLearnedMove3);
+            DisplayPartyMenuMessage(gStringVar4, TRUE);
+            gTasks[taskId].func = Task_DoLearnedMoveFanfareAfterText;
+        }
+        break;
     }
 }
 

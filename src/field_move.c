@@ -85,6 +85,11 @@ static bool32 IsFieldMoveUnlocked_SweetScent(void)
     return TRUE;
 }
 
+static bool32 IsFieldMoveUnlocked_Sketch(void)
+{
+    return TRUE;
+}
+
 #if OW_DEFOG_FIELD_MOVE == TRUE
 static bool32 IsFieldMoveUnlocked_Defog(void)
 {
@@ -223,4 +228,11 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
 #endif
+    [FIELD_MOVE_SKETCH] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Sketch,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Sketch,
+        .moveID = MOVE_SKETCH,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
 };

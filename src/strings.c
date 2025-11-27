@@ -313,6 +313,7 @@ const u8 gText_TeachWhichPokemon2[] = _("Teach which POKéMON?"); // Unused
 const u8 gText_ChoosePokemon[] = _("Choose a POKéMON.");
 const u8 gText_MoveToWhere[] = _("Move to where?");
 const u8 gText_TeachWhichPokemon[] = _("Teach which POKéMON?");
+const u8 gText_SketchWhichMove[] = _("Sketch which move?");
 const u8 gText_UseOnWhichPokemon[] = _("Use on which POKéMON?");
 const u8 gText_GiveToWhichPokemon[] = _("Give to which POKéMON?");
 const u8 gText_DoWhatWithPokemon[] = _("Do what with this {PKMN}?");
