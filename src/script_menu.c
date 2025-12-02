@@ -279,10 +279,13 @@ static void GiftMonMenu_ItemPrintFunc(u8 windowId, u32 speciesId, u8 y)
         name = gText_EggNickname;
     else if (speciesId == 999)
         name = gText_Finished;
-    else
+    else if (speciesId == GIFT_MON_RANDOM_ID) {
+        name = gText_Finished;
+    } else {
         name = gSpeciesInfo[speciesId].speciesName;
+    }
 
-    if (sGiftMonIsTaken[speciesId] && speciesId != GIFT_MON_RANDOM_ID)
+    if (sGiftMonIsTaken[speciesId] && speciesId != GIFT_MON_RANDOM_ID && speciesId != SPECIES_EGG)
     {
         colors = sGiftMenuTextColors[1];
         stringToDraw = name;
