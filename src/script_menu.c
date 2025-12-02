@@ -187,7 +187,7 @@ static void GiftMonMenu_CreateFrontSprite(u16 species)
         sGiftMonMenuData.selectedMonSpriteId = 0xFFFF;
     }
 
-    if (species != 999)
+    if (species != GIFT_MON_FINISH_ID && species != GIFT_MON_RANDOM_ID)
     {
         // Use the species ID as the palette tag to ensure each Pokémon gets its own unique palette.
         spriteId = CreateMonPicSprite(species, FALSE, 0, TRUE, 176, 50, 15, species);
