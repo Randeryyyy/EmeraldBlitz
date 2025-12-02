@@ -13659,6 +13659,521 @@ Mudkip
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
+=== TRAINER_WALLY_VR_1 ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer / Smart Mon Choices
+
+Altaria
+Level: 47
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Natural Cure
+- Aerial Ace
+- Perish Song
+- Dragon Pulse
+- Safeguard
+
+Delcatty
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Cute Charm
+- Sing
+- Assist
+- Charm
+- Play Rough
+
+Roserade
+Level: 47
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Poison Point
+- Petal Blizzard
+- Leech Seed
+- Synthesis
+- Toxic
+
+Magnezone
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Magnet Pull
+- Supersonic
+- Flash Cannon
+- Tri Attack
+- Discharge
+
+Gallade @ Galladite
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Steadfast
+- Close Combat
+- Aerial Ace
+- Psycho Cut
+- Swords Dance
+
+=== TRAINER_ANGELO ===
+Name: ANGELO
+Class: Bug Maniac
+Pic: Bug Maniac
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Basic Trainer / Smart Mon Choices
+
+Illumise
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shock Wave
+- Quick Attack
+- Charm
+
+Volbeat
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shock Wave
+- Quick Attack
+- Confuse Ray
+
+=== TRAINER_DARIUS ===
+Name: DARIUS
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer / Smart Mon Choices
+
+Tropius
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_ANABEL ===
+Name: ANABEL
+Class: Salon Maiden
+Pic: Salon Maiden Anabel
+Gender: Female
+Music: Male
+Double Battle: No
+AI: Basic Trainer / Smart Mon Choices
+
+Beldum
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_GRETA ===
+Name: GRETA
+Class: Arena Tycoon
+Pic: Arena Tycoon Greta
+Gender: Female
+Music: Male
+Double Battle: No
+AI: Basic Trainer / Smart Mon Choices
+
+Beldum
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_NOLAND ===
+Name: NOLAND
+Class: Factory Head
+Pic: Factory Head Noland
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer / Smart Mon Choices
+
+Beldum
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_SAWYER_2 ===
+Name: SAWYER
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Basic Trainer / Smart Mon Choices
+
+Geodude
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Numel
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_SAWYER_3 ===
+Name: SAWYER
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Basic Trainer / Smart Mon Choices
+
+Machop
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Numel
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Graveler
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_SAWYER_4 ===
+Name: SAWYER
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Basic Trainer / Smart Mon Choices
+
+Machop
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Numel
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Graveler
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_SAWYER_5 ===
+Name: SAWYER
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Basic Trainer / Smart Mon Choices
+
+Machop
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Numel
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Graveler
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_GABRIELLE_2 ===
+Name: GABRIELLE
+Class: Pkmn Breeder
+Pic: Pokemon Breeder F
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Skitty
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Mightyena
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Zigzagoon
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Lotad
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Seedot
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Taillow
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_GABRIELLE_3 ===
+Name: GABRIELLE
+Class: Pkmn Breeder
+Pic: Pokemon Breeder F
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Skitty
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Mightyena
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Linoone
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Lombre
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Nuzleaf
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Taillow
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_GABRIELLE_4 ===
+Name: GABRIELLE
+Class: Pkmn Breeder
+Pic: Pokemon Breeder F
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Delcatty
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Mightyena
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Linoone
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Lombre
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Nuzleaf
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Swellow
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_GABRIELLE_5 ===
+Name: GABRIELLE
+Class: Pkmn Breeder
+Pic: Pokemon Breeder F
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Delcatty
+Level: 37
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Mightyena
+Level: 37
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Linoone
+Level: 37
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Ludicolo
+Level: 37
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Shiftry
+Level: 37
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Swellow
+Level: 37
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_THALIA_2 ===
+Name: THALIA
+Class: Beauty
+Pic: Beauty
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Wailmer
+Level: 34
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Horsea
+Level: 34
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_THALIA_3 ===
+Name: THALIA
+Class: Beauty
+Pic: Beauty
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Luvdisc
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Wailmer
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Seadra
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_THALIA_4 ===
+Name: THALIA
+Class: Beauty
+Pic: Beauty
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Luvdisc
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Wailmer
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Seadra
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_THALIA_5 ===
+Name: THALIA
+Class: Beauty
+Pic: Beauty
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Luvdisc
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Wailord
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Kingdra
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_MARIELA ===
+Name: MARIELA
+Class: Psychic
+Pic: Psychic F
+Gender: Female
+Music: Intense
+Double Battle: No
+
+Chimecho
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_ALVARO ===
+Name: ALVARO
+Class: Psychic
+Pic: Psychic M
+Gender: Male
+Music: Intense
+Double Battle: No
+
+Banette
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Kadabra
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_EVERETT ===
+Name: EVERETT
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Rich
+Double Battle: No
+
+Wobbuffet
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_RED ===
+Name: RED
+Class: Rival
+Pic: Red
+Gender: Male
+Music: Male
+Double Battle: No
+
+Charmander
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_LEAF ===
+Name: LEAF
+Class: Rival
+Pic: Leaf
+Gender: Female
+Music: Male
+Double Battle: No
+
+Bulbasaur
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_BRENDAN_PLACEHOLDER ===
+Name: BRENDAN
+Class: RS Protag
+Pic: RS Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+
+Groudon
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_MAY_PLACEHOLDER ===
+Name: MAY
+Class: RS Protag
+Pic: RS May
+Gender: Female
+Music: Male
+Double Battle: No
+
+Kyogre
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
 === TRAINER_ROXANNE_1 ===
 Name: ROXANNE
 Class: Leader
@@ -15874,7 +16389,7 @@ Nature: Serious
 Ability: Illusion
 - Shadow Sneak
 - Facade
-- Leer
+- Curse
 - Torment
 
 Linoone-Galar
@@ -15974,7 +16489,7 @@ Nature: Serious
 Ability: Illusion
 - Shadow Ball
 - Facade
-- Curse
+- Torment
 - Nasty Plot
 
 Linoone-Galar
@@ -15992,7 +16507,7 @@ Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Truant
-- Counter
+- Earthquake
 - Brick Break
 - Facade
 - Feint Attack
@@ -16024,7 +16539,7 @@ Nature: Serious
 Ability: Illusion
 - Shadow Ball
 - Facade
-- Curse
+- Torment
 - Nasty Plot
 
 Loudred
@@ -16052,7 +16567,7 @@ Level: 35
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Truant
-- Counter
+- Earthquake
 - Brick Break
 - Facade
 - Feint Attack
@@ -16112,10 +16627,10 @@ Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Truant
-- Counter
+- Earthquake
 - Fling
 - Facade
-- Earthquake
+- Hammer Arm
 
 === TRAINER_NORMAN_8 ===
 Name: NORMAN
@@ -16172,10 +16687,10 @@ Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Truant
-- Hammer Arm
+- Earthquake
 - Fling
 - Facade
-- Earthquake
+- Hammer Arm
 
 === TRAINER_WINONA_1 ===
 Name: WINONA
@@ -17154,7 +17669,7 @@ Ability: Poison Point
 - Water Pulse
 - Smokescreen
 - Aurora Beam
-- Twister
+- Bounce
 
 === TRAINER_JUAN_4 ===
 Name: JUAN
@@ -17194,7 +17709,7 @@ Ability: Poison Point
 - Water Pulse
 - Smokescreen
 - Aurora Beam
-- Twister
+- Bounce
 
 Milotic @ Sitrus Berry
 Level: 29
@@ -17222,7 +17737,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Gooey
 - Rain Dance
-- Wrap
+- Throat Chop
 - Water Pulse
 - Triple Dive
 
@@ -17244,7 +17759,7 @@ Ability: Poison Point
 - Water Pulse
 - Smokescreen
 - Aurora Beam
-- Twister
+- Bounce
 
 Milotic @ Sitrus Berry
 Level: 32
@@ -17272,7 +17787,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Gooey
 - Rain Dance
-- Wrap
+- Throat Chop
 - Water Pulse
 - Triple Dive
 
@@ -17313,7 +17828,7 @@ Nature: Serious
 Ability: Swift Swim
 - Water Pulse
 - Dragon Pulse
-- Double Team
+- Bounce
 - Rest
 
 === TRAINER_JUAN_7 ===
@@ -17452,8 +17967,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Swift Swim
 - Water Pulse
-- Double Team
 - Dragon Pulse
+- Double Team
 - Rest
 
 === TRAINER_ARCHIE ===
@@ -17547,7 +18062,7 @@ Ability: Inner Focus
 - Mean Look
 
 Aggron
-Level: 47
+Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Sturdy
@@ -18135,518 +18650,3 @@ Ability: Clear Body
 - Psychic
 - Meteor Mash
 - Hyper Beam
-
-=== TRAINER_WALLY_VR_1 ===
-Name: WALLY
-Class: Rival
-Pic: Wally
-Gender: Male
-Music: Male
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
-
-Altaria
-Level: 47
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Natural Cure
-- Aerial Ace
-- Perish Song
-- Dragon Pulse
-- Safeguard
-
-Delcatty
-Level: 46
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Cute Charm
-- Sing
-- Assist
-- Charm
-- Play Rough
-
-Roserade
-Level: 47
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Poison Point
-- Petal Blizzard
-- Leech Seed
-- Synthesis
-- Toxic
-
-Magnezone
-Level: 44
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Magnet Pull
-- Supersonic
-- Flash Cannon
-- Tri Attack
-- Discharge
-
-Gallade @ Galladite
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Steadfast
-- Close Combat
-- Aerial Ace
-- Psycho Cut
-- Swords Dance
-
-=== TRAINER_ANGELO ===
-Name: ANGELO
-Class: Bug Maniac
-Pic: Bug Maniac
-Gender: Male
-Music: Suspicious
-Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
-
-Illumise
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shock Wave
-- Quick Attack
-- Charm
-
-Volbeat
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shock Wave
-- Quick Attack
-- Confuse Ray
-
-=== TRAINER_DARIUS ===
-Name: DARIUS
-Class: Bird Keeper
-Pic: Bird Keeper
-Gender: Male
-Music: Cool
-Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
-
-Tropius
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_ANABEL ===
-Name: ANABEL
-Class: Salon Maiden
-Pic: Salon Maiden Anabel
-Gender: Female
-Music: Male
-Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
-
-Beldum
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_GRETA ===
-Name: GRETA
-Class: Arena Tycoon
-Pic: Arena Tycoon Greta
-Gender: Female
-Music: Male
-Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
-
-Beldum
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_NOLAND ===
-Name: NOLAND
-Class: Factory Head
-Pic: Factory Head Noland
-Gender: Male
-Music: Male
-Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
-
-Beldum
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_SAWYER_2 ===
-Name: SAWYER
-Class: Hiker
-Pic: Hiker
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
-
-Geodude
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Numel
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_SAWYER_3 ===
-Name: SAWYER
-Class: Hiker
-Pic: Hiker
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
-
-Machop
-Level: 28
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Numel
-Level: 28
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Graveler
-Level: 28
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_SAWYER_4 ===
-Name: SAWYER
-Class: Hiker
-Pic: Hiker
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
-
-Machop
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Numel
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Graveler
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_SAWYER_5 ===
-Name: SAWYER
-Class: Hiker
-Pic: Hiker
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
-
-Machop
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Numel
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Graveler
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_GABRIELLE_2 ===
-Name: GABRIELLE
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Skitty
-Level: 31
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Mightyena
-Level: 31
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Zigzagoon
-Level: 31
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Lotad
-Level: 31
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Seedot
-Level: 31
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Taillow
-Level: 31
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_GABRIELLE_3 ===
-Name: GABRIELLE
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Skitty
-Level: 33
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Mightyena
-Level: 33
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Linoone
-Level: 33
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Lombre
-Level: 33
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Nuzleaf
-Level: 33
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Taillow
-Level: 33
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_GABRIELLE_4 ===
-Name: GABRIELLE
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Delcatty
-Level: 35
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Mightyena
-Level: 35
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Linoone
-Level: 35
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Lombre
-Level: 35
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Nuzleaf
-Level: 35
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Swellow
-Level: 35
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_GABRIELLE_5 ===
-Name: GABRIELLE
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Delcatty
-Level: 37
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Mightyena
-Level: 37
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Linoone
-Level: 37
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Ludicolo
-Level: 37
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Shiftry
-Level: 37
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Swellow
-Level: 37
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_THALIA_2 ===
-Name: THALIA
-Class: Beauty
-Pic: Beauty
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Wailmer
-Level: 34
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Horsea
-Level: 34
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_THALIA_3 ===
-Name: THALIA
-Class: Beauty
-Pic: Beauty
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Luvdisc
-Level: 36
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Wailmer
-Level: 36
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Seadra
-Level: 36
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_THALIA_4 ===
-Name: THALIA
-Class: Beauty
-Pic: Beauty
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Luvdisc
-Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Wailmer
-Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Seadra
-Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_THALIA_5 ===
-Name: THALIA
-Class: Beauty
-Pic: Beauty
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Luvdisc
-Level: 40
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Wailord
-Level: 40
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Kingdra
-Level: 40
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_MARIELA ===
-Name: MARIELA
-Class: Psychic
-Pic: Psychic F
-Gender: Female
-Music: Intense
-Double Battle: No
-
-Chimecho
-Level: 41
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_ALVARO ===
-Name: ALVARO
-Class: Psychic
-Pic: Psychic M
-Gender: Male
-Music: Intense
-Double Battle: No
-
-Banette
-Level: 41
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Kadabra
-Level: 41
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_EVERETT ===
-Name: EVERETT
-Class: Gentleman
-Pic: Gentleman
-Gender: Male
-Music: Rich
-Double Battle: No
-
-Wobbuffet
-Level: 41
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_RED ===
-Name: RED
-Class: Rival
-Pic: Red
-Gender: Male
-Music: Male
-Double Battle: No
-
-Charmander
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_LEAF ===
-Name: LEAF
-Class: Rival
-Pic: Leaf
-Gender: Female
-Music: Male
-Double Battle: No
-
-Bulbasaur
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_BRENDAN_PLACEHOLDER ===
-Name: BRENDAN
-Class: RS Protag
-Pic: RS Brendan
-Gender: Male
-Music: Male
-Double Battle: No
-
-Groudon
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_MAY_PLACEHOLDER ===
-Name: MAY
-Class: RS Protag
-Pic: RS May
-Gender: Female
-Music: Male
-Double Battle: No
-
-Kyogre
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe

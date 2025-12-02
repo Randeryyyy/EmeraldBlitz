@@ -3026,7 +3026,9 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             used = FlagGet(FLAG_SKIDDO_USED_MILK_DRINK);
         else if (species == SPECIES_GOGOAT)
             used = FlagGet(FLAG_SKIDDO_USED_MILK_DRINK);
-
+        else if (species == SPECIES_SMEARGLE)
+            used = FlagGet(FLAG_SMEARGLE_USED_MILK_DRINK);
+            
         if (!used)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_MILK_DRINK);
     }
@@ -8199,14 +8201,15 @@ void IsLastMonThatKnowsSurf(void)
 
 static const u16 sSketchMovePool[] = {
     MOVE_ACID_SPRAY,
+    MOVE_BEAK_BLAST,
     MOVE_BOOMBURST,
-    MOVE_BUG_BITE,
+    //MOVE_BUG_BITE,
+    MOVE_CHARM,
     MOVE_DRAGON_RAGE,
     MOVE_EERIE_IMPULSE,
     MOVE_ELECTROWEB,
     MOVE_ENDEAVOR,
     MOVE_EXPLOSION,
-    MOVE_EXTREME_SPEED,
     MOVE_FEATHER_DANCE,
     MOVE_FOUL_PLAY,
     MOVE_GIGATON_HAMMER,
@@ -8216,7 +8219,10 @@ static const u16 sSketchMovePool[] = {
     MOVE_OBSTRUCT,
     MOVE_PARTING_SHOT,
     MOVE_PAY_DAY,
+    MOVE_POWDER,
     MOVE_RAPID_SPIN,
+    MOVE_SHEER_COLD,
+    MOVE_SNARL,
     MOVE_SPORE,
     MOVE_STICKY_WEB,
     MOVE_STONE_AXE,
@@ -8225,6 +8231,7 @@ static const u16 sSketchMovePool[] = {
     MOVE_TAIL_SLAP,
     MOVE_TOXIC_SPIKES,
     MOVE_VOLT_SWITCH,
+    MOVE_WATER_SPOUT,
     MOVE_U_TURN,
 };
 
@@ -8236,7 +8243,14 @@ static void Task_InitSketchMoveMenu(u8 taskId)
 {
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[2]);
-    DisplayPartyMenuMessage(gText_SketchWhichMove, TRUE);
+
+    // Use a smaller window for the "Sketch which move?" prompt
+    sPartyMenuInternal->windowId[1] = AddWindow(&sDoWhatWithMonMsgWindowTemplate);
+    DrawStdFrameWithCustomTileAndPalette(sPartyMenuInternal->windowId[1], FALSE, 0x4F, 13);
+    AddTextPrinterParameterized(sPartyMenuInternal->windowId[1], FONT_NORMAL, gText_SketchWhichMove, 0, 1, TEXT_SKIP_DRAW, NULL);
+    PutWindowTilemap(sPartyMenuInternal->windowId[1]);
+    CopyWindowToVram(sPartyMenuInternal->windowId[1], COPYWIN_GFX);
+
     sPartyMenuInternal->windowId[0] = DisplaySelectionWindow(SELECTWINDOW_MOVES);
 
     // Generate 4 unique random moves from the pool

@@ -51,7 +51,9 @@ A game built on Pokémon Emerald Expansion specifically for draft auction nuzloc
 
 
 # Credits
-- **Rom Hacking Hideout** For Pokemon Emerald Expansion, the base on which this game is built.
+- **Rom Hacking Hideout** For Pokemon Emerald Expansion, the base on which this game is built
+- **Kten** for the smoking hot trailer
+- **catwalkvivi** For the beautiful logo
 - **Ulithium_Dragon** For the Flygon overworld sprite
 - **aveontrainer** For the base of Viola's overworld sprite
 - **Christian, Matt, Soosk, Justin, and Lucas** For testing 60 betas worth of content
