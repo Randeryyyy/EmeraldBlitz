@@ -10,6 +10,7 @@
 #include "constants/flags.h"
 #include "event_data.h"
 
+static const u8 sText_Random[] = _("Random");
 static const u8 sText_MysteryEgg[] = _("Mystery Egg");
 
 static const u16 sGiftPokemonList[] = {
@@ -153,7 +154,10 @@ void BuildGiftPokemonMenu(void)
             ScriptMenu_AddDynmultichoice(gSpeciesInfo[SPECIES_SCATTERBUG].speciesName, species, 0);
         }
         else if (species == SPECIES_EGG)
+        {
             ScriptMenu_AddDynmultichoice(sText_MysteryEgg, species, 0);
+            ScriptMenu_AddDynmultichoice(sText_Random, 1000, 0);
+        }
         else
             ScriptMenu_AddDynmultichoice(gSpeciesInfo[species].speciesName, species, 0);
     }

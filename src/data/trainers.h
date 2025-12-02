@@ -42127,7 +42127,7 @@ F_TRAINER_FEMALE |
 #line 16390
                 MOVE_SHADOW_SNEAK,
                 MOVE_FACADE,
-                MOVE_LEER,
+                MOVE_CURSE,
                 MOVE_TORMENT,
             },
             },
@@ -42349,7 +42349,7 @@ F_TRAINER_FEMALE |
 #line 16490
                 MOVE_SHADOW_BALL,
                 MOVE_FACADE,
-                MOVE_CURSE,
+                MOVE_TORMENT,
                 MOVE_NASTY_PLOT,
             },
             },
@@ -42391,7 +42391,7 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 16510
-                MOVE_COUNTER,
+                MOVE_EARTHQUAKE,
                 MOVE_BRICK_BREAK,
                 MOVE_FACADE,
                 MOVE_FEINT_ATTACK,
@@ -42460,7 +42460,7 @@ F_TRAINER_FEMALE |
 #line 16540
                 MOVE_SHADOW_BALL,
                 MOVE_FACADE,
-                MOVE_CURSE,
+                MOVE_TORMENT,
                 MOVE_NASTY_PLOT,
             },
             },
@@ -42523,7 +42523,7 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 16570
-                MOVE_COUNTER,
+                MOVE_EARTHQUAKE,
                 MOVE_BRICK_BREAK,
                 MOVE_FACADE,
                 MOVE_FEINT_ATTACK,
@@ -42655,10 +42655,10 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 16630
-                MOVE_COUNTER,
+                MOVE_EARTHQUAKE,
                 MOVE_FLING,
                 MOVE_FACADE,
-                MOVE_EARTHQUAKE,
+                MOVE_HAMMER_ARM,
             },
             },
         },
@@ -42787,10 +42787,10 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 16690
-                MOVE_HAMMER_ARM,
+                MOVE_EARTHQUAKE,
                 MOVE_FLING,
                 MOVE_FACADE,
-                MOVE_EARTHQUAKE,
+                MOVE_HAMMER_ARM,
             },
             },
         },

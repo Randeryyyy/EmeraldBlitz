@@ -42,6 +42,10 @@
 #define TAG_GIFT_MON_PIC_TILES 5510
 #define TAG_GIFT_MON_PIC_PALETTE 5511
 
+#define GIFT_MON_RANDOM_ID 1000
+#define GIFT_MON_FINISH_ID 999
+#define MAX_GIFT_MON_LIST 128
+
 #define MAX_GIFT_MON 10
 
 #include "data/script_menu.h"
@@ -270,7 +274,7 @@ static void GiftMonMenu_ItemPrintFunc(u8 windowId, u32 speciesId, u8 y)
     const u8 *name = gSpeciesInfo[speciesId].speciesName;
 
     const u8 *stringToDraw;
-
+    
     if (speciesId == SPECIES_EGG)
         name = gText_EggNickname;
     else if (speciesId == 999)
@@ -278,7 +282,7 @@ static void GiftMonMenu_ItemPrintFunc(u8 windowId, u32 speciesId, u8 y)
     else
         name = gSpeciesInfo[speciesId].speciesName;
 
-    if (sGiftMonIsTaken[speciesId])
+    if (sGiftMonIsTaken[speciesId] && speciesId != GIFT_MON_RANDOM_ID)
     {
         colors = sGiftMenuTextColors[1];
         stringToDraw = name;
@@ -577,7 +581,7 @@ static void DrawMultichoiceMenuDynamic(u8 left, u8 top, u8 argc, struct ListMenu
     {
         if (sIsGiftMonMenu)
         {
-            if (items[i].id != 999 && items[i].id != SPECIES_EGG)
+            if (items[i].id != GIFT_MON_FINISH_ID && items[i].id != SPECIES_EGG && items[i].id != GIFT_MON_RANDOM_ID)
             items[i].name = gText_EmptyString7;
         }
      }  
@@ -800,9 +804,45 @@ static void Task_HandleScrollingMultichoiceInput(u8 taskId)
 
         break;
     default:
-        if (sIsGiftMonMenu && input != 999) // 999 is the "Finished" option
+        if (sIsGiftMonMenu && input != GIFT_MON_FINISH_ID) // "Finished" option
         {
-            if ((u16)input == SPECIES_EGG)
+            if ((u16)input == GIFT_MON_RANDOM_ID)
+            {
+                struct ListMenuItem *items;
+                u32 i, numMons, availableMonsCount = 0;
+                u16 availableMons[MAX_GIFT_MON_LIST] = {0};
+
+                LoadWordFromTwoHalfwords((u16 *)&gTasks[taskId].data[3], (u32 *)&items);
+                numMons = gTasks[taskId].data[5];
+
+                // Find available Pokémon
+                for (i = 0; i < numMons; i++)
+                {
+                    if (items[i].id != GIFT_MON_RANDOM_ID && items[i].id != GIFT_MON_FINISH_ID && !sGiftMonIsTaken[items[i].id])
+                    {
+                        availableMons[availableMonsCount++] = items[i].id;
+                    }
+                }
+
+                if (availableMonsCount > 0 && CountTakenGiftMons() < MAX_GIFT_MON)
+                {
+                    u16 randomSpecies = availableMons[Random() % availableMonsCount];
+                    u8 result = (randomSpecies == SPECIES_EGG) ? ScriptGiveEgg(sGiftEggPool[Random() % ARRAY_COUNT(sGiftEggPool)]) : ScriptGiveMon(randomSpecies, 15, ITEM_NONE);
+
+                    if (result != MON_CANT_GIVE)
+                    {
+                        PlaySE(SE_SUCCESS);
+                        sGiftMonIsTaken[randomSpecies] = TRUE;
+                        GiftMonMenu_CreateChosenMonIcon(randomSpecies);
+                        RedrawListMenu(gTasks[taskId].data[0]);
+                    }
+                }
+                else
+                {
+                    PlaySE(SE_FAILURE);
+                }
+            }
+            else if ((u16)input == SPECIES_EGG)
             {
                 if (CountTakenGiftMons() >= MAX_GIFT_MON)
                 {
@@ -840,7 +880,7 @@ static void Task_HandleScrollingMultichoiceInput(u8 taskId)
         }
         else
         {
-            gSpecialVar_Result = input;
+            gSpecialVar_Result = input; // This is where the selection is returned to the script
             done = TRUE;
         }
         break;
