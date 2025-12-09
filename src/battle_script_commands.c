@@ -1159,12 +1159,23 @@ bool32 EmergencyExitCanBeTriggered(u32 battler)
 {
     u32 ability = GetBattlerAbility(battler);
 
-    if (ability != ABILITY_EMERGENCY_EXIT && ability != ABILITY_WIMP_OUT)
+    if (ability != ABILITY_EMERGENCY_EXIT && ability != ABILITY_WIMP_OUT  && ability != ABILITY_RUN_AWAY)
         return FALSE;
+
+    bool32 hpThresholdCrossed;
+    if (ability == ABILITY_RUN_AWAY)
+    {
+        u32 cutoff = gBattleMons[battler].maxHP / 4;
+        hpThresholdCrossed = gBattleStruct->hpBefore[battler] > cutoff && gBattleMons[battler].hp <= cutoff;
+    }
+    else
+    {
+        hpThresholdCrossed = HadMoreThanHalfHpNowDoesnt(battler);
+    }
 
     if (IsBattlerTurnDamaged(battler)
      && IsBattlerAlive(battler)
-     && HadMoreThanHalfHpNowDoesnt(battler)
+     && hpThresholdCrossed
      && (CanBattlerSwitch(battler) || !(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
      && !(gBattleTypeFlags & BATTLE_TYPE_ARENA)
      && gBattleMons[battler].volatiles.semiInvulnerable != STATE_SKY_DROP)

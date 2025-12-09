@@ -303,12 +303,15 @@ static bool32 HandleEndTurnEmergencyExit(u32 battler)
 
     gBattleStruct->turnEffectsBattlerId++;
 
-    if (ability == ABILITY_EMERGENCY_EXIT || ability == ABILITY_WIMP_OUT)
+    if (ability == ABILITY_EMERGENCY_EXIT || ability == ABILITY_WIMP_OUT  || ability == ABILITY_RUN_AWAY)
     {
         u32 cutoff = gBattleMons[battler].maxHP / 2;
-        bool32 HadMoreThanHalfHpNowDoesnt = gBattleStruct->hpBefore[battler] > cutoff && gBattleMons[battler].hp <= cutoff;
+        if (ability == ABILITY_RUN_AWAY)
+            cutoff = gBattleMons[battler].maxHP / 4;
 
-        if (HadMoreThanHalfHpNowDoesnt
+        bool32 hadMoreThanCutoffNowDoesnt = gBattleStruct->hpBefore[battler] > cutoff && gBattleMons[battler].hp <= cutoff;
+
+        if (hadMoreThanCutoffNowDoesnt
          && IsBattlerAlive(battler)
          && (CanBattlerSwitch(battler) || !(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
          && !(gBattleTypeFlags & BATTLE_TYPE_ARENA)

@@ -187,9 +187,12 @@ static void GiftMonMenu_CreateFrontSprite(u16 species)
         sGiftMonMenuData.selectedMonSpriteId = 0xFFFF;
     }
 
-    if (species != GIFT_MON_FINISH_ID && species != GIFT_MON_RANDOM_ID)
+    if (species != GIFT_MON_FINISH_ID)
     {
-        // Use the species ID as the palette tag to ensure each Pokémon gets its own unique palette.
+        if (species == GIFT_MON_RANDOM_ID)
+            species = SPECIES_NONE;
+
+        // Use the species ID as the palette tag to ensure each Pokémon gets its own unique palette, except for the question mark.
         spriteId = CreateMonPicSprite(species, FALSE, 0, TRUE, 176, 50, 15, species);
         gSprites[spriteId].oam.priority = 0; // Ensure it's drawn on top of the window
         sGiftMonMenuData.selectedMonSpriteId = spriteId;

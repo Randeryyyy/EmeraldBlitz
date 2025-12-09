@@ -88,7 +88,7 @@ Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Geodude
 Level: 21
@@ -243,7 +243,7 @@ Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Manectric
 Level: 29
@@ -513,7 +513,7 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Makuhita
 Level: 30
@@ -531,7 +531,7 @@ Gender: Male
 Music: Aqua
 Items: Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Mightyena
 Level: 34
@@ -561,7 +561,7 @@ Pic: Aqua Admin F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Carvanha
 Level: 28
@@ -578,7 +578,7 @@ Pic: Aqua Admin F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Sharpedo
 Level: 37
@@ -647,7 +647,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Medicham
 Level: 43
@@ -1244,7 +1244,7 @@ Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Taillow
 Level: 12
@@ -1261,7 +1261,7 @@ Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Spinda
 Level: 12
@@ -1278,7 +1278,7 @@ Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Slakoth @ Sitrus Berry
 Level: 10
@@ -1295,7 +1295,7 @@ Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Slakoth
 Level: 12
@@ -1311,7 +1311,7 @@ Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swellow
 Level: 28
@@ -1361,7 +1361,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Sableye
 Level: 44
@@ -1383,7 +1383,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Mawile
 Level: 46
@@ -1401,7 +1401,7 @@ Gender: Male
 Music: Cool
 Items: Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Electrike
 Level: 17
@@ -1423,7 +1423,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Cacturne
 Level: 43
@@ -1441,7 +1441,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Magneton
 Level: 43
@@ -1459,7 +1459,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swellow
 Level: 42
@@ -1481,7 +1481,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Dodrio
 Level: 42
@@ -1507,7 +1507,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Kecleon
 Level: 42
@@ -1529,7 +1529,7 @@ Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Electrike
 Level: 26
@@ -1551,7 +1551,7 @@ Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Manectric
 Level: 29
@@ -1573,7 +1573,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Manectric
 Level: 32
@@ -1595,7 +1595,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Manectric
 Level: 35
@@ -1617,7 +1617,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Graveler
 Level: 33
@@ -1635,7 +1635,7 @@ Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Skitty
 Level: 12
@@ -1651,7 +1651,7 @@ Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Jigglypuff
 Level: 12
@@ -1736,7 +1736,7 @@ Gender: Female
 Music: Cool
 Items: Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wingull
 Level: 17
@@ -1758,7 +1758,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Sableye
 Level: 30
@@ -1772,7 +1772,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Roselia
 Level: 45
@@ -1786,7 +1786,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Claydol
 Level: 45
@@ -1800,7 +1800,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Torkoal
 Level: 42
@@ -1822,7 +1822,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Skarmory
 Level: 43
@@ -1840,7 +1840,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Sandslash
 Level: 42
@@ -1862,7 +1862,7 @@ Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wingull
 Level: 26
@@ -1884,7 +1884,7 @@ Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Pelipper
 Level: 29
@@ -1906,7 +1906,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Pelipper
 Level: 32
@@ -1928,7 +1928,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Pelipper
 Level: 34
@@ -2503,7 +2503,7 @@ Gender: Male
 Music: Intense
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Zigzagoon @ Nugget
 Level: 7
@@ -5198,7 +5198,7 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Hariyama
 Level: 27
@@ -5211,7 +5211,7 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Hariyama
 Level: 33
@@ -5228,7 +5228,7 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Hariyama
 Level: 36
@@ -5245,7 +5245,7 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Hariyama
 Level: 39
@@ -5262,7 +5262,7 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Hariyama
 Level: 42
@@ -5279,7 +5279,7 @@ Pic: Expert F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Meditite
 Level: 18
@@ -5296,7 +5296,7 @@ Pic: Expert F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Meditite
 Level: 21
@@ -5313,7 +5313,7 @@ Pic: Expert F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Meditite
 Level: 30
@@ -5330,7 +5330,7 @@ Pic: Expert F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Medicham
 Level: 33
@@ -5347,7 +5347,7 @@ Pic: Expert F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Medicham
 Level: 36
@@ -5364,7 +5364,7 @@ Pic: Expert F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Medicham
 Level: 39
@@ -5481,7 +5481,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Slaking
 Level: 43
@@ -5507,7 +5507,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Gardevoir
 Level: 43
@@ -5682,7 +5682,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 Mugshot: Yellow
 
 Wailord
@@ -8623,7 +8623,7 @@ Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Absol
 Level: 27
@@ -8636,7 +8636,7 @@ Pic: Ninja Boy
 Gender: Male
 Music: Suspicious
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Koffing
 Level: 31
@@ -8705,7 +8705,7 @@ Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Manectric
 Level: 34
@@ -8892,7 +8892,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Treecko
 Level: 5
@@ -8905,7 +8905,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Slugma
 Level: 18
@@ -8926,7 +8926,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Slugma
 Level: 31
@@ -8960,7 +8960,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Slugma
 Level: 18
@@ -8981,7 +8981,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Slugma
 Level: 31
@@ -9002,7 +9002,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Treecko
 Level: 5
@@ -9015,7 +9015,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Lombre
 Level: 18
@@ -9036,7 +9036,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Slugma
 Level: 31
@@ -9057,7 +9057,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Treecko
 Level: 5
@@ -9070,7 +9070,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wingull
 Level: 18
@@ -9091,7 +9091,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Slugma
 Level: 31
@@ -9112,7 +9112,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Treecko
 Level: 5
@@ -9125,7 +9125,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wingull
 Level: 18
@@ -9146,7 +9146,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Slugma
 Level: 31
@@ -9167,7 +9167,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Treecko
 Level: 5
@@ -9180,7 +9180,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Lombre
 Level: 18
@@ -9201,7 +9201,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Slugma
 Level: 31
@@ -9268,7 +9268,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Lunatone
 Level: 43
@@ -9459,7 +9459,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Sableye
 Level: 43
@@ -9622,7 +9622,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Breloom
 Level: 27
@@ -9636,7 +9636,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Seedot
 Level: 28
@@ -9658,7 +9658,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Cacturne
 Level: 39
@@ -9686,7 +9686,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Breloom
 Level: 34
@@ -9714,7 +9714,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Kecleon
 Level: 39
@@ -9772,7 +9772,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swablu
 Level: 38
@@ -9808,7 +9808,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Gloom
 Level: 33
@@ -9844,7 +9844,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Bellossom
 Level: 39
@@ -10025,7 +10025,7 @@ Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Manectric
 Level: 32
@@ -10267,7 +10267,7 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swellow
 Level: 33
@@ -10314,7 +10314,7 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Numel
 Level: 18
@@ -10357,7 +10357,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Slugma
 Level: 13
@@ -10392,7 +10392,7 @@ Gender: Male
 Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Mightyena
 Level: 24
@@ -10460,7 +10460,7 @@ Pic: Lass
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Marill
 Level: 15
@@ -11229,7 +11229,7 @@ Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Kecleon
 Level: 12
@@ -11401,7 +11401,7 @@ Pic: Wally
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Ralts
 Level: 17
@@ -11415,7 +11415,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Altaria
 Level: 47
@@ -11465,7 +11465,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Altaria
 Level: 50
@@ -11515,7 +11515,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Altaria
 Level: 53
@@ -11565,7 +11565,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Altaria
 Level: 56
@@ -11614,7 +11614,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swellow
 Level: 37
@@ -11663,7 +11663,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swellow
 Level: 37
@@ -11712,7 +11712,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swellow
 Level: 37
@@ -11761,7 +11761,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swellow
 Level: 37
@@ -11810,7 +11810,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swellow
 Level: 37
@@ -11859,7 +11859,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swellow
 Level: 37
@@ -11968,7 +11968,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Gloom
 Level: 34
@@ -11986,7 +11986,7 @@ Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Shiftry
 Level: 34
@@ -12176,7 +12176,7 @@ Pic: Old Couple
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Medicham
 Level: 39
@@ -12201,7 +12201,7 @@ Pic: Old Couple
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Medicham
 Level: 43
@@ -12226,7 +12226,7 @@ Pic: Old Couple
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Medicham
 Level: 46
@@ -12276,7 +12276,7 @@ Pic: Old Couple
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Medicham
 Level: 52
@@ -13022,7 +13022,7 @@ Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Pelipper
 Level: 33
@@ -13039,7 +13039,7 @@ Pic: Magma Leader Maxie
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Mightyena
 Level: 42
@@ -13155,7 +13155,7 @@ Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Manectric
 Level: 24
@@ -13437,7 +13437,7 @@ Gender: Female
 Music: Intense
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Roselia
 Level: 33
@@ -13498,7 +13498,7 @@ Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Manectric
 Level: 30
@@ -13615,7 +13615,7 @@ Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Loudred
 Level: 29
@@ -13632,7 +13632,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Lotad
 Level: 13
@@ -13649,7 +13649,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Torkoal
 Level: 13
@@ -13667,7 +13667,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Altaria
 Level: 47
@@ -13726,7 +13726,7 @@ Pic: Bug Maniac
 Gender: Male
 Music: Suspicious
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Illumise
 Level: 9
@@ -13749,7 +13749,7 @@ Pic: Bird Keeper
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Tropius
 Level: 11
@@ -13762,7 +13762,7 @@ Pic: Salon Maiden Anabel
 Gender: Female
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Beldum
 Level: 5
@@ -13775,7 +13775,7 @@ Pic: Arena Tycoon Greta
 Gender: Female
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Beldum
 Level: 5
@@ -13788,7 +13788,7 @@ Pic: Factory Head Noland
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Beldum
 Level: 5
@@ -13801,7 +13801,7 @@ Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Geodude
 Level: 26
@@ -13818,7 +13818,7 @@ Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Machop
 Level: 28
@@ -13839,7 +13839,7 @@ Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Machop
 Level: 30
@@ -13860,7 +13860,7 @@ Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Machop
 Level: 30
@@ -14182,7 +14182,7 @@ Gender: Female
 Music: Female
 Items: Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Geodude
 Level: 12
@@ -14221,7 +14221,7 @@ Gender: Female
 Music: Female
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Geodude
 Level: 16
@@ -14270,7 +14270,7 @@ Gender: Female
 Music: Female
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Graveler
 Level: 21
@@ -14320,7 +14320,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Graveler
 Level: 26
@@ -14370,7 +14370,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Graveler
 Level: 28
@@ -14420,7 +14420,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Graveler
 Level: 32
@@ -14480,7 +14480,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Golem
 Level: 40
@@ -14540,7 +14540,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Golem
 Level: 44
@@ -14600,7 +14600,7 @@ Gender: Female
 Music: Female
 Items: Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Surskit
 Level: 12
@@ -14640,7 +14640,7 @@ Gender: Female
 Music: Female
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Surskit
 Level: 16
@@ -14690,7 +14690,7 @@ Gender: Female
 Music: Female
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Surskit
 Level: 21
@@ -14740,7 +14740,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Masquerain
 Level: 26
@@ -14790,7 +14790,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Masquerain
 Level: 30
@@ -14840,14 +14840,14 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Masquerain
 Level: 33
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Intimidate
-- Surf
+- Hydro Pump
 - Quiver Dance
 - Bug Buzz
 - Air Cutter
@@ -14900,14 +14900,14 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Masquerain
 Level: 39
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Intimidate
-- Surf
+- Hydro Pump
 - Quiver Dance
 - Bug Buzz
 - Air Cutter
@@ -14960,14 +14960,14 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Masquerain
 Level: 44
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Intimidate
-- Surf
+- Hydro Pump
 - Quiver Dance
 - Bug Buzz
 - Air Cutter
@@ -15020,16 +15020,16 @@ Gender: Male
 Music: Male
 Items: Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
-Meditite
+Machop
 Level: 12
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Pure Power
-- Focus Punch
-- Light Screen
-- Reflect
+Ability: Guts
+- Karate Chop
+- Foresight
+- Bullet Punch
 - Bulk Up
 
 Farfetch'd-Galar
@@ -15037,7 +15037,7 @@ Level: 12
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Inner Focus
-- Fury Cutter
+- Brutal Swing
 - Peck
 - Rock Smash
 - Sand Attack
@@ -15060,7 +15060,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Machop
 Level: 16
@@ -15068,7 +15068,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
 - Karate Chop
-- Low Kick
+- Foresight
 - Bullet Punch
 - Bulk Up
 
@@ -15110,7 +15110,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Machop
 Level: 21
@@ -15118,7 +15118,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
 - Karate Chop
-- Low Kick
+- Foresight
 - Bullet Punch
 - Bulk Up
 
@@ -15160,7 +15160,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Machoke
 Level: 26
@@ -15168,7 +15168,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
 - Vital Throw
-- Low Kick
+- Foresight
 - Bullet Punch
 - Bulk Up
 
@@ -15210,7 +15210,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Machoke
 Level: 30
@@ -15218,7 +15218,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
 - Vital Throw
-- Low Kick
+- Foresight
 - Bullet Punch
 - Bulk Up
 
@@ -15260,15 +15260,15 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Machoke
 Level: 33
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
+- Vital Throw
 - Submission
-- Low Kick
 - Dual Chop
 - Bulk Up
 
@@ -15320,7 +15320,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Machamp
 Level: 39
@@ -15380,7 +15380,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Machamp
 Level: 44
@@ -15440,7 +15440,7 @@ Gender: Male
 Music: Male
 Items: Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Voltorb-Hisui
 Level: 12
@@ -15480,7 +15480,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Geodude-Alola
 Level: 16
@@ -15530,7 +15530,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Graveler-Alola
 Level: 21
@@ -15580,7 +15580,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Graveler-Alola
 Level: 25
@@ -15630,7 +15630,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Graveler-Alola
 Level: 28
@@ -15680,7 +15680,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Graveler-Alola
 Level: 31
@@ -15740,7 +15740,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Golem-Alola
 Level: 40
@@ -15800,7 +15800,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Golem-Alola
 Level: 44
@@ -16700,7 +16700,7 @@ Gender: Female
 Music: Female
 Items: Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swablu
 Level: 12
@@ -16740,7 +16740,7 @@ Gender: Female
 Music: Female
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swablu
 Level: 16
@@ -16790,7 +16790,7 @@ Gender: Female
 Music: Female
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swablu
 Level: 21
@@ -16840,7 +16840,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swablu
 Level: 24
@@ -16890,7 +16890,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Swablu
 Level: 28
@@ -16908,7 +16908,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Keen Eye
 - Water Pulse
-- Roost
+- Stockpile
 - Fling
 - Aerial Ace
 
@@ -16940,7 +16940,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Tropius
 Level: 31
@@ -16959,7 +16959,7 @@ Nature: Serious
 Ability: Sheer Force
 - Air Slash
 - Esper Wing
-- Roost
+- Tailwind
 - Aerial Ace
 
 Pelipper @ Deep Sea Tooth
@@ -17000,7 +17000,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Tropius
 Level: 40
@@ -17060,7 +17060,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Tropius
 Level: 44
@@ -17120,7 +17120,7 @@ Gender: Male
 Music: Female
 Items: Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Lunatone @ Oran Berry
 Level: 15
@@ -17150,7 +17150,7 @@ Gender: Male
 Music: Female
 Items: Super Potion / Super Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Lunatone @ Oran Berry
 Level: 19
@@ -17180,7 +17180,7 @@ Gender: Male
 Music: Female
 Items: Super Potion / Super Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Natu
 Level: 21
@@ -17230,7 +17230,7 @@ Gender: Male
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Natu
 Level: 25
@@ -17280,7 +17280,7 @@ Gender: Male
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Xatu
 Level: 29
@@ -17330,7 +17330,7 @@ Gender: Male
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Xatu
 Level: 31
@@ -17390,7 +17390,7 @@ Gender: Male
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Claydol
 Level: 41
@@ -17460,7 +17460,7 @@ Gender: Male
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Claydol
 Level: 44
@@ -17530,7 +17530,7 @@ Gender: Male
 Music: Male
 Items: Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wiglett
 Level: 11
@@ -17579,7 +17579,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wiglett
 Level: 16
@@ -17629,7 +17629,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wiglett
 Level: 22
@@ -17679,7 +17679,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wiglett
 Level: 24
@@ -17729,7 +17729,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wugtrio
 Level: 29
@@ -17779,7 +17779,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wugtrio
 Level: 32
@@ -17839,7 +17839,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wugtrio
 Level: 41
@@ -17909,7 +17909,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wugtrio
 Level: 45
@@ -17979,7 +17979,7 @@ Gender: Male
 Music: Aqua
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Mightyena
 Level: 46
@@ -18039,7 +18039,7 @@ Gender: Male
 Music: Magma
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Mightyena
 Level: 46
@@ -18099,7 +18099,7 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 Mugshot: Purple
 
 Cacturne
@@ -18160,7 +18160,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 Mugshot: Green
 
 Roserade
@@ -18221,7 +18221,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 Mugshot: Green
 
 Dusclops
@@ -18282,7 +18282,7 @@ Gender: Female
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 Mugshot: Purple
 
 Seviper @ Salac Berry
@@ -18343,7 +18343,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 Mugshot: Pink
 
 Sandslash-Alola
@@ -18404,7 +18404,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 Mugshot: Pink
 
 Wigglytuff
@@ -18465,7 +18465,7 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 Mugshot: Blue
 
 Exeggutor-Alola @ Sitrus Berry
@@ -18526,7 +18526,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 Mugshot: Yellow
 
 Dugtrio-Alola
@@ -18587,7 +18587,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Mon Choices
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
 Mugshot: Yellow
 
 Skarmory

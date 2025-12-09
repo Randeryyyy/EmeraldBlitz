@@ -12,31 +12,31 @@
 #define STAY_IN_STATS_RAISED                                    2  // Number of stat stages that must be raised across any stats before the AI won't switch mon out in certain cases
 
 // AI smart switching chances; if you want more complex behaviour, modify GetSwitchChance
-#define SHOULD_SWITCH_ABSORBS_MOVE_PERCENTAGE                       100
-#define SHOULD_SWITCH_ABSORBS_HIDDEN_POWER_PERCENTAGE               50
-#define SHOULD_SWITCH_TRAPPER_PERCENTAGE                            100
-#define SHOULD_SWITCH_FREE_TURN_PERCENTAGE                          100
+#define SHOULD_SWITCH_ABSORBS_MOVE_PERCENTAGE                       0
+#define SHOULD_SWITCH_ABSORBS_HIDDEN_POWER_PERCENTAGE               0
+#define SHOULD_SWITCH_TRAPPER_PERCENTAGE                            0
+#define SHOULD_SWITCH_FREE_TURN_PERCENTAGE                          0
 #define STAY_IN_ABSORBING_PERCENTAGE                                66  // Chance to stay in if outgoing mon has super effective move against player, will prevent switching out for an absorber with this likelihood
-#define SHOULD_SWITCH_HASBADODDS_PERCENTAGE                         50
-#define SHOULD_SWITCH_ENCORE_STATUS_PERCENTAGE                      100
+#define SHOULD_SWITCH_HASBADODDS_PERCENTAGE                         0
+#define SHOULD_SWITCH_ENCORE_STATUS_PERCENTAGE                      0
 #define SHOULD_SWITCH_ENCORE_DAMAGE_PERCENTAGE                      50
 #define SHOULD_SWITCH_CHOICE_LOCKED_PERCENTAGE                      100 // Only if locked into status move
-#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO_PERCENTAGE           50
-#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS_PERCENTAGE    100
-#define SHOULD_SWITCH_ALL_SCORES_BAD_PERCENTAGE                     100
+#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO_PERCENTAGE           0
+#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS_PERCENTAGE    50
+#define SHOULD_SWITCH_ALL_SCORES_BAD_PERCENTAGE                     0
 
 // AI smart switching chances for bad statuses
 #define SHOULD_SWITCH_PERISH_SONG_PERCENTAGE                    100
-#define SHOULD_SWITCH_YAWN_PERCENTAGE                           100
-#define SHOULD_SWITCH_BADLY_POISONED_PERCENTAGE                 50
-#define SHOULD_SWITCH_BADLY_POISONED_STATS_RAISED_PERCENTAGE    20
-#define SHOULD_SWITCH_CURSED_PERCENTAGE                         50
-#define SHOULD_SWITCH_CURSED_STATS_RAISED_PERCENTAGE            20
-#define SHOULD_SWITCH_NIGHTMARE_PERCENTAGE                      33
-#define SHOULD_SWITCH_NIGHTMARE_STATS_RAISED_PERCENTAGE         15
-#define SHOULD_SWITCH_SEEDED_PERCENTAGE                         25
-#define SHOULD_SWITCH_SEEDED_STATS_RAISED_PERCENTAGE            10
-#define SHOULD_SWITCH_INFATUATION_PERCENTAGE                    100
+#define SHOULD_SWITCH_YAWN_PERCENTAGE                           0
+#define SHOULD_SWITCH_BADLY_POISONED_PERCENTAGE                 0
+#define SHOULD_SWITCH_BADLY_POISONED_STATS_RAISED_PERCENTAGE    0
+#define SHOULD_SWITCH_CURSED_PERCENTAGE                         0
+#define SHOULD_SWITCH_CURSED_STATS_RAISED_PERCENTAGE            0
+#define SHOULD_SWITCH_NIGHTMARE_PERCENTAGE                      0
+#define SHOULD_SWITCH_NIGHTMARE_STATS_RAISED_PERCENTAGE         0
+#define SHOULD_SWITCH_SEEDED_PERCENTAGE                         0
+#define SHOULD_SWITCH_SEEDED_STATS_RAISED_PERCENTAGE            0
+#define SHOULD_SWITCH_INFATUATION_PERCENTAGE                    0
 
 // AI smart switching chances for beneficial abilities
 #define SHOULD_SWITCH_NATURAL_CURE_STRONG_PERCENTAGE                66
