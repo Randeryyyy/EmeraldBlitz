@@ -746,18 +746,21 @@ static void Task_EvolutionScene(u8 taskId)
         }
         break;
     case EVOSTATE_SET_MON_EVOLVED:
-            u32 zero = 0;
-            StringExpandPlaceholders(gStringVar4, gText_CongratsPkmnEvolved);
-            BattlePutTextOnWindow(gStringVar4, B_WIN_MSG);
-            gTasks[taskId].tState++;
-            SetMonData(mon, MON_DATA_SPECIES, (void *)(&gTasks[taskId].tPostEvoSpecies));
-            SetMonData(mon, MON_DATA_EVOLUTION_TRACKER, &zero);
-            CalculateMonStats(mon);
-            EvolutionRenameMon(mon, gTasks[taskId].tPreEvoSpecies, gTasks[taskId].tPostEvoSpecies);
-            GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_SEEN);
-            GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_CAUGHT);
-            IncrementGameStat(GAME_STAT_EVOLVED_POKEMON);
+    {
+        u32 zero = 0;
+
+        StringExpandPlaceholders(gStringVar4, gText_CongratsPkmnEvolved);
+        BattlePutTextOnWindow(gStringVar4, B_WIN_MSG);
+        gTasks[taskId].tState++;
+        SetMonData(mon, MON_DATA_SPECIES, (void *)(&gTasks[taskId].tPostEvoSpecies));
+        SetMonData(mon, MON_DATA_EVOLUTION_TRACKER, &zero);
+        CalculateMonStats(mon);
+        EvolutionRenameMon(mon, gTasks[taskId].tPreEvoSpecies, gTasks[taskId].tPostEvoSpecies);
+        GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_SEEN);
+        GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_CAUGHT);
+        IncrementGameStat(GAME_STAT_EVOLVED_POKEMON);
         break;
+    }
     case EVOSTATE_TRY_LEARN_MOVE:
         if (!IsTextPrinterActive(0))
         {
