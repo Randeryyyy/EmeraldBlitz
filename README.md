@@ -56,6 +56,6 @@ A game built on Pokémon Emerald Expansion specifically for draft auction nuzloc
 - **catwalkvivi** For the beautiful logo
 - **Ulithium_Dragon** For the Flygon overworld sprite
 - **aveontrainer** For the base of Viola's overworld sprite
-- **Christian, Matt, Soosk, Justin, and Lucas** For testing 60 betas worth of content
+- **Christian, Frazz, Soosk, Jason, Justin, and Lucas** For testing 60 betas worth of content
 
 <!-- END CONTENT -->

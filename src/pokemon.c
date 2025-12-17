@@ -7237,9 +7237,29 @@ u32 GetTeraTypeFromPersonality(struct Pokemon *mon)
     return (GetMonData(mon, MON_DATA_PERSONALITY) & 0x1) == 0 ? types[0] : types[1];
 }
 
+static bool8 AllPartyMonsFainted(void)
+{
+    u8 i;
+
+    // Don't bother checking if the party is empty.
+    if (gPlayerPartyCount == 0)
+        return FALSE;
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_HP) != 0 && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) != SPECIES_EGG)
+            return FALSE; // Found a non-fainted, non-egg mon
+    }
+    return TRUE; // All Pokémon are fainted
+}
+
 void TryEvolveFaintedCorsola(void)
 {
     u32 i;
+
+    if (AllPartyMonsFainted())
+        return;
+        
     for (i = 0; i < PARTY_SIZE; i++)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_CORSOLA
@@ -7260,7 +7280,6 @@ void TryEvolveFaintedCorsola(void)
 
             CalculateMonStats(&gPlayerParty[i]);
 
-            // Heal it to full HP and restore PP.
             HealPokemon(&gPlayerParty[i]);
         }
     }

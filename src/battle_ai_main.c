@@ -1176,7 +1176,11 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             break;
         case ABILITY_WONDER_GUARD:
             if (effectiveness < UQ_4_12(2.0))
-                RETURN_SCORE_MINUS(20);
+            {
+                if (move != MOVE_SUPERSONIC
+                 && move != MOVE_LEECH_SEED)                   
+                    RETURN_SCORE_MINUS(20);
+            }
             break;
         case ABILITY_JUSTIFIED:
             if (moveType == TYPE_DARK && !IsBattleMoveStatus(move) && !IsTargetingPartner(battlerAtk, battlerDef))

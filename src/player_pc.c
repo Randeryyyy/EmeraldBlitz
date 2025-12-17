@@ -290,6 +290,7 @@ static const u16 sNewGamePCItems[][2] =
     { ITEM_CLEFABLITE, 1 },
 	{ ITEM_DELPHOXITE, 1 },
 	{ ITEM_DRAGALGITE, 1 },
+	{ ITEM_EELEKTROSSITE, 1 },
 	{ ITEM_EXCADRITE, 1 },
 	{ ITEM_FERALIGITE, 1 },
 	{ ITEM_FROSLASSITE, 1 },

@@ -324,8 +324,8 @@ Common_Text_LookCloserAtMap:
 
 PlayersHouse_2F_Text_ItsAGameCube:
 	.string "It's a Nintendo GameCube.\p"
-	.string "A Game Boy Advance is connected to\n"
-	.string "serve as the Controller.$"
+	.string "It's currently playing\n"
+	.string "POKéMON EMERALD BLITZ v7.0.$"
 
 PlayersHouse_2F_Text_DustyFossil:
 	.string "{PLAYER} looked under the bed…\p"

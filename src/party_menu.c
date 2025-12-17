@@ -2577,6 +2577,7 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_GOOMY
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_HONEDGE
          //|| GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_DEINO
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_TYNAMO
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SWINUB
         )) || (VarGet(VAR_BADGE_COUNT) >= 0 && (
             GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_AZURILL
@@ -5934,6 +5935,19 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     u16 targetSpecies;
     bool32 canStopEvo = TRUE;
     bool8 fromFieldMove = gIsFromFieldMove; // Store gIsFromFieldMove before it's reset
+
+    if (GetMonData(mon, MON_DATA_HP) == 0)
+    {
+        gPartyMenuUseExitCallback = FALSE;
+        PlaySE(SE_SELECT);
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        if (gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD)
+            gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+        else
+            gTasks[taskId].func = task;
+        return;
+    }
 
     for (; i < 25 && !learnedNewMove && !canEvolve; i++)
     {

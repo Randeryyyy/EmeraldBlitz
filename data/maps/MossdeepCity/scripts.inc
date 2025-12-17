@@ -309,6 +309,7 @@ MossdeepCity_EventScript_Man::
 MossdeepCity_EventScript_KingsRockBoy::
 	lock
 	faceplayer
+	setflag FLAG_RECEIVED_KINGS_ROCK
 	goto_if_set FLAG_RECEIVED_KINGS_ROCK, MossdeepCity_EventScript_ReceivedKingsRock
 	msgbox MossdeepCity_Text_WantKingsRockStevenGaveMe, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MossdeepCity_EventScript_DeclineKingsRock
