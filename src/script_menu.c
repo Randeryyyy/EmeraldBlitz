@@ -38,6 +38,7 @@
 #include "script_pokemon_util.h"
 #include "trainer_pokemon_sprites.h"
 #include "list_menu.h"
+#include "pokemon_storage_system.h"
 
 #define TAG_GIFT_MON_PIC_TILES 5510
 #define TAG_GIFT_MON_PIC_PALETTE 5511
@@ -47,8 +48,30 @@
 #define MAX_GIFT_MON_LIST 128
 
 #define MAX_GIFT_MON 10
+#define GIFT_MON_LEVEL 15
 
 #include "data/script_menu.h"
+
+enum GiftMonStorageLocation
+{
+    GIFT_MON_STORAGE_NONE,
+    GIFT_MON_STORAGE_PARTY,
+    GIFT_MON_STORAGE_PC,
+};
+
+// Tracks each claimed gift entry so we can render the icon grid and undo selections safely.
+struct GiftMonMenuSelection
+{
+    bool8 active;
+    bool8 isEggEntry;
+    u16 species;
+    u16 displaySpecies;
+    u16 takenKey;
+    u32 personality;
+    u8 location;
+    u8 boxId;
+    u8 boxPos;
+};
 
 struct DynamicListMenuEventArgs
 {
@@ -76,6 +99,7 @@ struct GiftMonMenu
 };
 
 static EWRAM_DATA struct GiftMonMenu sGiftMonMenuData = {0};
+static EWRAM_DATA struct GiftMonMenuSelection sGiftMonSelections[MAX_GIFT_MON] = {0};
 
 static EWRAM_DATA u8 sProcessInputDelay = 0;
 static EWRAM_DATA u8 sGiftSpriteIds[MAX_GIFT_MON];
@@ -152,6 +176,19 @@ static const struct OamData sMonPicOamData = {
     .paletteNum = 0,
 };
 static void CreateGiftMonSpritesAtPos(u16 selectedMon);
+static void GiftMonMenu_ClearChosenMonIcons(void);
+static void GiftMonMenu_RebuildChosenMonIcons(void);
+static struct GiftMonMenuSelection *GiftMonMenu_GetFreeSelectionSlot(void);
+static struct GiftMonMenuSelection *GiftMonMenu_FindSelection(u16 takenKey);
+static bool8 GiftMonMenu_IsPersonalityTracked(u32 personality);
+static bool8 GiftMonMenu_RecordSelection(u16 species, u16 displaySpecies, u16 takenKey, bool8 giveEgg, u8 giveResult, u8 initialPartyCount);
+static bool8 GiftMonMenu_AddSelection(u16 species, u16 displaySpecies, u16 takenKey, bool8 giveEgg);
+static bool8 GiftMonMenu_AddEggSelection(void);
+static bool8 GiftMonMenu_AddRandomSelection(struct ListMenuItem *items, u32 numMons);
+static bool8 GiftMonMenu_RemoveSelection(u16 takenKey);
+static bool8 GiftMonMenu_RemoveSelectionEntry(struct GiftMonMenuSelection *selection);
+static bool8 GiftMonMenu_RemoveFromParty(u16 species, u32 personality);
+static bool8 GiftMonMenu_RemoveFromPC(u16 species, u32 personality, u8 preferredBoxId, u8 preferredBoxPos);
 
 
 const struct SpriteTemplate gMonPicSpriteTemplate = {
@@ -234,19 +271,299 @@ static void GiftMonMenu_CreateChosenMonIcon(u16 species)
 
 static void GiftMonMenu_DestroyMonIcons(void)
 {
-    u8 i;
-
-    for (i = 0; i < MAX_GIFT_MON; i++)
-    {
-        if (sGiftSpriteIds[i] != 0xFF)
-            FreeAndDestroyMonIconSprite(&gSprites[sGiftSpriteIds[i]]);
-    }
+    GiftMonMenu_ClearChosenMonIcons();
     if (sGiftMonMenuData.selectedMonSpriteId != 0xFFFF)
     {
         FreeAndDestroyMonPicSprite(sGiftMonMenuData.selectedMonSpriteId);
         FreeSpritePaletteByTag(TAG_GIFT_MON_PIC_PALETTE);
         sGiftMonMenuData.selectedMonSpriteId = 0xFFFF;
     }
+    memset(sGiftMonSelections, 0, sizeof(sGiftMonSelections));
+}
+
+static void GiftMonMenu_ClearChosenMonIcons(void)
+{
+    u8 i;
+
+    for (i = 0; i < MAX_GIFT_MON; i++)
+    {
+        if (sGiftSpriteIds[i] != 0xFF && sGiftSpriteIds[i] < MAX_SPRITES && gSprites[sGiftSpriteIds[i]].inUse)
+            FreeAndDestroyMonIconSprite(&gSprites[sGiftSpriteIds[i]]);
+        sGiftSpriteIds[i] = 0xFF;
+    }
+}
+
+static void GiftMonMenu_RebuildChosenMonIcons(void)
+{
+    u8 i;
+
+    GiftMonMenu_ClearChosenMonIcons();
+    for (i = 0; i < MAX_GIFT_MON; i++)
+    {
+        if (sGiftMonSelections[i].active)
+            GiftMonMenu_CreateChosenMonIcon(sGiftMonSelections[i].displaySpecies);
+    }
+}
+
+static struct GiftMonMenuSelection *GiftMonMenu_GetFreeSelectionSlot(void)
+{
+    u8 i;
+
+    for (i = 0; i < MAX_GIFT_MON; i++)
+    {
+        if (!sGiftMonSelections[i].active)
+            return &sGiftMonSelections[i];
+    }
+    return NULL;
+}
+
+static struct GiftMonMenuSelection *GiftMonMenu_FindSelection(u16 takenKey)
+{
+    u8 i;
+
+    for (i = 0; i < MAX_GIFT_MON; i++)
+    {
+        if (sGiftMonSelections[i].active && sGiftMonSelections[i].takenKey == takenKey)
+            return &sGiftMonSelections[i];
+    }
+    return NULL;
+}
+
+static bool8 GiftMonMenu_IsPersonalityTracked(u32 personality)
+{
+    u8 i;
+
+    for (i = 0; i < MAX_GIFT_MON; i++)
+    {
+        if (sGiftMonSelections[i].active && sGiftMonSelections[i].personality == personality)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static bool8 GiftMonMenu_RecordSelection(u16 species, u16 displaySpecies, u16 takenKey, bool8 giveEgg, u8 giveResult, u8 initialPartyCount)
+{
+    struct GiftMonMenuSelection *slot = GiftMonMenu_GetFreeSelectionSlot();
+
+    if (slot == NULL)
+        return FALSE;
+
+    memset(slot, 0, sizeof(*slot));
+    slot->active = TRUE;
+    slot->isEggEntry = giveEgg;
+    slot->species = species;
+    slot->displaySpecies = displaySpecies;
+    slot->takenKey = takenKey;
+    slot->location = GIFT_MON_STORAGE_NONE;
+
+    if (giveResult == MON_GIVEN_TO_PARTY)
+    {
+        u8 newPartyCount = CalculatePlayerPartyCount();
+        u8 index;
+
+        if (newPartyCount > initialPartyCount && newPartyCount != 0)
+        {
+            index = newPartyCount - 1;
+        }
+        else
+        {
+            for (index = 0; index < PARTY_SIZE; index++)
+            {
+                u16 slotSpecies = GetMonData(&gPlayerParty[index], MON_DATA_SPECIES, NULL);
+                if (slotSpecies == SPECIES_NONE)
+                    continue;
+                if (slotSpecies != species)
+                    continue;
+
+                if (!GiftMonMenu_IsPersonalityTracked(GetMonData(&gPlayerParty[index], MON_DATA_PERSONALITY, NULL)))
+                    break;
+            }
+
+            if (index == PARTY_SIZE)
+                return FALSE;
+        }
+
+        slot->personality = GetMonData(&gPlayerParty[index], MON_DATA_PERSONALITY, NULL);
+        slot->location = GIFT_MON_STORAGE_PARTY;
+    }
+    else if (giveResult == MON_GIVEN_TO_PC)
+    {
+        u8 boxId = gSpecialVar_MonBoxId;
+        u8 boxPos = gSpecialVar_MonBoxPos;
+
+        slot->personality = GetBoxMonDataAt(boxId, boxPos, MON_DATA_PERSONALITY);
+        slot->location = GIFT_MON_STORAGE_PC;
+        slot->boxId = boxId;
+        slot->boxPos = boxPos;
+    }
+    else
+    {
+        return FALSE;
+    }
+
+    return TRUE;
+}
+
+static bool8 GiftMonMenu_AddSelection(u16 species, u16 displaySpecies, u16 takenKey, bool8 giveEgg)
+{
+    u8 initialPartyCount = CalculatePlayerPartyCount();
+    u8 giveResult;
+
+    if (giveEgg)
+        giveResult = ScriptGiveEgg(species);
+    else
+        giveResult = ScriptGiveMon(species, GIFT_MON_LEVEL, ITEM_NONE);
+
+    if (giveResult == MON_CANT_GIVE)
+        return FALSE;
+
+    // Record who was granted so the toggle logic can locate and remove them later.
+    if (!GiftMonMenu_RecordSelection(species, displaySpecies, takenKey, giveEgg, giveResult, initialPartyCount))
+    {
+        if (giveResult == MON_GIVEN_TO_PARTY)
+        {
+            u8 partyCount = CalculatePlayerPartyCount();
+            if (partyCount != 0)
+            {
+                u32 personality = GetMonData(&gPlayerParty[partyCount - 1], MON_DATA_PERSONALITY, NULL);
+                GiftMonMenu_RemoveFromParty(species, personality);
+            }
+        }
+        else if (giveResult == MON_GIVEN_TO_PC)
+        {
+            u32 personality = GetBoxMonDataAt(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos, MON_DATA_PERSONALITY);
+            GiftMonMenu_RemoveFromPC(species, personality, gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos);
+        }
+        return FALSE;
+    }
+
+    sGiftMonIsTaken[takenKey] = TRUE;
+    GiftMonMenu_RebuildChosenMonIcons();
+    return TRUE;
+}
+
+static bool8 GiftMonMenu_AddEggSelection(void)
+{
+    u16 species = sGiftEggPool[Random() % ARRAY_COUNT(sGiftEggPool)];
+
+    return GiftMonMenu_AddSelection(species, SPECIES_EGG, SPECIES_EGG, TRUE);
+}
+
+static bool8 GiftMonMenu_AddRandomSelection(struct ListMenuItem *items, u32 numMons)
+{
+    u16 availableMons[MAX_GIFT_MON_LIST];
+    u32 availableMonsCount = 0;
+    u32 i;
+
+    for (i = 0; i < numMons; i++)
+    {
+        u16 species = items[i].id;
+
+        if (species == GIFT_MON_RANDOM_ID || species == GIFT_MON_FINISH_ID || species == SPECIES_EGG)
+            continue;
+
+        if (!sGiftMonIsTaken[species])
+            availableMons[availableMonsCount++] = species;
+    }
+
+    if (availableMonsCount == 0)
+        return FALSE;
+
+    u32 randomIndex = Random() % availableMonsCount;
+    u16 randomSpecies = availableMons[randomIndex];
+
+    return GiftMonMenu_AddSelection(randomSpecies, randomSpecies, randomSpecies, FALSE);
+}
+
+static bool8 GiftMonMenu_RemoveSelection(u16 takenKey)
+{
+    struct GiftMonMenuSelection *selection = GiftMonMenu_FindSelection(takenKey);
+
+    if (selection == NULL)
+        return FALSE;
+
+    // Undoing a choice clears both UI and the actual mon grant (party or PC).
+    if (!GiftMonMenu_RemoveSelectionEntry(selection))
+        return FALSE;
+
+    sGiftMonIsTaken[takenKey] = FALSE;
+    memset(selection, 0, sizeof(*selection));
+    GiftMonMenu_RebuildChosenMonIcons();
+    return TRUE;
+}
+
+static bool8 GiftMonMenu_RemoveSelectionEntry(struct GiftMonMenuSelection *selection)
+{
+    if (GiftMonMenu_RemoveFromParty(selection->species, selection->personality))
+        return TRUE;
+
+    return GiftMonMenu_RemoveFromPC(selection->species, selection->personality, selection->boxId, selection->boxPos);
+}
+
+static bool8 GiftMonMenu_RemoveFromParty(u16 species, u32 personality)
+{
+    u8 i;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u16 slotSpecies = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+
+        if (slotSpecies == SPECIES_NONE || slotSpecies != species)
+            continue;
+
+        if (GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY, NULL) != personality)
+            continue;
+
+        ZeroMonData(&gPlayerParty[i]);
+        CompactPartySlots();
+        CalculatePlayerPartyCount();
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static bool8 GiftMonMenu_RemoveFromPC(u16 species, u32 personality, u8 preferredBoxId, u8 preferredBoxPos)
+{
+    if (preferredBoxId < TOTAL_BOXES_COUNT && preferredBoxPos < IN_BOX_COUNT)
+    {
+        u16 storedSpecies = GetBoxMonDataAt(preferredBoxId, preferredBoxPos, MON_DATA_SPECIES);
+
+        if (storedSpecies == species)
+        {
+            u32 storedPersonality = GetBoxMonDataAt(preferredBoxId, preferredBoxPos, MON_DATA_PERSONALITY);
+
+            if (storedPersonality == personality)
+            {
+                ZeroBoxMonAt(preferredBoxId, preferredBoxPos);
+                return TRUE;
+            }
+        }
+    }
+
+    {
+        u8 boxId;
+        u8 boxPos;
+
+        for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
+        {
+            for (boxPos = 0; boxPos < IN_BOX_COUNT; boxPos++)
+            {
+                u16 storedSpecies = GetBoxMonDataAt(boxId, boxPos, MON_DATA_SPECIES);
+
+                if (storedSpecies != species)
+                    continue;
+
+                if (GetBoxMonDataAt(boxId, boxPos, MON_DATA_PERSONALITY) == personality)
+                {
+                    ZeroBoxMonAt(boxId, boxPos);
+                    return TRUE;
+                }
+            }
+        }
+    }
+
+    return FALSE;
 }
 
 void ListMenuSetLRBtnWrap(u8 listTaskId, bool8 lrWrap)
@@ -605,6 +922,8 @@ static void DrawMultichoiceMenuDynamic(u8 left, u8 top, u8 argc, struct ListMenu
         sGiftMonMenuData.monSpriteId = MAX_SPRITES;
         sGiftMonMenuData.bottomWindowId = WINDOW_NONE;
         memset(sGiftMonIsTaken, 0, sizeof(sGiftMonIsTaken));
+        memset(sGiftMonSelections, 0, sizeof(sGiftMonSelections));
+        GiftMonMenu_ClearChosenMonIcons();
         sGiftMonMenuData.selectedMonSpriteId = 0xFFFF;
         LoadMonIconPalettes();
         memset(sGiftSpriteIds, 0xFF, sizeof(sGiftSpriteIds));
@@ -810,45 +1129,9 @@ static void Task_HandleScrollingMultichoiceInput(u8 taskId)
 
         break;
     default:
-        if (sIsGiftMonMenu && input != GIFT_MON_FINISH_ID) // "Finished" option
+        if (sIsGiftMonMenu && input != GIFT_MON_FINISH_ID)
         {
             if ((u16)input == GIFT_MON_RANDOM_ID)
-            {
-                struct ListMenuItem *items;
-                u32 i, numMons, availableMonsCount = 0;
-                u16 availableMons[MAX_GIFT_MON_LIST] = {0};
-
-                LoadWordFromTwoHalfwords((u16 *)&gTasks[taskId].data[3], (u32 *)&items);
-                numMons = gTasks[taskId].data[5];
-
-                // Find available Pokémon
-                for (i = 0; i < numMons; i++)
-                {
-                    if (items[i].id != GIFT_MON_RANDOM_ID && items[i].id != GIFT_MON_FINISH_ID && !sGiftMonIsTaken[items[i].id])
-                    {
-                        availableMons[availableMonsCount++] = items[i].id;
-                    }
-                }
-
-                if (availableMonsCount > 0 && CountTakenGiftMons() < MAX_GIFT_MON)
-                {
-                    u16 randomSpecies = availableMons[Random() % availableMonsCount];
-                    u8 result = (randomSpecies == SPECIES_EGG) ? ScriptGiveEgg(sGiftEggPool[Random() % ARRAY_COUNT(sGiftEggPool)]) : ScriptGiveMon(randomSpecies, 15, ITEM_NONE);
-
-                    if (result != MON_CANT_GIVE)
-                    {
-                        PlaySE(SE_SUCCESS);
-                        sGiftMonIsTaken[randomSpecies] = TRUE;
-                        GiftMonMenu_CreateChosenMonIcon(randomSpecies);
-                        RedrawListMenu(gTasks[taskId].data[0]);
-                    }
-                }
-                else
-                {
-                    PlaySE(SE_FAILURE);
-                }
-            }
-            else if ((u16)input == SPECIES_EGG)
             {
                 if (CountTakenGiftMons() >= MAX_GIFT_MON)
                 {
@@ -856,31 +1139,76 @@ static void Task_HandleScrollingMultichoiceInput(u8 taskId)
                 }
                 else
                 {
-                    u16 species = sGiftEggPool[Random() % ARRAY_COUNT(sGiftEggPool)];
-                    u8 result = ScriptGiveEgg(species);
+                    struct ListMenuItem *items;
 
-                    if (result != MON_CANT_GIVE)
+                    LoadWordFromTwoHalfwords((u16 *)&gTasks[taskId].data[3], (u32 *)&items);
+                    if (GiftMonMenu_AddRandomSelection(items, gTasks[taskId].data[5]))
                     {
                         PlaySE(SE_SUCCESS);
-                        sGiftMonIsTaken[SPECIES_EGG] = TRUE;
-                        GiftMonMenu_CreateChosenMonIcon(SPECIES_EGG);
                         RedrawListMenu(gTasks[taskId].data[0]);
+                    }
+                    else
+                    {
+                        PlaySE(SE_FAILURE);
                     }
                 }
             }
-            else if (sGiftMonIsTaken[(u16)input] || CountTakenGiftMons() >= MAX_GIFT_MON)
+            else if ((u16)input == SPECIES_EGG)
             {
-                PlaySE(SE_FAILURE);
+                if (sGiftMonIsTaken[SPECIES_EGG])
+                {
+                    if (GiftMonMenu_RemoveSelection(SPECIES_EGG))
+                    {
+                        PlaySE(SE_PC_OFF);
+                        RedrawListMenu(gTasks[taskId].data[0]);
+                    }
+                    else
+                    {
+                        PlaySE(SE_FAILURE);
+                    }
+                }
+                else if (CountTakenGiftMons() >= MAX_GIFT_MON)
+                {
+                    PlaySE(SE_FAILURE);
+                }
+                else if (GiftMonMenu_AddEggSelection())
+                {
+                    PlaySE(SE_SUCCESS);
+                    RedrawListMenu(gTasks[taskId].data[0]);
+                }
+                else
+                {
+                    PlaySE(SE_FAILURE);
+                }
             }
             else
             {
-                u8 result = ScriptGiveMon(input, 15, ITEM_NONE);
-                if (result != MON_CANT_GIVE)
+                u16 species = (u16)input;
+
+                if (sGiftMonIsTaken[species])
+                {
+                    if (GiftMonMenu_RemoveSelection(species))
+                    {
+                        PlaySE(SE_PC_OFF);
+                        RedrawListMenu(gTasks[taskId].data[0]);
+                    }
+                    else
+                    {
+                        PlaySE(SE_FAILURE);
+                    }
+                }
+                else if (CountTakenGiftMons() >= MAX_GIFT_MON)
+                {
+                    PlaySE(SE_FAILURE);
+                }
+                else if (GiftMonMenu_AddSelection(species, species, species, FALSE))
                 {
                     PlaySE(SE_SUCCESS);
-                    sGiftMonIsTaken[(u16)input] = TRUE;
-                    GiftMonMenu_CreateChosenMonIcon(input);
                     RedrawListMenu(gTasks[taskId].data[0]);
+                }
+                else
+                {
+                    PlaySE(SE_FAILURE);
                 }
             }
         }
@@ -1568,6 +1896,7 @@ int ScriptMenu_AdjustLeftCoordFromWidth(int left, int width)
 void SetIsGiftPokemonMenu(void)
 {
     sIsGiftMonMenu = TRUE;
+    memset(sGiftSpriteIds, 0xFF, sizeof(sGiftSpriteIds));
 }
 
 static void CreateGiftMonSpritesAtPos(u16 selectedMon)
