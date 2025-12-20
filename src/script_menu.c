@@ -605,7 +605,7 @@ static void GiftMonMenu_ItemPrintFunc(u8 windowId, u32 speciesId, u8 y)
         name = gSpeciesInfo[speciesId].speciesName;
     }
 
-    if (sGiftMonIsTaken[speciesId] && speciesId != GIFT_MON_RANDOM_ID && speciesId != SPECIES_EGG)
+    if (sGiftMonIsTaken[speciesId])
     {
         colors = sGiftMenuTextColors[1];
         stringToDraw = name;
@@ -1155,19 +1155,7 @@ static void Task_HandleScrollingMultichoiceInput(u8 taskId)
             }
             else if ((u16)input == SPECIES_EGG)
             {
-                if (sGiftMonIsTaken[SPECIES_EGG])
-                {
-                    if (GiftMonMenu_RemoveSelection(SPECIES_EGG))
-                    {
-                        PlaySE(SE_PC_OFF);
-                        RedrawListMenu(gTasks[taskId].data[0]);
-                    }
-                    else
-                    {
-                        PlaySE(SE_FAILURE);
-                    }
-                }
-                else if (CountTakenGiftMons() >= MAX_GIFT_MON)
+                if (CountTakenGiftMons() >= MAX_GIFT_MON)
                 {
                     PlaySE(SE_FAILURE);
                 }

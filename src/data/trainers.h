@@ -39542,7 +39542,7 @@ F_TRAINER_FEMALE |
 #line 15239
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 15241
-            .ability = ABILITY_INNER_FOCUS,
+            .ability = ABILITY_STEADFAST,
 #line 15238
             .lvl = 30,
 #line 15240
@@ -39676,7 +39676,7 @@ F_TRAINER_FEMALE |
 #line 15299
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 15301
-            .ability = ABILITY_INNER_FOCUS,
+            .ability = ABILITY_STEADFAST,
 #line 15298
             .lvl = 33,
 #line 15300
@@ -39810,7 +39810,7 @@ F_TRAINER_FEMALE |
 #line 15359
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 15361
-            .ability = ABILITY_INNER_FOCUS,
+            .ability = ABILITY_STEADFAST,
 #line 15358
             .lvl = 41,
 #line 15360
@@ -39944,7 +39944,7 @@ F_TRAINER_FEMALE |
 #line 15419
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 15421
-            .ability = ABILITY_INNER_FOCUS,
+            .ability = ABILITY_STEADFAST,
 #line 15418
             .lvl = 47,
 #line 15420
@@ -47085,7 +47085,7 @@ F_TRAINER_FEMALE |
 #line 18607
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 18609
-            .ability = ABILITY_HYDRATION,
+            .ability = ABILITY_SAP_SIPPER,
 #line 18606
             .lvl = 56,
 #line 18608
