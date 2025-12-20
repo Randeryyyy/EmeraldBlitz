@@ -4,6 +4,7 @@
 #include "battle.h"
 #include "battle_tower.h"
 #include "cable_club.h"
+#include "daycare.h"
 #include "data.h"
 #include "decoration.h"
 #include "diploma.h"
@@ -4400,4 +4401,32 @@ void SetHiddenNature(void)
     u32 hiddenNature = gSpecialVar_Result;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_NATURE, &hiddenNature);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+u16 GetPartyMonSpeciesFromIndex(void)
+{
+    u8 partyIndex = VarGet(VAR_TEMP_0);
+    if (partyIndex >= PARTY_SIZE)
+        return SPECIES_NONE;
+
+    return GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES_OR_EGG);
+}
+
+void GetFirstEggMoveForSpecies(void)
+{
+    u16 species = VarGet(VAR_0x8004);
+    const u16 *eggMoves;
+
+    // Get the base species, as evolutions share egg moves with their pre-evolutions.
+    species = GetEggSpecies(species);
+    eggMoves = GetSpeciesEggMoves(species);
+
+    if (eggMoves == NULL || eggMoves[0] == MOVE_UNAVAILABLE)
+    {
+        gSpecialVar_Result = MOVE_NONE;
+    }
+    else
+    {
+        gSpecialVar_Result = eggMoves[0];
+    }
 }

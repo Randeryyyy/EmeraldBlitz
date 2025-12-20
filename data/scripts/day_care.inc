@@ -6,7 +6,28 @@ Route117_EventScript_DaycareMan::
 	goto_if_eq VAR_RESULT, DAYCARE_EGG_WAITING, Route117_EventScript_DaycareEggWaiting
 	goto_if_eq VAR_RESULT, DAYCARE_ONE_MON, Route117_EventScript_CheckOnOneMon
 	goto_if_eq VAR_RESULT, DAYCARE_TWO_MONS, Route117_EventScript_CheckOnTwoMons
-	msgbox Route117_Text_SeeWifeIfYoudLikeMeToRaiseMon, MSGBOX_DEFAULT
+	goto Route117_EventScript_DaycareMan_SuggestEggMoves
+	end
+
+Route117_EventScript_DaycareMan_SuggestEggMoves::
+	msgbox Route117_Text_SplendidTeam, MSGBOX_DEFAULT
+	setvar VAR_TEMP_0, 0 @ Party index
+Route117_EventScript_DaycareMan_SuggestEggMoves_Loop::
+	specialvar VAR_0x8004, GetPartyMonSpeciesFromIndex
+	goto_if_eq VAR_0x8004, SPECIES_NONE, Route117_EventScript_DaycareMan_SuggestEggMoves_End
+	goto_if_eq VAR_0x8004, SPECIES_EGG, Route117_EventScript_DaycareMan_SuggestEggMoves_Next
+
+	special GetFirstEggMoveForSpecies
+	goto_if_eq VAR_RESULT, MOVE_NONE, Route117_EventScript_DaycareMan_SuggestEggMoves_Next
+
+	bufferspeciesname STR_VAR_1, VAR_0x8004
+	buffermovename STR_VAR_2, VAR_RESULT
+	msgbox Route117_Text_SuggestEggMove, MSGBOX_DEFAULT
+
+Route117_EventScript_DaycareMan_SuggestEggMoves_Next::
+	addvar VAR_TEMP_0, 1
+	goto_if_lt VAR_TEMP_0, PARTY_SIZE, Route117_EventScript_DaycareMan_SuggestEggMoves_Loop
+Route117_EventScript_DaycareMan_SuggestEggMoves_End::
 	release
 	end
 
@@ -277,6 +298,14 @@ Route117_Text_SeeWifeIfYoudLikeMeToRaiseMon:
 	.string "POKéMON of TRAINERS.\p"
 	.string "If you'd like me to raise your POKéMON,\n"
 	.string "have a word with my wife.$"
+
+Route117_Text_SplendidTeam:
+	.string "Ah, what a splendid team you have!\n"
+	.string "They have so much potential.$"
+
+Route117_Text_SuggestEggMove:
+	.string "If you left your {COLOR BLUE}{STR_VAR_1}{COLOR DARK_GRAY} with my\n"
+	.string "wife, it would learn {COLOR RED}{STR_VAR_2}{COLOR DARK_GRAY}.$"
 
 Route117_Text_DoYouWantEgg:
 	.string "Ah, it's you!\p"

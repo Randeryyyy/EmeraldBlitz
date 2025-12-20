@@ -553,6 +553,8 @@ gSpecials::
 	def_special VsSeekerFreezeObjectsAfterChargeComplete
 	def_special PlayerHasMulch
 	def_special Bag_ChooseMulch
+	def_special GetPartyMonSpeciesFromIndex
+	def_special GetFirstEggMoveForSpecies
 	def_special ObjectEventInteractionApplyMulch
 	def_special ObjectEventInteractionPullBerryWeed
 	def_special ObjectEventInteractionClearBerryPests
