@@ -8219,6 +8219,8 @@ static const u16 sSketchMovePool[] = {
     MOVE_BOOMBURST,
     //MOVE_BUG_BITE,
     MOVE_CHARM,
+    MOVE_DESTINY_BOND,
+    MOVE_DRACO_METEOR,
     MOVE_DRAGON_RAGE,
     MOVE_EERIE_IMPULSE,
     MOVE_ELECTROWEB,
@@ -8237,12 +8239,14 @@ static const u16 sSketchMovePool[] = {
     MOVE_RAPID_SPIN,
     MOVE_SHEER_COLD,
     MOVE_SNARL,
+    MOVE_SPIKY_SHIELD,
     MOVE_SPORE,
     MOVE_STICKY_WEB,
     MOVE_STONE_AXE,
     MOVE_STRENGTH_SAP,
     MOVE_SUPER_FANG,
     MOVE_TAIL_SLAP,
+    MOVE_TAUNT,
     MOVE_TOXIC_SPIKES,
     MOVE_VOLT_SWITCH,
     MOVE_WATER_SPOUT,
@@ -8268,13 +8272,20 @@ static void Task_InitSketchMoveMenu(u8 taskId)
     sPartyMenuInternal->windowId[0] = DisplaySelectionWindow(SELECTWINDOW_MOVES);
 
     // Generate 4 unique random moves from the pool
-    for (u8 i = 0; i < 4; i++)
+    for (u8 i = 0; i < SKETCH_MENU_MOVES; i++)
     {
         bool32 unique;
         do
         {
             unique = TRUE;
             sPartyMenuInternal->data[i] = sSketchMovePool[Random() % ARRAY_COUNT(sSketchMovePool)];
+
+            if (MonKnowsMove(&gPlayerParty[gPartyMenu.slotId], sPartyMenuInternal->data[i]))
+            {
+                unique = FALSE;
+                continue;
+            }
+
             for (u8 j = 0; j < i; j++)
             {
                 if (sPartyMenuInternal->data[j] == sPartyMenuInternal->data[i])
@@ -8286,7 +8297,7 @@ static void Task_InitSketchMoveMenu(u8 taskId)
         } while (!unique);
         AddTextPrinterParameterized(sPartyMenuInternal->windowId[0], FONT_NORMAL, GetMoveName(sPartyMenuInternal->data[i]), 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL);
     }
-    InitMenuInUpperLeftCornerNormal(sPartyMenuInternal->windowId[0], 4, 0);
+    InitMenuInUpperLeftCornerNormal(sPartyMenuInternal->windowId[0], SKETCH_MENU_MOVES, 0);
     ScheduleBgCopyTilemapToVram(2);
 
     gTasks[taskId].func = Task_HandleSketchMoveInput_Loop;
@@ -8319,6 +8330,8 @@ static void Task_HandleSketchMoveInput_Loop(u8 taskId)
             GetMonNickname(&gPlayerParty[gPartyMenu.slotId], gStringVar1);
             StringCopy(gStringVar2, GetMoveName(sPartyMenuInternal->data[chosenMove]));
             StringExpandPlaceholders(gStringVar4, gText_PkmnLearnedMove3);
+            PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+            PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
             DisplayPartyMenuMessage(gStringVar4, TRUE);
             gTasks[taskId].func = Task_DoLearnedMoveFanfareAfterText;
         }

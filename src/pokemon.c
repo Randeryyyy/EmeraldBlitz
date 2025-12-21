@@ -1826,7 +1826,7 @@ u16 GiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move)
             SetBoxMonData(boxMon, MON_DATA_PP1 + i, &pp);
             return move;
         }
-        if (existingMove == move && move != MOVE_SKETCH)
+        if (existingMove == move)
             return MON_ALREADY_KNOWS_MOVE;
     }
     return MON_HAS_MAX_MOVES;

@@ -59,12 +59,19 @@ EverGrandeCity_SidneysRoom_EventScript_WalkInCloseDoor::
 EverGrandeCity_SidneysRoom_EventScript_Sidney::
 	lock
 	faceplayer
+	specialvar VAR_RESULT, Script_CheckPartyBelowLevelCap
+	goto_if_eq VAR_RESULT, TRUE, EverGrandeCity_SidneysRoom_EventScript_NotReady
 	goto_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_SidneysRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	goto_if_set FLAG_BOSS_FLIP, EverGrandeCity_SidneysRoom_EventScript_Spenser
 	trainerbattle_no_intro TRAINER_SIDNEY, EverGrandeCity_SidneysRoom_Text_Defeat
 	goto EverGrandeCity_SidneysRoom_EventScript_Defeated
+	end
+
+EverGrandeCity_SidneysRoom_EventScript_NotReady::
+	msgbox EverGrandeCity_SidneysRoom_Text_NotReady, MSGBOX_DEFAULT
+	release
 	end
 
 EverGrandeCity_SidneysRoom_EventScript_Spenser::
@@ -85,6 +92,13 @@ EverGrandeCity_SidneysRoom_EventScript_Defeated::
 	clearflag FLAG_BOSS_FLIP
 	release
 	end
+
+EverGrandeCity_SidneysRoom_Text_NotReady:
+	.string "I look forward to our fight,\n"
+	.string "but your POKéMON are not yet\p"
+	.string "strong enough.\p"
+	.string "Level up your POKéMON and return\n"
+	.string "when you're ready.$"
 
 EverGrandeCity_SidneysRoom_Text_IntroSpeech:
 	.string "Welcome, challenger!\p"

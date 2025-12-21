@@ -42706,7 +42706,7 @@ F_TRAINER_FEMALE |
                 MOVE_TEETER_DANCE,
                 MOVE_SUCKER_PUNCH,
                 MOVE_FACADE,
-                MOVE_FLAIL,
+                MOVE_ENCORE,
             },
             },
             {
@@ -46754,7 +46754,7 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 18457
-                MOVE_MOONBLAST,
+                MOVE_SHADOW_SNEAK,
                 MOVE_PSYCHIC,
                 MOVE_DRAINING_KISS,
                 MOVE_CALM_MIND,
@@ -47117,7 +47117,7 @@ F_TRAINER_FEMALE |
                 MOVE_THUNDER,
                 MOVE_EARTHQUAKE,
                 MOVE_DRAGON_CLAW,
-                MOVE_IRON_TAIL,
+                MOVE_ROCK_SLIDE,
             },
             },
             {

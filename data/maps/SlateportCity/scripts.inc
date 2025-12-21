@@ -727,7 +727,6 @@ SlateportCity_Pokemart_PowerTMs_Badge2TMsItems:
 	.2byte ITEM_TM_TAUNT
 	.2byte ITEM_TM_THIEF
 	.2byte ITEM_TM_TORMENT
-	.2byte ITEM_TM_TOXIC
 	.2byte ITEM_TM_TRICK_ROOM
 	pokemartlistend
 
@@ -797,7 +796,6 @@ SlateportCity_Pokemart_PowerTMs_Badge7TMsItems:
 	.2byte ITEM_TM_STEEL_WING
 	.2byte ITEM_TM_THIEF
 	.2byte ITEM_TM_TORMENT
-	.2byte ITEM_TM_TOXIC
 	.2byte ITEM_TM_TRICK_ROOM
 	.2byte ITEM_TM_DOUBLE_TEAM
 	.2byte ITEM_TM_LIGHT_SCREEN
