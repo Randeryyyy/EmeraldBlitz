@@ -8,6 +8,7 @@
 #include "fieldmap.h"
 #include "field_specials.h"
 #include "metatile_behavior.h"
+#include "oras_dowse.h"
 #include "overworld.h"
 #include "main.h"
 #include "sound.h"
@@ -1020,6 +1021,7 @@ void GetOnOffBike(u8 transitionFlags)
     }
     else
     {
+        EndORASDowsing();
         SetPlayerAvatarTransitionFlags(transitionFlags);
         Overworld_SetSavedMusic(MUS_CYCLING);
         Overworld_ChangeMusicTo(MUS_CYCLING);

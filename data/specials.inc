@@ -572,5 +572,8 @@ gSpecials::
 	def_special ReleasePlayerBoxes
 	def_special SetIsGiftPokemonMenu
 	def_special SetHiddenNature
+	def_special SetAbility
+	def_special ObjectEventInteractionGetApricornTreeData
+	def_special ObjectEventInteractionPickApricornTree
 	def_special Script_CheckPartyBelowLevelCap
 	def_special GetOffBike
