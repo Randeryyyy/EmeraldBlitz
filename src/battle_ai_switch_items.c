@@ -1064,13 +1064,14 @@ static bool32 ShouldSwitchIfAttackingStatsLowered(u32 battler)
     if (gBattleMons[battler].attack > gBattleMons[battler].spAttack)
     {
         // Don't switch if attack isn't below -1
-        if (attackingStage > DEFAULT_STAT_STAGE - 2)
+        if (attackingStage > DEFAULT_STAT_STAGE - 1)
             return FALSE;
-        // 50% chance if attack at -2 and have a good candidate mon
-        else if (attackingStage == DEFAULT_STAT_STAGE - 2)
+        // 50% chance if attack at -1 and seeded
+        else if ((attackingStage < DEFAULT_STAT_STAGE) && (gBattleMons[battler].volatiles.leechSeed))
         {
-            if (gAiLogicData->mostSuitableMonId[battler] != PARTY_SIZE && (RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, GetSwitchChance(SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO)) || gAiLogicData->aiPredictionInProgress))
-                return SetSwitchinAndSwitch(battler, PARTY_SIZE);
+                if (gAiLogicData->mostSuitableMonId[battler] != PARTY_SIZE && (RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, GetSwitchChance(SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO)) || gAiLogicData->aiPredictionInProgress))
+                    return SetSwitchinAndSwitch(battler, PARTY_SIZE);
+
         }
         // If at -3 or worse, switch out regardless
         else if ((attackingStage < DEFAULT_STAT_STAGE - 2) && RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, GetSwitchChance(SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS)))
@@ -1081,12 +1082,12 @@ static bool32 ShouldSwitchIfAttackingStatsLowered(u32 battler)
     else
     {
         // Don't switch if attack isn't below -1
-        if (spAttackingStage > DEFAULT_STAT_STAGE - 2)
+        if (spAttackingStage > DEFAULT_STAT_STAGE - 1)
             return FALSE;
-        // 50% chance if attack at -2 and have a good candidate mon
-        else if (spAttackingStage == DEFAULT_STAT_STAGE - 2)
+        // 50% chance if attack at -1 and seeded
+        else if ((spAttackingStage < DEFAULT_STAT_STAGE) && (gBattleMons[battler].volatiles.leechSeed))
         {
-            if (gAiLogicData->mostSuitableMonId[battler] != PARTY_SIZE && (RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, GetSwitchChance(SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO)) || gAiLogicData->aiPredictionInProgress))
+                if (gAiLogicData->mostSuitableMonId[battler] != PARTY_SIZE && (RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, GetSwitchChance(SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO)) || gAiLogicData->aiPredictionInProgress))
                 return SetSwitchinAndSwitch(battler, PARTY_SIZE);
         }
         // If at -3 or worse, switch out regardless

@@ -5690,7 +5690,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .formSpeciesIdTable = sSneaselFormSpeciesIdTable,
     #if P_GEN_4_CROSS_EVOS
         .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_WEAVILE, CONDITIONS({IF_TIME, TIME_NIGHT}, {IF_HOLD_ITEM, ITEM_RAZOR_CLAW})},
-                                {EVO_ITEM, ITEM_RAZOR_CLAW, SPECIES_WEAVILE, CONDITIONS({IF_TIME, TIME_NIGHT})}),
+                                {EVO_ITEM, ITEM_DUSK_STONE, SPECIES_WEAVILE}),
     #endif
     },
 

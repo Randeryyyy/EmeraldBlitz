@@ -261,6 +261,7 @@ static const u16 sNewGamePCItems[][2] =
     { ITEM_TM_ROCK_TOMB, 20 },
     { ITEM_TM_SHADOW_BALL, 20 },
     { ITEM_TM_SLUDGE_BOMB, 20 },
+    { ITEM_TM_SNARL, 20 },
     { ITEM_TM_THUNDER, 20 },
     { ITEM_TM_THUNDERBOLT, 20 },
     { ITEM_TM_X_SCISSOR, 20 },

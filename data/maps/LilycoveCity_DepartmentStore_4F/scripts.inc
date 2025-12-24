@@ -70,11 +70,9 @@ LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
 	.2byte ITEM_TM_STEEL_WING
 	.2byte ITEM_TM_THIEF
 	.2byte ITEM_TM_TORMENT
-	.2byte ITEM_TM_TOXIC
 	.2byte ITEM_TM_TRICK_ROOM
 	.2byte ITEM_TM_DOUBLE_TEAM
 	.2byte ITEM_TM_LIGHT_SCREEN
-	.2byte ITEM_TM_RETURN
 	.2byte ITEM_TM_REFLECT
 	.2byte ITEM_TM_REST
 	pokemartlistend

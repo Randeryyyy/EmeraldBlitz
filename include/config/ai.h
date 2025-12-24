@@ -21,13 +21,13 @@
 #define SHOULD_SWITCH_ENCORE_STATUS_PERCENTAGE                      0
 #define SHOULD_SWITCH_ENCORE_DAMAGE_PERCENTAGE                      50
 #define SHOULD_SWITCH_CHOICE_LOCKED_PERCENTAGE                      100 // Only if locked into status move
-#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO_PERCENTAGE           0
+#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO_PERCENTAGE           50 // Repurposed, requires Leech Seed and a stat to be -1
 #define SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS_PERCENTAGE    50
 #define SHOULD_SWITCH_ALL_SCORES_BAD_PERCENTAGE                     0
 
 // AI smart switching chances for bad statuses
 #define SHOULD_SWITCH_PERISH_SONG_PERCENTAGE                    100
-#define SHOULD_SWITCH_YAWN_PERCENTAGE                           0
+#define SHOULD_SWITCH_YAWN_PERCENTAGE                           50
 #define SHOULD_SWITCH_BADLY_POISONED_PERCENTAGE                 0
 #define SHOULD_SWITCH_BADLY_POISONED_STATS_RAISED_PERCENTAGE    0
 #define SHOULD_SWITCH_CURSED_PERCENTAGE                         0

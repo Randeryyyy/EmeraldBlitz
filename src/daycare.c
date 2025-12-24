@@ -352,21 +352,21 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
     species = GetBoxMonData(&daycareMon->mon, MON_DATA_SPECIES);
     BoxMonToMon(&daycareMon->mon, &pokemon);
 
-    u16 eggMove;
-    u16 baseSpecies = GetEggSpecies(species);
-    const u16 *eggMoveLearnset = GetSpeciesEggMoves(baseSpecies);
+	u16 eggMove;
+	u16 baseSpecies = GetEggSpecies(species);
+	const u16 *eggMoveLearnset = GetSpeciesEggMoves(baseSpecies);
 
-    if (eggMoveLearnset != NULL && eggMoveLearnset[0] != MOVE_UNAVAILABLE)
-    {
-        u16 firstMove = GetMonData(&pokemon, MON_DATA_MOVE1, NULL);
-        eggMove = eggMoveLearnset[0];
-        if (firstMove != eggMove) {
-            SetMonMoveSlot(&pokemon, eggMove, 0);
-            RemoveMonPPBonus(&pokemon, 0);
-        }
-    }
+	if (eggMoveLearnset != NULL && eggMoveLearnset[0] != MOVE_UNAVAILABLE)
+	{
+		u16 firstMove = GetMonData(&pokemon, MON_DATA_MOVE1, NULL);
+		eggMove = eggMoveLearnset[0];
+		if (firstMove != eggMove) {
+			SetMonMoveSlot(&pokemon, eggMove, 0);
+			RemoveMonPPBonus(&pokemon, 0);
+		}
+	}
 
-    newSpecies = GetFormChangeTargetSpecies(&pokemon, FORM_CHANGE_WITHDRAW, 0);
+	newSpecies = GetFormChangeTargetSpecies(&pokemon, FORM_CHANGE_WITHDRAW, 0);
     if (newSpecies != species)
     {
         SetMonData(&pokemon, MON_DATA_SPECIES, &newSpecies);
@@ -374,27 +374,26 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
         species = newSpecies;
     }
 
-    if (GetMonData(&pokemon, MON_DATA_LEVEL) < GetCurrentLevelCap())
+    CalculatePlayerPartyCount();
+    if (gPlayerPartyCount < PARTY_SIZE)
     {
-        experience = GetMonData(&pokemon, MON_DATA_EXP) + daycareMon->steps;
-        u32 maxExp = GetExpAtLevelCap(&pokemon);
-        if (experience > maxExp)
-            experience = maxExp;
-        SetMonData(&pokemon, MON_DATA_EXP, &experience);
-        ApplyDaycareExperience(&pokemon);
+        gPlayerParty[PARTY_SIZE - 1] = pokemon;
+        if (daycareMon->mail.message.itemId)
+        {
+            GiveMailToMon(&gPlayerParty[PARTY_SIZE - 1], &daycareMon->mail.message);
+        }
+        CompactPartySlots();
+        CalculatePlayerPartyCount();
     }
-
-    gPlayerParty[PARTY_SIZE - 1] = pokemon;
-    if (daycareMon->mail.message.itemId)
+    else
     {
-        GiveMailToMon(&gPlayerParty[PARTY_SIZE - 1], &daycareMon->mail.message);
-        ClearDaycareMonMail(&daycareMon->mail);
+        if (CopyMonToPC(&pokemon) == MON_CANT_GIVE)
+            return SPECIES_NONE; // Fail
     }
 
     ZeroBoxMonData(&daycareMon->mon);
     daycareMon->steps = 0;
-    CompactPartySlots();
-    CalculatePlayerPartyCount();
+    ClearDaycareMonMail(&daycareMon->mail);
     return species;
 }
 

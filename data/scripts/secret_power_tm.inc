@@ -36,9 +36,7 @@ Route111_Text_DontHaveAnyRoom:
 Route111_EventScript_SecretPowerMan::
 	lock
 	faceplayer
-	msgbox Route111_Text_MakingRoomUseTMToMakeYourOwn, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Route111_EventScript_GiveSecretPower
-	msgbox Route111_Text_DontWantThis, MSGBOX_DEFAULT
+	msgbox Route111_Text_ExplainSecretPower, MSGBOX_DEFAULT
 	release
 	end
 

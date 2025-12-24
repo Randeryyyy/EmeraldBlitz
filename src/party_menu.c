@@ -2509,6 +2509,8 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_ELECTABUZZ
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_GURDURR
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_HAUNTER
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_BOLDORE
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_MACHOKE
         )) || (VarGet(VAR_BADGE_COUNT) >= 4 && (
             GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_VULPIX_ALOLA
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_GROWLITHE
@@ -2518,7 +2520,7 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_POLIWHIRL
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SHELLDER
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_STARYU
-         //|| GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_LOMBRE
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_LOMBRE
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_PIKACHU
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_EELEKTRIK
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_MAGNETON
@@ -2528,6 +2530,7 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_EXEGGCUTE
          //|| GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_NUZLEAF
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_EEVEE
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_NOSEPASS
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_VOLTORB_HISUI
          //|| GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_VULPIX
          //|| GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_CETODDLE
@@ -2547,13 +2550,14 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
          //|| GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_MISDREAVUS
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_DOUBLADE
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_LAMPENT
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SNEASEL
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_ROSELIA
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_TOGETIC
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_MINCCINO
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_FLOETTE
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SKRELP
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SEADRA
-         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SLOWPOKE
+         //|| GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SLOWPOKE
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SLOWPOKE_GALAR
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SCYTHER
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SWADLOON
@@ -2589,6 +2593,9 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_PIKIPEK
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_MAREEP
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SHINX
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_LOTAD
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_BLIPBUG
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_CHIMCHAR
         )) || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_RUSTBORO_CITY_GYM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_RUSTBORO_CITY_GYM) && (
             GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_APPLIN
         )) || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_FORTREE_CITY_GYM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_FORTREE_CITY_GYM) && (
@@ -8235,7 +8242,9 @@ static const u16 sSketchMovePool[] = {
     MOVE_OBSTRUCT,
     MOVE_PARTING_SHOT,
     MOVE_PAY_DAY,
+    MOVE_PERISH_SONG,
     MOVE_POWDER,
+    MOVE_RAIN_DANCE,
     MOVE_RAPID_SPIN,
     MOVE_SHEER_COLD,
     MOVE_SNARL,
@@ -8246,10 +8255,12 @@ static const u16 sSketchMovePool[] = {
     MOVE_STRENGTH_SAP,
     MOVE_SUPER_FANG,
     MOVE_TAIL_SLAP,
+    MOVE_TAILWIND,
     MOVE_TAUNT,
     MOVE_TOXIC_SPIKES,
     MOVE_VOLT_SWITCH,
     MOVE_WATER_SPOUT,
+    MOVE_WILL_O_WISP,
     MOVE_U_TURN,
 };
 

@@ -57,6 +57,7 @@
 #include "constants/battle_partner.h"
 #include "constants/hold_effects.h"
 #include "constants/items.h"
+#include "constants/maps.h"
 #include "constants/battle_script_commands.h"
 #include "constants/item_effects.h"
 #include "constants/moves.h"
@@ -13749,28 +13750,70 @@ bool32 CanCamouflage(u8 battler)
     return TRUE;
 }
 
+static u8 GetGymType(void)
+{
+    static const struct {
+        u8 mapGroup;
+        u8 mapNum;
+        u8 type;
+    } sGymTypes[] = {
+        {MAP_GROUP(MAP_RUSTBORO_CITY_GYM), MAP_NUM(MAP_RUSTBORO_CITY_GYM), TYPE_ROCK},
+        {MAP_GROUP(MAP_DEWFORD_TOWN_GYM), MAP_NUM(MAP_DEWFORD_TOWN_GYM), TYPE_FIGHTING},
+        {MAP_GROUP(MAP_MAUVILLE_CITY_GYM), MAP_NUM(MAP_MAUVILLE_CITY_GYM), TYPE_ELECTRIC},
+        {MAP_GROUP(MAP_LAVARIDGE_TOWN_GYM_1F), MAP_NUM(MAP_LAVARIDGE_TOWN_GYM_1F), TYPE_FIRE},
+        {MAP_GROUP(MAP_LAVARIDGE_TOWN_GYM_B1F), MAP_NUM(MAP_LAVARIDGE_TOWN_GYM_B1F), TYPE_FIRE},
+        {MAP_GROUP(MAP_PETALBURG_CITY_GYM), MAP_NUM(MAP_PETALBURG_CITY_GYM), TYPE_NORMAL},
+        {MAP_GROUP(MAP_FORTREE_CITY_GYM), MAP_NUM(MAP_FORTREE_CITY_GYM), TYPE_FLYING},
+        {MAP_GROUP(MAP_MOSSDEEP_CITY_GYM), MAP_NUM(MAP_MOSSDEEP_CITY_GYM), TYPE_PSYCHIC},
+        {MAP_GROUP(MAP_SOOTOPOLIS_CITY_GYM_1F), MAP_NUM(MAP_SOOTOPOLIS_CITY_GYM_1F), TYPE_WATER},
+        {MAP_GROUP(MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM), MAP_NUM(MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM), TYPE_DARK},
+        {MAP_GROUP(MAP_EVER_GRANDE_CITY_PHOEBES_ROOM), MAP_NUM(MAP_EVER_GRANDE_CITY_PHOEBES_ROOM), TYPE_GHOST},
+        {MAP_GROUP(MAP_EVER_GRANDE_CITY_GLACIAS_ROOM), MAP_NUM(MAP_EVER_GRANDE_CITY_GLACIAS_ROOM), TYPE_ICE},
+        {MAP_GROUP(MAP_EVER_GRANDE_CITY_DRAKES_ROOM), MAP_NUM(MAP_EVER_GRANDE_CITY_DRAKES_ROOM), TYPE_DRAGON},
+        {MAP_GROUP(MAP_EVER_GRANDE_CITY_CHAMPIONS_ROOM), MAP_NUM(MAP_EVER_GRANDE_CITY_CHAMPIONS_ROOM), TYPE_STEEL},
+    };
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sGymTypes); i++)
+    {
+        if (gSaveBlock1Ptr->location.mapGroup == sGymTypes[i].mapGroup && gSaveBlock1Ptr->location.mapNum == sGymTypes[i].mapNum)
+            return sGymTypes[i].type;
+    }
+
+    return TYPE_MYSTERY;
+}
+
 static void Cmd_settypetoenvironment(void)
 {
     CMD_ARGS(const u8 *failInstr);
 
     u8 environmentType;
-    switch(gFieldStatuses & STATUS_FIELD_TERRAIN_ANY)
+u8 gymType = GetGymType();
+
+    if (gymType != TYPE_MYSTERY)
     {
-    case STATUS_FIELD_ELECTRIC_TERRAIN:
-        environmentType = TYPE_ELECTRIC;
-        break;
-    case STATUS_FIELD_GRASSY_TERRAIN:
-        environmentType = TYPE_GRASS;
-        break;
-    case STATUS_FIELD_MISTY_TERRAIN:
-        environmentType = TYPE_FAIRY;
-        break;
-    case STATUS_FIELD_PSYCHIC_TERRAIN:
-        environmentType = TYPE_PSYCHIC;
-        break;
-    default:
-        environmentType = gBattleEnvironmentInfo[gBattleEnvironment].camouflageType;
-        break;
+        environmentType = gymType;
+    }
+    else
+    {
+        switch(gFieldStatuses & STATUS_FIELD_TERRAIN_ANY)
+        {
+        case STATUS_FIELD_ELECTRIC_TERRAIN:
+            environmentType = TYPE_ELECTRIC;
+            break;
+        case STATUS_FIELD_GRASSY_TERRAIN:
+            environmentType = TYPE_GRASS;
+            break;
+        case STATUS_FIELD_MISTY_TERRAIN:
+            environmentType = TYPE_FAIRY;
+            break;
+        case STATUS_FIELD_PSYCHIC_TERRAIN:
+            environmentType = TYPE_PSYCHIC;
+            break;
+        default:
+            environmentType = gBattleEnvironmentInfo[gBattleEnvironment].camouflageType;
+            break;
+        }
     }
 
     if (!IS_BATTLER_OF_TYPE(gBattlerAttacker, environmentType) && GetActiveGimmick(gBattlerAttacker) != GIMMICK_TERA)

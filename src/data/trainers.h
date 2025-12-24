@@ -27330,7 +27330,7 @@ F_TRAINER_FEMALE |
 #line 10392
             TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 10393
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 10394
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10395
@@ -37260,7 +37260,7 @@ F_TRAINER_FEMALE |
 #line 14222
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 14223
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 14224
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14225
@@ -37373,7 +37373,7 @@ F_TRAINER_FEMALE |
 #line 14272
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 14273
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 14274
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14275
@@ -37486,7 +37486,7 @@ F_TRAINER_FEMALE |
 #line 14322
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 14323
-        .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
+        .items = { ITEM_HYPER_POTION },
 #line 14324
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14325
@@ -38206,7 +38206,7 @@ F_TRAINER_FEMALE |
 #line 14642
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 14643
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 14644
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14645
@@ -38319,7 +38319,7 @@ F_TRAINER_FEMALE |
 #line 14692
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 14693
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 14694
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14695
@@ -38432,7 +38432,7 @@ F_TRAINER_FEMALE |
 #line 14742
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 14743
-        .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
+        .items = { ITEM_HYPER_POTION },
 #line 14744
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14745
@@ -39148,7 +39148,7 @@ F_TRAINER_FEMALE |
 #line 15062
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 15063
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 15064
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 15065
@@ -39259,7 +39259,7 @@ F_TRAINER_FEMALE |
 #line 15112
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 15113
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 15114
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 15115
@@ -39370,7 +39370,7 @@ F_TRAINER_FEMALE |
 #line 15162
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 15163
-        .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
+        .items = { ITEM_HYPER_POTION },
 #line 15164
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 15165
@@ -40086,7 +40086,7 @@ F_TRAINER_FEMALE |
 #line 15482
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 15483
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 15484
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 15485
@@ -40197,7 +40197,7 @@ F_TRAINER_FEMALE |
 #line 15532
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 15533
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 15534
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 15535
@@ -40308,7 +40308,7 @@ F_TRAINER_FEMALE |
 #line 15582
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 15583
-        .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
+        .items = { ITEM_HYPER_POTION },
 #line 15584
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 15585
@@ -40486,9 +40486,9 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 15662
-                MOVE_TRI_ATTACK,
+                MOVE_SUPERSONIC,
                 MOVE_SHOCK_WAVE,
-                MOVE_THUNDER_WAVE,
+                MOVE_TRI_ATTACK,
                 MOVE_MIRROR_SHOT,
             },
             },
@@ -40597,9 +40597,9 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 15712
-                MOVE_TRI_ATTACK,
+                MOVE_SUPERSONIC,
                 MOVE_SHOCK_WAVE,
-                MOVE_THUNDER_WAVE,
+                MOVE_TRI_ATTACK,
                 MOVE_FLASH_CANNON,
             },
             },
@@ -40729,9 +40729,9 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 15772
-                MOVE_TRI_ATTACK,
+                MOVE_SUPERSONIC,
                 MOVE_SHOCK_WAVE,
-                MOVE_THUNDER_WAVE,
+                MOVE_TRI_ATTACK,
                 MOVE_FLASH_CANNON,
             },
             },
@@ -40861,9 +40861,9 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 15832
-                MOVE_ZAP_CANNON,
+                MOVE_SUPERSONIC,
                 MOVE_SHOCK_WAVE,
-                MOVE_THUNDER_WAVE,
+                MOVE_TRI_ATTACK,
                 MOVE_FLASH_CANNON,
             },
             },
@@ -41020,7 +41020,7 @@ F_TRAINER_FEMALE |
 #line 15902
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 15903
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 15904
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 15905
@@ -41133,7 +41133,7 @@ F_TRAINER_FEMALE |
 #line 15952
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 15953
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 15954
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 15955
@@ -41246,7 +41246,7 @@ F_TRAINER_FEMALE |
 #line 16002
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 16003
-        .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
+        .items = { ITEM_HYPER_POTION },
 #line 16004
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16005
@@ -41970,7 +41970,7 @@ F_TRAINER_FEMALE |
 #line 16322
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 16323
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 16324
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16325
@@ -42081,7 +42081,7 @@ F_TRAINER_FEMALE |
 #line 16372
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 16373
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 16374
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16375
@@ -42192,7 +42192,7 @@ F_TRAINER_FEMALE |
 #line 16422
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 16423
-        .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
+        .items = { ITEM_HYPER_POTION },
 #line 16424
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16425
@@ -42904,7 +42904,7 @@ F_TRAINER_FEMALE |
 #line 16742
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 16743
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 16744
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16745
@@ -43017,7 +43017,7 @@ F_TRAINER_FEMALE |
 #line 16792
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 16793
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 16794
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16795
@@ -43130,7 +43130,7 @@ F_TRAINER_FEMALE |
 #line 16842
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 16843
-        .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
+        .items = { ITEM_HYPER_POTION },
 #line 16844
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16845
@@ -43837,7 +43837,7 @@ F_TRAINER_FEMALE |
 #line 17152
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 17153
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 17154
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 17155
@@ -43908,7 +43908,7 @@ F_TRAINER_FEMALE |
 #line 17182
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 17183
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 17184
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 17185
@@ -43978,7 +43978,7 @@ F_TRAINER_FEMALE |
             .moves = {
 #line 17212
                 MOVE_CONFUSION,
-                MOVE_PSYSHOCK,
+                MOVE_ROCK_THROW,
                 MOVE_CALM_MIND,
                 MOVE_HYPNOSIS,
             },
@@ -44021,7 +44021,7 @@ F_TRAINER_FEMALE |
 #line 17232
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 17233
-        .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
+        .items = { ITEM_HYPER_POTION },
 #line 17234
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 17235
@@ -44450,7 +44450,7 @@ F_TRAINER_FEMALE |
 #line 17422
                 MOVE_SHELL_SIDE_ARM,
                 MOVE_CALM_MIND,
-                MOVE_YAWN,
+                MOVE_BRICK_BREAK,
                 MOVE_PSYCHIC,
             },
             },
@@ -44605,7 +44605,7 @@ F_TRAINER_FEMALE |
 #line 17492
                 MOVE_SHELL_SIDE_ARM,
                 MOVE_CALM_MIND,
-                MOVE_HEAL_PULSE,
+                MOVE_BRICK_BREAK,
                 MOVE_PSYCHIC,
             },
             },
@@ -44803,7 +44803,7 @@ F_TRAINER_FEMALE |
 #line 17581
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 17582
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 17583
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 17584
@@ -44916,7 +44916,7 @@ F_TRAINER_FEMALE |
 #line 17631
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 17632
-        .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
+        .items = { ITEM_SUPER_POTION },
 #line 17633
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 17634
@@ -45029,7 +45029,7 @@ F_TRAINER_FEMALE |
 #line 17681
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 17682
-        .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
+        .items = { ITEM_HYPER_POTION },
 #line 17683
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 17684
@@ -45569,10 +45569,10 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17921
-                MOVE_TRIPLE_DIVE,
                 MOVE_RAIN_DANCE,
                 MOVE_THROAT_CHOP,
                 MOVE_WATER_PULSE,
+                MOVE_TRIPLE_DIVE,
             },
             },
             {
@@ -46168,7 +46168,7 @@ F_TRAINER_FEMALE |
 #line 18193
                 MOVE_LEAF_BLADE,
                 MOVE_X_SCISSOR,
-                MOVE_AGILITY,
+                MOVE_NIGHT_SLASH,
                 MOVE_DUAL_CHOP,
             },
             },
@@ -47087,7 +47087,7 @@ F_TRAINER_FEMALE |
 #line 18609
             .ability = ABILITY_SAP_SIPPER,
 #line 18606
-            .lvl = 56,
+            .lvl = 55,
 #line 18608
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -47108,7 +47108,7 @@ F_TRAINER_FEMALE |
 #line 18619
             .ability = ABILITY_STURDY,
 #line 18616
-            .lvl = 55,
+            .lvl = 56,
 #line 18618
             .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,

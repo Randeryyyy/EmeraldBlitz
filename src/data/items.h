@@ -11476,14 +11476,14 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_X_SCISSOR, // Todo
     },
 
-    [ITEM_TM_TOXIC] =
+    [ITEM_TM_SNARL] =
     {
-        .name = ITEM_NAME("Toxic"),
-        .price = 1000,
+        .name = ITEM_NAME("Snarl"),
+        .price = 3000,
         .description = COMPOUND_STRING(
-            "Poisons the foe\n"
-            "with a toxin that\n"
-            "gradually worsens."),
+            "Hits all foes with\n"
+            "an ugly sound that\n"
+            "lowers Sp. Atk."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

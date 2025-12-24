@@ -7,7 +7,7 @@
     F(WATER_PULSE) \
     F(CALM_MIND) \
     F(X_SCISSOR) \
-    F(TOXIC) \
+    F(SNARL) \
     F(HAIL) \
     F(BULK_UP) \
     F(BULLET_SEED) \

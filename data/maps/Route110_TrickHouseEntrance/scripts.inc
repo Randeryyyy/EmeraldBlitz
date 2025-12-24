@@ -384,7 +384,7 @@ Route110_TrickHouseEntrance_EventScript_GivePuzzle6Reward::
 	end
 
 Route110_TrickHouseEntrance_EventScript_GivePuzzle7Reward::
-	giveitem ITEM_PP_MAX
+	giveitem ITEM_NUGGET
 	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
 	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT

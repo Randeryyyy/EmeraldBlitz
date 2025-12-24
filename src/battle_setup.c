@@ -798,7 +798,7 @@ u8 GetTrainerBattleTransition(void)
         minPartyCount = 1;
         break;
     case TRAINER_BATTLE_TYPE_DOUBLES:
-        minPartyCount = 2; // double battles always at least have 2 Pokémon.
+        minPartyCount = 1; // double battles always at least have 2 Pokémon.
         break;
     }
 

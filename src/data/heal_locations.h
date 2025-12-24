@@ -142,6 +142,12 @@ static const struct HealLocation sHealLocations[NUM_HEAL_LOCATIONS - 1] = {
         .x = 5,
         .y = 19,
     },
+    [HEAL_LOCATION_ROUTE_117 - 1] = {
+        .mapGroup = MAP_GROUP(MAP_ROUTE117),
+        .mapNum = MAP_NUM(MAP_ROUTE117),
+        .x = 51,
+        .y = 6,
+    },
     [HEAL_LOCATION_ROUTE_123 - 1] = {
         .mapGroup = MAP_GROUP(MAP_ROUTE123),
         .mapNum = MAP_NUM(MAP_ROUTE123),

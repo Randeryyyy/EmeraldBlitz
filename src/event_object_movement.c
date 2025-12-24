@@ -9833,7 +9833,8 @@ u8 GetLedgeJumpDirection(s16 x, s16 y, u8 direction)
     && MB_JUMP_EAST <= behavior && behavior <= MB_JUMP_SOUTH)
    {
        MoveCoords(direction, &x, &y);
-       if (GetCollisionAtCoords(playerObjEvent, x, y, direction) == COLLISION_NONE)
+       if (GetCollisionAtCoords(playerObjEvent, x, y, direction) == COLLISION_NONE
+       || GetCollisionAtCoords(playerObjEvent, x, y, direction) == COLLISION_ELEVATION_MISMATCH)
            return index + 1;
    }
 

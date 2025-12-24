@@ -8832,7 +8832,7 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
         }
         break;
     case ABILITY_GRASS_PELT:
-        if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN && usesDefStat)
+        if (IsBattlerWeatherAffected(battlerDef, B_WEATHER_SUN) && usesDefStat)
         {
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
             if (ctx->updateFlags)
