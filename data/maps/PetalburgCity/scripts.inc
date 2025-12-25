@@ -112,6 +112,7 @@ PetalburgCity_EventScript_WalkDown::
 	setflag FLAG_RECEIVED_HM_SURF
 	closemessage
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	forcesave
 	releaseall
 	end
 

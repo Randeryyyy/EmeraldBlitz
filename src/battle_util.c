@@ -619,7 +619,10 @@ void HandleAction_UseMove(void)
         BattleArena_AddMindPoints(gBattlerAttacker);
 
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)
+    {
         gBattleStruct->battlerState[i].wasAboveHalfHp = gBattleMons[i].hp > gBattleMons[i].maxHP / 2;
+        gBattleStruct->battlerState[i].wasAboveQuarterHp = gBattleMons[i].hp > gBattleMons[i].maxHP / 4;
+    }
 
     gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
 }
@@ -3388,7 +3391,7 @@ static inline uq4_12_t GetSupremeOverlordModifier(u32 battler)
 
 bool32 HadMoreThanQuarterHpNowDoesnt(u32 battler)
 {
-    // Had more than half of hp before, now has less
+    // Had more than quarter of hp before, now has less
     return gBattleStruct->battlerState[battler].wasAboveQuarterHp
         && gBattleMons[battler].hp <= gBattleMons[battler].maxHP / 4;
 }

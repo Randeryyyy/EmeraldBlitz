@@ -70,6 +70,7 @@ static bool32 HandleEndTurnVarious(u32 battler)
             gBattleMons[i].volatiles.laserFocus = FALSE;
 
         gBattleStruct->battlerState[i].wasAboveHalfHp = gBattleMons[i].hp > gBattleMons[i].maxHP / 2;
+        gBattleStruct->battlerState[i].wasAboveQuarterHp = gBattleMons[i].hp > gBattleMons[i].maxHP / 4;
     }
 
     if (gBattleStruct->incrementEchoedVoice)
@@ -1294,21 +1295,14 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
     {
         // TODO: simplify
         enum HoldEffect holdEffect = GetBattlerHoldEffect(battler);
-        switch (holdEffect)
-        {
-        case HOLD_EFFECT_FLAME_ORB:
-        case HOLD_EFFECT_STICKY_BARB:
-        case HOLD_EFFECT_TOXIC_ORB:
-            if (ItemBattleEffects(battler, 0, holdEffect, IsOrbsActivation))
-                effect = TRUE;
-            break;
-        case HOLD_EFFECT_WHITE_HERB:
-            if (ItemBattleEffects(battler, 0, holdEffect, IsWhiteHerbEndTurnActivation))
-                effect = TRUE;
-            break;
-        default:
-            break;
-        }
+        if (ItemBattleEffects(battler, 0, holdEffect, IsOnStatusChangeActivation)
+         || ItemBattleEffects(battler, 0, holdEffect, IsOrbsActivation)
+         || ItemBattleEffects(battler, 0, holdEffect, IsWhiteHerbEndTurnActivation))
+            effect = TRUE;
+
+        if (effect)
+            return TRUE;
+
         gBattleStruct->eventState.endTurnBlock = 0;
         gBattleStruct->eventState.endTurnBattler++;
         break;

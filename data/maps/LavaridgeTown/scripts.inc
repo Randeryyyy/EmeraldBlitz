@@ -116,6 +116,7 @@ LavaridgeTown_EventScript_RivalGiveGoGoggles::
 	waitmovement 0
 	setvar VAR_LAVARIDGE_TOWN_STATE, 2
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	forcesave
 	releaseall
 	end
 

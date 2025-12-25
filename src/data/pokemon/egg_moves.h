@@ -2859,7 +2859,7 @@ static const u16 sBlitzleEggMoveLearnset[] = {
 
 #if P_FAMILY_ROGGENROLA
 static const u16 sRoggenrolaEggMoveLearnset[] = {
-    MOVE_CURSE,
+    MOVE_HEAVY_SLAM,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_ROGGENROLA

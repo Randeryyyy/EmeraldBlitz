@@ -1189,7 +1189,7 @@ bool32 EmergencyExitCanBeTriggered(u32 battler)
     if (IsBattlerAlive(battler)
      && HadMoreThanQuarterHpNowDoesnt(battler)
      && (CanBattlerSwitch(battler) || !(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
-     && !(gBattleTypeFlags & BATTLE_TYPE_ARENA)
+     //&& !(gBattleTypeFlags & BATTLE_TYPE_ARENA)
      && gBattleMons[battler].volatiles.semiInvulnerable != STATE_SKY_DROP)
         return TRUE;
 

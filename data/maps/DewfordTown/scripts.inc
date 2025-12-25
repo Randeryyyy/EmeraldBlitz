@@ -86,8 +86,9 @@ DewfordTown_EventScript_WalkDown::
 	setvar VAR_DEWFORD_TOWN_STATE, 0
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkLeft
 	waitmovement 0
-	releaseall
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	forcesave
+	releaseall
 	end
 
 DewfordTown_EventScript_Briney::

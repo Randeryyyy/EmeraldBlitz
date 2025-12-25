@@ -5936,8 +5936,7 @@ bool32 HasRelearnerLevelUpMoves(struct Pokemon *mon)
         {
             if (learnset[i].level > level)
                 break;
-
-            if (!DoesMonHaveMove(learnedMoves, learnset[i].move))
+            if (learnset[i].move != MOVE_SKETCH && !DoesMonHaveMove(learnedMoves, learnset[i].move))
                 return TRUE;
         }
 

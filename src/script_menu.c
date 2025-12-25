@@ -694,7 +694,7 @@ void Task_ExitGiftMenu(u8 taskId)
             RemoveScrollIndicatorArrowPair(taskData[6]);
 
         LoadWordFromTwoHalfwords((u16 *)&taskData[3], (u32 *)&items);
-        //FreeListMenuItems(items, taskData[5]);
+        Free(items);
         TRY_FREE_AND_SET_NULL(sDynamicMenuEventScratchPad);
         DestroyListMenuTask(taskData[0], NULL, NULL);
         ClearStdWindowAndFrame(taskData[2], TRUE);
@@ -1225,8 +1225,11 @@ static void Task_HandleScrollingMultichoiceInput(u8 taskId)
                 sDynamicListMenuEventCollections[sDynamicMenuEventId].OnDestroy(&eventArgs);
             }
             sDynamicMenuEventId = DYN_MULTICHOICE_CB_NONE;
+        
             if (gTasks[taskId].data[5] > gTasks[taskId].data[7])
+            {
                 RemoveScrollIndicatorArrowPair(gTasks[taskId].data[6]);
+            }
             LoadWordFromTwoHalfwords((u16*) &gTasks[taskId].data[3], (u32* )(&items));
             FreeListMenuItems(items, gTasks[taskId].data[5]);
             TRY_FREE_AND_SET_NULL(sDynamicMenuEventScratchPad);

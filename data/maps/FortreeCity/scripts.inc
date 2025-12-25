@@ -88,6 +88,7 @@ FortreeCity_EventScript_WalkDown::
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkRight
 	waitmovement 0
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	forcesave
 	releaseall
 	end
 

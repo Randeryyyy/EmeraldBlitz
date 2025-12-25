@@ -239,7 +239,7 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
     .tilemapLeft = 1,
     .tilemapTop = 1,
     .width = 14,
-    .height = 10,
+    .height = 12,
     .paletteNum = 15,
     .baseBlock = 8
 };
@@ -995,7 +995,7 @@ static void HideSaveInfoWindow(void)
 
 static void SaveStartTimer(void)
 {
-    sSaveDialogTimer = 60;
+    sSaveDialogTimer = 15;
 }
 
 static bool8 SaveSuccesTimer(void)
@@ -1096,7 +1096,7 @@ static u8 SaveFileExistsCallback(void)
     {
         ShowSaveMessage(gText_AlreadySavedFile, SaveConfirmOverwriteCallback);
     }
-
+    
     return SAVE_IN_PROGRESS;
 }
 
@@ -1426,15 +1426,15 @@ static void ShowSaveInfoWindow(void)
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
 
-    if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
-    {
+    //if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
+    //{
         // Print Pokédex count
-        yOffset += 16;
-        AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-        BufferSaveMenuText(SAVE_MENU_CAUGHT, gStringVar4, color);
-        xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
-        AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
-    }
+    //    yOffset += 16;
+    //    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+    //   BufferSaveMenuText(SAVE_MENU_CAUGHT, gStringVar4, color);
+    //    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
+    //    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
+    //}
 
     // Print play time
     yOffset += 16;
@@ -1442,6 +1442,30 @@ static void ShowSaveInfoWindow(void)
     BufferSaveMenuText(SAVE_MENU_PLAY_TIME, gStringVar4, color);
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
+
+    // Print Faint Counter
+    yOffset += 16;
+    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingFaints, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+    u8 textColor[] = {1, 4, 3}; // bg, fg, shadow. Default to red.
+    u32 faintCount = gSaveBlock1Ptr->playerFaintCounter;
+
+    if (faintCount == 0)
+    {
+        textColor[1] = TEXT_COLOR_GREEN;
+    }
+    else if (faintCount <= 2)
+    {
+        textColor[1] = TEXT_COLOR_BLUE;
+    }
+    else if (faintCount <= 4)
+    {
+        textColor[1] = TEXT_COLOR_LIGHT_RED; // This will appear as yellow.
+    }
+    // else textColor[1] remains TEXT_COLOR_RED (4)
+
+    ConvertIntToDecimalStringN(gStringVar4, faintCount, STR_CONV_MODE_LEFT_ALIGN, 10);
+    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
+    AddTextPrinterParameterized3(sSaveInfoWindowId, FONT_NORMAL, xOffset, yOffset, textColor, TEXT_SKIP_DRAW, gStringVar4);
 
     CopyWindowToVram(sSaveInfoWindowId, COPYWIN_GFX);
 }
