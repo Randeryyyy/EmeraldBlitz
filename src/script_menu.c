@@ -694,7 +694,7 @@ void Task_ExitGiftMenu(u8 taskId)
             RemoveScrollIndicatorArrowPair(taskData[6]);
 
         LoadWordFromTwoHalfwords((u16 *)&taskData[3], (u32 *)&items);
-        FreeListMenuItems(items, taskData[5]);
+        //FreeListMenuItems(items, taskData[5]);
         TRY_FREE_AND_SET_NULL(sDynamicMenuEventScratchPad);
         DestroyListMenuTask(taskData[0], NULL, NULL);
         ClearStdWindowAndFrame(taskData[2], TRUE);

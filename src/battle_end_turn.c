@@ -1369,7 +1369,7 @@ static bool32 HandleEndTurnMegaEvolution(u32 battler)
 {
     bool32 effect = FALSE;
 
-    gBattleStruct->turnEffectsBattlerId++;
+    gBattleStruct->eventState.endTurnBattler++;
 
     if (GetActiveGimmick(battler) == GIMMICK_MEGA && gBattleStruct->mega.megaTurns[battler] == gBattleTurnCounter)
     {

@@ -818,7 +818,7 @@ static void Task_SetClock_HandleInput(u8 taskId)
             {
                 gTasks[taskId].tHours = (gTasks[taskId].tHours + 12) % 24;
                 PlaySE(SE_SELECT);
-                UpdateClockPeriod(taskId, MOVE_FORWARD); // Direction doesn't matter here, just need to update period
+                UpdateClockPeriod(taskId, CLOCK_MOVE_FORWARD); // Direction doesn't matter here, just need to update period
             }
 
             if (gTasks[taskId].tMoveDir != MOVE_NONE)

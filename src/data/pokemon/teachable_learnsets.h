@@ -6404,7 +6404,7 @@ static const u16 sStaryuTeachableLearnset[] = {
 static const u16 sStarmieTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BLIZZARD,
-    MOVE_BULK_UP,
+    //MOVE_BULK_UP,
     MOVE_DAZZLING_GLEAM,
     MOVE_DIVE,
     MOVE_DOUBLE_EDGE,
@@ -14394,7 +14394,7 @@ static const u16 sSableyeTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BODY_SLAM,
     MOVE_BRICK_BREAK,
-    MOVE_BULK_UP,
+    //MOVE_BULK_UP,
     MOVE_CALM_MIND,
     MOVE_COUNTER,
     MOVE_CUT,

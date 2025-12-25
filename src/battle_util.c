@@ -3386,6 +3386,13 @@ static inline uq4_12_t GetSupremeOverlordModifier(u32 battler)
     return UQ_4_12(1.0) + (PercentToUQ4_12(gBattleStruct->supremeOverlordCounter[battler] * 10));
 }
 
+bool32 HadMoreThanQuarterHpNowDoesnt(u32 battler)
+{
+    // Had more than half of hp before, now has less
+    return gBattleStruct->battlerState[battler].wasAboveQuarterHp
+        && gBattleMons[battler].hp <= gBattleMons[battler].maxHP / 4;
+}
+
 bool32 HadMoreThanHalfHpNowDoesnt(u32 battler)
 {
     // Had more than half of hp before, now has less
@@ -5362,11 +5369,11 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
              && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
              && IsBattlerAlive(gBattlerTarget)
              && IsBattlerTurnDamaged(gBattlerTarget) // Ensure the attacking Pokémon actually hit the target
-             && IsMoveMakingContact(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker, TRUE), gCurrentMove)) // Ensure the move makes contact
+             && IsMoveMakingContact(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker), gCurrentMove)) // Ensure the move makes contact
             {
                 if (!IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GRASS)
                  && !gBattleMons[gBattlerAttacker].volatiles.leechSeed
-                 && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES
+                 //&& GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES
                  && GetBattlerAbility(gBattlerAttacker) != ABILITY_OVERCOAT)
                 {
                 SWAP(gBattlerAttacker, gBattlerTarget, i);

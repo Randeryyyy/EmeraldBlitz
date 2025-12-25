@@ -5688,20 +5688,11 @@ static void QuickSortMoves(u16 *moves, s32 left, s32 right)
 
         if (i <= j)
         {
-            if (learnset[i].move == MOVE_SKETCH)
-                continue;
-
-            for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != learnset[i].move; j++)
-                ;
-
-            if (j == MAX_MON_MOVES)
-            {
-                for (k = 0; k < numMoves && moves[k] != learnset[i].move; k++)
-                    ;
-
-                if (k == numMoves)
-                    moves[numMoves++] = learnset[i].move;
-            }
+            u16 temp = moves[i];
+            moves[i] = moves[j];
+            moves[j] = temp;
+            i++;
+            j--;
         }
     }
 
