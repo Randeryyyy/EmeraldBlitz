@@ -82,13 +82,12 @@ FortreeCity_OnFrame:
 
 FortreeCity_EventScript_WalkDown::
 	lockall
-	setflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_STEP_DOWN, 0
 	setvar VAR_FORTREE_CITY_STATE, 0
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkRight
 	waitmovement 0
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	forcesave
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
 
@@ -238,4 +237,3 @@ FortreeCity_Text_GymSign:
 	.string "LEADER: WINONA\p"
 	.string "“The bird user taking flight into\n"
 	.string "the world.”$"
-

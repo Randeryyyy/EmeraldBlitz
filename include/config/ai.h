@@ -19,7 +19,7 @@
 #define STAY_IN_ABSORBING_PERCENTAGE                                66  // Chance to stay in if outgoing mon has super effective move against player, will prevent switching out for an absorber with this likelihood
 #define SHOULD_SWITCH_HASBADODDS_PERCENTAGE                         0
 #define SHOULD_SWITCH_ENCORE_STATUS_PERCENTAGE                      0
-#define SHOULD_SWITCH_ENCORE_DAMAGE_PERCENTAGE                      50
+#define SHOULD_SWITCH_ENCORE_DAMAGE_PERCENTAGE                      0
 #define SHOULD_SWITCH_CHOICE_LOCKED_PERCENTAGE                      100 // Only if locked into status move
 #define SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO_PERCENTAGE           50 // Repurposed, requires Leech Seed and a stat to be -1
 #define SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS_PERCENTAGE    50

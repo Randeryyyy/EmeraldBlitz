@@ -22,6 +22,7 @@
 #include "link.h"
 #include "load_save.h"
 #include "main.h"
+#include "money.h"
 #include "menu.h"
 #include "new_game.h"
 #include "option_menu.h"
@@ -49,6 +50,8 @@
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+
+extern void AddTextPrinterParameterized3(u8 windowId, u8 fontId, u8 x, u8 y, const u8 *color, s8 speed, const u8 *str);
 
 // Menu actions
 enum
@@ -239,7 +242,7 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
     .tilemapLeft = 1,
     .tilemapTop = 1,
     .width = 14,
-    .height = 12,
+    .height = 8,
     .paletteNum = 15,
     .baseBlock = 8
 };
@@ -1000,19 +1003,7 @@ static void SaveStartTimer(void)
 
 static bool8 SaveSuccesTimer(void)
 {
-    sSaveDialogTimer--;
-
-    if (JOY_HELD(A_BUTTON))
-    {
-        PlaySE(SE_SELECT);
-        return TRUE;
-    }
-    if (sSaveDialogTimer == 0)
-    {
-        return TRUE;
-    }
-
-    return FALSE;
+    return TRUE;
 }
 
 static bool8 SaveErrorTimer(void)
@@ -1155,7 +1146,10 @@ static u8 SaveDoSaveCallback(void)
     }
 
     if (saveStatus == SAVE_STATUS_OK)
+    {
+        PlaySE(SE_SAVE);
         ShowSaveMessage(gText_PlayerSavedGame, SaveSuccessCallback);
+    }
     else
         ShowSaveMessage(gText_SaveError, SaveErrorCallback);
 
@@ -1167,7 +1161,6 @@ static u8 SaveSuccessCallback(void)
 {
     if (!IsTextPrinterActive(0))
     {
-        PlaySE(SE_SAVE);
         sSaveDialogCallback = SaveReturnSuccessCallback;
     }
 
@@ -1391,12 +1384,9 @@ static void ShowSaveInfoWindow(void)
     u32 xOffset;
     u32 yOffset;
 
-    if (!FlagGet(FLAG_SYS_POKEDEX_GET))
-    {
-        saveInfoWindow.height -= 2;
-    }
-
+    // The Pokedex display is removed, so we have space for other info.
     sSaveInfoWindowId = AddWindow(&saveInfoWindow);
+    LoadMessageBoxAndFrameGfx(sSaveInfoWindowId, FALSE);
     DrawStdWindowFrame(sSaveInfoWindowId, FALSE);
 
     gender = gSaveBlock2Ptr->playerGender;
@@ -1408,23 +1398,68 @@ static void ShowSaveInfoWindow(void)
     }
 
     // Print region name
-    yOffset = 1;
-    BufferSaveMenuText(SAVE_MENU_LOCATION, gStringVar4, TEXT_COLOR_GREEN);
-    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+    //yOffset = 1;
+    //BufferSaveMenuText(SAVE_MENU_LOCATION, gStringVar4, TEXT_COLOR_GREEN);
+    //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, 0, yOffset, TEXT_SKIP_DRAW, NULL);
 
     // Print player name
-    yOffset += 16;
-    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPlayer, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    BufferSaveMenuText(SAVE_MENU_NAME, gStringVar4, color);
-    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
-    PrintPlayerNameOnWindow(sSaveInfoWindowId, gStringVar4, xOffset, yOffset);
+    //yOffset += 16;
+    //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPlayer, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+    //u8 playerNameColor[] = {TEXT_COLOR_WHITE, TEXT_COLOR_BLUE, TEXT_COLOR_LIGHT_GRAY};
+    //xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gSaveBlock2Ptr->playerName, 0x70);
+    //AddTextPrinterParameterized3(sSaveInfoWindowId, FONT_NORMAL, xOffset, yOffset, playerNameColor, TEXT_SKIP_DRAW, gSaveBlock2Ptr->playerName);
 
     // Print badge count
-    yOffset += 16;
+    yOffset = 1;
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingBadges, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    BufferSaveMenuText(SAVE_MENU_BADGES, gStringVar4, color);
-    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
-    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
+    // Build and print badge string
+    static const u8 sText_X[] = _("{CIRCLE_DOT}");
+    static const u8 sText_O[] = _("{CIRCLE_HOLLOW}");
+    u32 totalWidth = 0;
+    int i;
+
+    for (i = 0; i < 8; i++)
+    {
+        if (FlagGet(FLAG_BADGE01_GET + i))
+            totalWidth += GetStringWidth(FONT_NORMAL, sText_X, 0);
+        else
+            totalWidth += GetStringWidth(FONT_NORMAL, sText_O, 0);
+    }
+
+    u32 currentX = 0x70 - totalWidth;
+
+    for (i = 0; i < 8; i++) // NUM_BADGES
+    {
+        u8 textColor[] = {TEXT_COLOR_WHITE, 0, TEXT_COLOR_LIGHT_GRAY}; // bg, fg, shadow
+        const u8 *str;
+
+        if (FlagGet(FLAG_BADGE01_GET + i))
+        {
+            str = sText_X;
+            textColor[1] = TEXT_COLOR_BLUE;
+        }
+        else
+        {
+            str = sText_O;
+            textColor[1] = TEXT_COLOR_RED;
+        }
+        AddTextPrinterParameterized3(sSaveInfoWindowId, FONT_NORMAL, currentX, yOffset, textColor, TEXT_SKIP_DRAW, str);
+        currentX += GetStringWidth(FONT_NORMAL, str, 0);
+    }
+
+// Print Money
+    yOffset += 16;
+    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_TrainerCardMoney, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+    u8 moneyColor[] = {TEXT_COLOR_WHITE, TEXT_COLOR_RED, TEXT_COLOR_LIGHT_GRAY};
+    u8 moneyString[20];
+    u8 *ptr;
+
+    ConvertIntToDecimalStringN(gStringVar1, GetMoney(&gSaveBlock1Ptr->money), STR_CONV_MODE_LEFT_ALIGN, 6);
+    StringExpandPlaceholders(moneyString, gText_PokedollarVar1);
+    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, moneyString, 0x70);
+    AddTextPrinterParameterized3(sSaveInfoWindowId, FONT_NORMAL, xOffset, yOffset, moneyColor, TEXT_SKIP_DRAW, moneyString);
+
+
 
     //if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
     //{
@@ -1439,9 +1474,15 @@ static void ShowSaveInfoWindow(void)
     // Print play time
     yOffset += 16;
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingTime, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    BufferSaveMenuText(SAVE_MENU_PLAY_TIME, gStringVar4, color);
+
+    u8 *str = gStringVar4;
+    str = ConvertIntToDecimalStringN(str, gSaveBlock2Ptr->playTimeHours, STR_CONV_MODE_LEFT_ALIGN, 3);
+    *str++ = CHAR_COLON;
+    ConvertIntToDecimalStringN(str, gSaveBlock2Ptr->playTimeMinutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+
+    u8 timeColor[] = {TEXT_COLOR_WHITE, color, TEXT_COLOR_LIGHT_GRAY};
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
-    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized3(sSaveInfoWindowId, FONT_NORMAL, xOffset, yOffset, timeColor, TEXT_SKIP_DRAW, gStringVar4);
 
     // Print Faint Counter
     yOffset += 16;

@@ -85,13 +85,12 @@ MossdeepCity_OnFrame:
 
 MossdeepCity_EventScript_WalkDown::
 	lockall
-	setflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_STEP_DOWN, 0
 	setvar VAR_MOSSDEEP_CITY_STATE, 4
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkDown
 	waitmovement 0
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	forcesave
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
 
@@ -512,4 +511,3 @@ MossdeepCity_Text_SootopolisNewGymLeader:
 	.string "LEADER come in.\p"
 	.string "People tell me the new LEADER once\n"
 	.string "mentored WALLACE.$"
-

@@ -1151,6 +1151,7 @@ EventScript_WarpHomeRustboro::
 	setvar VAR_DEVON_CORP_3F_STATE, 1
     setvar VAR_RUSTBORO_LOCKED, 1
     call_if_eq VAR_BADGE_COUNT, 4, Common_EventScript_ReadyPetalburgGymForBattle
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	warp MAP_RUSTBORO_CITY, 27, 20
 	waitstate
 	releaseall
@@ -1163,6 +1164,7 @@ EventScript_WarpHomeDewford::
     setvar VAR_DEWFORD_LOCKED, 1
     setvar VAR_DEWFORD_TOWN_STATE, 2
     call_if_eq VAR_BADGE_COUNT, 4, Common_EventScript_ReadyPetalburgGymForBattle
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	warp MAP_DEWFORD_TOWN, 8, 17
 	waitstate
 	releaseall
@@ -1177,6 +1179,7 @@ EventScript_WarpHomeMauville::
 	setvar VAR_MAUVILLE_CITY_STATE, 2
     setvar VAR_MAUVILLE_LOCKED, 1
     call_if_eq VAR_BADGE_COUNT, 4, Common_EventScript_ReadyPetalburgGymForBattle
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	warp MAP_MAUVILLE_CITY, 8, 6
 	waitstate
 	releaseall
@@ -1190,6 +1193,7 @@ EventScript_WarpHomeLavaridge::
 	setvar VAR_LAVARIDGE_TOWN_STATE, 1
     setvar VAR_LAVARIDGE_LOCKED, 1
    	call_if_eq VAR_BADGE_COUNT, 4, Common_EventScript_ReadyPetalburgGymForBattle
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	warp MAP_LAVARIDGE_TOWN, 5, 15
 	waitstate
 	releaseall
@@ -1203,6 +1207,7 @@ EventScript_WarpHomePetalburg::
     setvar VAR_PETALBURG_LOCKED, 1
 	setvar VAR_PETALBURG_CITY_STATE, 7
 	setvar VAR_STEP_DOWN, 1
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	warp MAP_PETALBURG_CITY, 15, 8
 	waitstate
 	releaseall
@@ -1223,6 +1228,7 @@ EventScript_WarpHomeFortree::
 	giveitem ITEM_HM_FLY
 	setflag FLAG_RECEIVED_HM_FLY
 	msgbox gText_FlygonUniversalFly, MSGBOX_DEFAULT
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	warp MAP_FORTREE_CITY, 22, 11
 	waitstate
 	releaseall
@@ -1234,6 +1240,7 @@ EventScript_WarpHomeMossdeep::
 	call_if_eq VAR_BADGE_COUNT, 8, EventScript_SetEverGrandeVisited
 	setvar VAR_MOSSDEEP_CITY_STATE, 8
     setvar VAR_MOSSDEEP_LOCKED, 1
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	warp MAP_MOSSDEEP_CITY, 38, 9
 	waitstate
 	releaseall
@@ -1245,7 +1252,7 @@ EventScript_WarpHomeSootopolis::
 	call_if_eq VAR_BADGE_COUNT, 8, EventScript_SetEverGrandeVisited
 	setvar VAR_SOOTOPOLIS_CITY_STATE, 7
     setvar VAR_SOOTOPOLIS_LOCKED, 1
-	@ giveitem ITEM_MAX_REVIVE
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	warp MAP_SOOTOPOLIS_CITY, 31, 32
 	waitstate
 	releaseall

@@ -87,13 +87,12 @@ MauvilleCity_OnFrame:
 
 MauvilleCity_EventScript_WalkDown::
 	lockall
-	setflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_STEP_DOWN, 0
 	setvar VAR_MAUVILLE_CITY_STATE, 0
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkDown
 	waitmovement 0
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	forcesave
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
 

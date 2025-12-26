@@ -84,6 +84,7 @@ static const u16 sGiftPokemonList[] = {
     SPECIES_NUMEL, 
     SPECIES_ODDISH, 
     SPECIES_PANCHAM,
+    SPECIES_PANSEAR,
     //SPECIES_PHANPY,
     SPECIES_PIKIPEK, 
     SPECIES_POLIWAG, 

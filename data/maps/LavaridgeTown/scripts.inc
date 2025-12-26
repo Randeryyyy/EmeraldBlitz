@@ -110,13 +110,12 @@ LavaridgeTown_OnFrame:
 	.2byte 0
 
 LavaridgeTown_EventScript_RivalGiveGoGoggles::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_STEP_DOWN, 0
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkRight
 	waitmovement 0
 	setvar VAR_LAVARIDGE_TOWN_STATE, 2
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	forcesave
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
 
@@ -470,4 +469,3 @@ LavaridgeTown_Text_GymSign:
 LavaridgeTown_Text_HerbShopSign:
 	.string "POKéMON HERB SHOP\n"
 	.string "“Bitter taste--better cure!”$"
-

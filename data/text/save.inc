@@ -11,7 +11,7 @@ gText_SavingDontTurnOff::
 	.string "DON'T TURN OFF THE POWER.$"
 
 gText_PlayerSavedGame::
-	.string "{PLAYER} saved the game.$"
+	.string "{PLAYER} saved the game.{PAUSE_UNTIL_PRESS}$"
 
 gText_DifferentSaveFile::
 	.string "WARNING!\p"

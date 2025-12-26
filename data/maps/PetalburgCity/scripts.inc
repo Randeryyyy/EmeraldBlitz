@@ -100,7 +100,6 @@ PetalburgCity_OnFrame:
 
 PetalburgCity_EventScript_WalkDown::
 	lockall
-	setflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_STEP_DOWN, 0
 	setvar VAR_PETALBURG_CITY_STATE, 5
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkDown
@@ -111,8 +110,8 @@ PetalburgCity_EventScript_WalkDown::
 	waitfanfare
 	setflag FLAG_RECEIVED_HM_SURF
 	closemessage
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	forcesave
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
 

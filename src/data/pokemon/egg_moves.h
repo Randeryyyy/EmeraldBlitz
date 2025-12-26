@@ -2776,19 +2776,7 @@ static const u16 sPansageEggMoveLearnset[] = {
 
 #if P_FAMILY_PANSEAR
 static const u16 sPansearEggMoveLearnset[] = {
-    MOVE_COVET,
-    MOVE_LOW_KICK,
-    MOVE_TICKLE,
-    MOVE_NASTY_PLOT,
-    MOVE_ROLE_PLAY,
-    MOVE_ASTONISH,
-    MOVE_SLEEP_TALK,
-    MOVE_FIRE_SPIN,
-    MOVE_FIRE_PUNCH,
     MOVE_HEAT_WAVE,
-    MOVE_DISARMING_VOICE,
-    MOVE_BELCH,
-    MOVE_FLARE_BLITZ,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_PANSEAR
