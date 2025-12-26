@@ -2,6 +2,7 @@
 #include "play_time.h"
 #include "fake_rtc.h"
 #include "field_player_avatar.h"
+#include "event_data.h"
 
 enum
 {
@@ -37,6 +38,10 @@ void PlayTimeCounter_Stop(void)
 
 void PlayTimeCounter_Update(void)
 {
+
+    if (!FlagGet(FLAG_RECEIVED_BIKE))
+        return;
+
     if (sPlayTimeCounterState != RUNNING)
         return;
 

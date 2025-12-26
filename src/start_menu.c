@@ -1392,11 +1392,6 @@ static void ShowSaveInfoWindow(void)
     gender = gSaveBlock2Ptr->playerGender;
     color = TEXT_COLOR_RED;  // Red when female, blue when male.
 
-    if (gender == MALE)
-    {
-        color = TEXT_COLOR_BLUE;
-    }
-
     // Print region name
     //yOffset = 1;
     //BufferSaveMenuText(SAVE_MENU_LOCATION, gStringVar4, TEXT_COLOR_GREEN);
@@ -1452,7 +1447,6 @@ static void ShowSaveInfoWindow(void)
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_TrainerCardMoney, 0, yOffset, TEXT_SKIP_DRAW, NULL);
     u8 moneyColor[] = {TEXT_COLOR_WHITE, TEXT_COLOR_RED, TEXT_COLOR_LIGHT_GRAY};
     u8 moneyString[20];
-    u8 *ptr;
 
     ConvertIntToDecimalStringN(gStringVar1, GetMoney(&gSaveBlock1Ptr->money), STR_CONV_MODE_LEFT_ALIGN, 6);
     StringExpandPlaceholders(moneyString, gText_PokedollarVar1);

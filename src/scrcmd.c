@@ -1844,7 +1844,12 @@ bool8 ScrCmd_dynmultichoice(struct ScriptContext *ctx)
         for (i = 0; i < argc; ++i)
         {
             struct ListMenuItem *currentItem = MultichoiceDynamic_PeekElementAt(i);
-            items[i] = *currentItem;
+            u8 *nameBuffer = Alloc(100);
+
+            StringExpandPlaceholders(nameBuffer, currentItem->name);
+            items[i].name = nameBuffer;
+            items[i].id = currentItem->id;
+
             if (currentItem->id == initialSelected)
                 initialRow = i;
         }

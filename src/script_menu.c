@@ -607,17 +607,17 @@ static void GiftMonMenu_ItemPrintFunc(u8 windowId, u32 speciesId, u8 y)
 
     if (sGiftMonIsTaken[speciesId])
     {
-        colors = sGiftMenuTextColors[1];
+        colors = sGiftMenuTextColors[1]; // Chosen (green)
         stringToDraw = name;
     }
     else
     {
-        colors = sGiftMenuTextColors[0];
+        colors = sGiftMenuTextColors[0]; // Normal (grey)
         stringToDraw = name;
     }
 
     // Clear the area before drawing to prevent overwriting issues.
-    FillWindowPixelRect(windowId, PIXEL_FILL(1), 8, y, GetStringWidth(FONT_NORMAL, stringToDraw, 0), 16);
+    FillWindowPixelRect(windowId, PIXEL_FILL(1), 8, y, GetWindowAttribute(windowId, WINDOW_WIDTH) * 8 - 8, 16);
     AddTextPrinterParameterized4(windowId, FONT_NORMAL, 8, y, 0, 0, colors, TEXT_SKIP_DRAW, stringToDraw);
 }
 
@@ -694,7 +694,7 @@ void Task_ExitGiftMenu(u8 taskId)
             RemoveScrollIndicatorArrowPair(taskData[6]);
 
         LoadWordFromTwoHalfwords((u16 *)&taskData[3], (u32 *)&items);
-        Free(items);
+        FreeListMenuItems(items, gTasks[taskId].data[5]);
         TRY_FREE_AND_SET_NULL(sDynamicMenuEventScratchPad);
         DestroyListMenuTask(taskData[0], NULL, NULL);
         ClearStdWindowAndFrame(taskData[2], TRUE);
@@ -899,15 +899,22 @@ static void DrawMultichoiceMenuDynamic(u8 left, u8 top, u8 argc, struct ListMenu
     u8 taskId;
     u32 windowHeight;
     u8 windowId;
-    
-    for (i = 0; i < argc; ++i)
-    {
-        if (sIsGiftMonMenu)
-        {
-            if (items[i].id != GIFT_MON_FINISH_ID && items[i].id != SPECIES_EGG && items[i].id != GIFT_MON_RANDOM_ID)
-            items[i].name = gText_EmptyString7;
+
+for (i = 0; i < argc; ++i) {
+    if (sIsGiftMonMenu) {
+        if (items[i].id != GIFT_MON_FINISH_ID && items[i].id != SPECIES_EGG && items[i].id != GIFT_MON_RANDOM_ID) {
+            // 1. Free the garbage/old pointer first to prevent memory leaks
+            Free((void *)items[i].name); 
+            
+            // 2. Allocate exactly 1 byte for a null terminator '\0'
+            u8 *emptyStr = Alloc(1);
+            emptyStr[0] = EOS; // EOS is the Pokémon engine's 'End Of String' (0xFF)
+            
+            // 3. Assign it to the name
+            items[i].name = emptyStr;
         }
-     }  
+    }
+}
     for (i = 0; i < argc; ++i) 
     {
     width = DisplayTextAndGetWidth(items[i].name, width);
