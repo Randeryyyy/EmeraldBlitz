@@ -543,6 +543,7 @@ SlateportCity_EventScript_DollClerk::
 SlateportCity_PokemartDecor_Basic:
 	.2byte ITEM_ABILITY_CAPSULE
 	.2byte ITEM_ABILITY_PATCH
+	.2byte ITEM_SERIOUS_MINT
 	pokemartlistend
 
 SlateportCity_PokemartDecor_Badge2::
@@ -556,6 +557,7 @@ SlateportCity_Pokemart_Badge2Items:
 	.2byte ITEM_WHIPPED_DREAM
 	.2byte ITEM_ABILITY_CAPSULE
 	.2byte ITEM_ABILITY_PATCH
+	.2byte ITEM_SERIOUS_MINT
 	pokemartlistend
 
 SlateportCity_PokemartDecor_Badge3::
@@ -569,6 +571,7 @@ SlateportCity_Pokemart_Badge3Items:
 	.2byte ITEM_WHIPPED_DREAM
 	.2byte ITEM_ABILITY_CAPSULE
 	.2byte ITEM_ABILITY_PATCH
+	.2byte ITEM_SERIOUS_MINT
 	pokemartlistend
 
 SlateportCity_PokemartDecor_Badge4::
@@ -596,6 +599,7 @@ SlateportCity_Pokemart_Badge4Items:
 	.2byte ITEM_WHIPPED_DREAM
 	.2byte ITEM_ABILITY_CAPSULE
 	.2byte ITEM_ABILITY_PATCH
+	.2byte ITEM_SERIOUS_MINT
 	pokemartlistend
 
 SlateportCity_PokemartDecor_Badge5::
@@ -623,6 +627,7 @@ SlateportCity_Pokemart_Badge5Items:
 	.2byte ITEM_WHIPPED_DREAM
 	.2byte ITEM_ABILITY_CAPSULE
 	.2byte ITEM_ABILITY_PATCH
+	.2byte ITEM_SERIOUS_MINT
 	pokemartlistend
 
 SlateportCity_PokemartDecor_Badge6::
@@ -651,6 +656,7 @@ SlateportCity_Pokemart_Badge6Items:
 	.2byte ITEM_WHIPPED_DREAM
 	.2byte ITEM_ABILITY_CAPSULE
 	.2byte ITEM_ABILITY_PATCH
+	.2byte ITEM_SERIOUS_MINT
 	pokemartlistend
 
 SlateportCity_EventScript_ComeBackWithSecretPower::

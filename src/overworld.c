@@ -74,6 +74,7 @@
 #include "constants/event_objects.h"
 #include "constants/layouts.h"
 #include "constants/region_map_sections.h"
+#include "constants/maps.h"
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
@@ -714,17 +715,12 @@ void SetWarpDestinationToHealLocation(u8 healLocationId)
 
 static bool32 IsWhiteoutCutscene(void)
 {
-    if (OW_WHITEOUT_CUTSCENE < GEN_4)
-        return FALSE;
-    return GetHealNpcLocalId(GetHealLocationIndexByWarpData(&gSaveBlock1Ptr->lastHealLocation)) > 0;
+    return FALSE;
 }
 
 void SetWarpDestinationToLastHealLocation(void)
 {
-    if (IsWhiteoutCutscene())
-        SetWhiteoutRespawnWarpAndHealerNPC(&sWarpDestination);
-    else
-        sWarpDestination = gSaveBlock1Ptr->lastHealLocation;
+    SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
 }
 
 void SetLastHealLocationWarp(u8 healLocationId)
@@ -2160,6 +2156,12 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         (*state)++;
         break;
     case 1:
+        if (gMain.callback2 == CB2_WhiteOut)
+        {
+        gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_SLOW;
+            if (B_FLAG_FOLLOWERS_DISABLED != 0)
+                FlagSet(B_FLAG_FOLLOWERS_DISABLED);
+        }
         ResetMirageTowerAndSaveBlockPtrs();
         ResetScreenForMapLoad();
         (*state)++;
