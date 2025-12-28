@@ -143,7 +143,7 @@ static void TryActivateStorksBlessing(void)
     if (gBattleOutcome == B_OUTCOME_WON && (gBattleTypeFlags & BATTLE_TYPE_TRAINER))
     {
         enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
-        if (trainerClass != TRAINER_CLASS_LEADER || trainerClass == TRAINER_CLASS_ELITE_FOUR || trainerClass == TRAINER_CLASS_PALACE_MAVEN)
+        if (trainerClass == TRAINER_CLASS_LEADER || trainerClass == TRAINER_CLASS_ELITE_FOUR || trainerClass == TRAINER_CLASS_PALACE_MAVEN)
         {
             // 2. A Pokémon with "Stork's Blessing" is alive
             for (i = 0; i < PARTY_SIZE; i++)

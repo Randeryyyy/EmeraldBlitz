@@ -1231,13 +1231,13 @@
 #define FLAG_FOUR_BADGES                                            0x493 // Do we have 4 badges? (Used for move tutors)
 #define FLAG_NUZLOCKE	                                            0x494 // Are we nuzlocking?
 #define FLAG_RECEIVED_NECTAR                                        0x495 // Did you get Oricorio's nectar?
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
+#define FLAG_HIDE_TRUCK_KOMMOO                                      0x496 // Unused Flag
+#define FLAG_HIDE_TRUCK_SHUPPET                                     0x497 // Unused Flag
+#define FLAG_HIDE_TRUCK_JELLICENT                                   0x498 // Unused Flag
+#define FLAG_HIDE_TRUCK_LOUDRED                                     0x499
+#define FLAG_HIDE_TRUCK_CASTFORM                                    0x49A // Unused Flag
+#define FLAG_HIDE_TRUCK_EXEGGUTOR                                   0x49B
+#define FLAG_HIDE_TRUCK_MIMIKYU                                           0x49C // Unused Flag
 #define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
