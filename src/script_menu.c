@@ -110,7 +110,7 @@ static EWRAM_DATA bool8 sGiftMonIsTaken[SPECIES_EGG + 1] = {0};
 static EWRAM_DATA bool8 sIsGiftMonMenu = FALSE; // TODO: Make this a part of the dynamic list menu args
 static u8 sLilycoveSSTidalSelections[SSTIDAL_SELECTION_COUNT] = {0}; // TODO: Make this a part of the dynamic list menu args
 
-static const u16 sGiftEggPool[] =
+const u16 sGiftEggPool[] =
 {
     SPECIES_PICHU,
     SPECIES_CLEFFA,

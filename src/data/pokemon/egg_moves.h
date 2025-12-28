@@ -4654,11 +4654,7 @@ static const u16 sWiglettEggMoveLearnset[] = {
 
 #if P_FAMILY_BOMBIRDIER
 static const u16 sBombirdierEggMoveLearnset[] = {
-    MOVE_FEATHER_DANCE,
-    MOVE_POWER_TRIP,
     MOVE_ROOST,
-    MOVE_SKY_ATTACK,
-    MOVE_SUCKER_PUNCH,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_BOMBIRDIER

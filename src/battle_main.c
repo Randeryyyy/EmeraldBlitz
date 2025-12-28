@@ -19,6 +19,7 @@
 #include "berry.h"
 #include "bg.h"
 #include "data.h"
+#include "daycare.h"
 #include "debug.h"
 #include "decompress.h"
 #include "dexnav.h"
@@ -74,6 +75,7 @@
 #include "constants/songs.h"
 #include "constants/trainer_slide.h"
 #include "constants/trainers.h"
+#include "constants/region_map_sections.h"
 #include "constants/weather.h"
 #include "cable_club.h"
 #include "test/test_runner_battle.h"
@@ -106,6 +108,61 @@ static void TurnValuesCleanUp(bool8 var0);
 static void SpriteCB_BounceEffect(struct Sprite *sprite);
 static void BattleStartClearSetData(void);
 static void DoBattleIntro(void);
+
+extern const u16 sGiftEggPool[];
+
+static void GiveStorkEgg(void)
+{
+    u16 species = sGiftEggPool[Random() % 18];
+    struct Pokemon mon;
+    u8 metLocation = METLOC_SPECIAL_EGG;
+    u8 level = 5;
+    bool8 ribbon = TRUE;
+    u8 isEgg = TRUE;
+    u16 metLevel = 0;
+    u8 friendship;
+
+    CreateMon(&mon, species, level, 32, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    SetMonData(&mon, MON_DATA_IS_EGG, &isEgg);
+    SetMonData(&mon, MON_DATA_MET_LEVEL, &metLevel);
+    SetMonData(&mon, MON_DATA_MET_LOCATION, &metLocation);
+    friendship = 1;
+    SetMonData(&mon, MON_DATA_FRIENDSHIP, &friendship);
+    // Using a ribbon as a flag to prevent leveling up.
+    SetMonData(&mon, MON_DATA_SKY_RIBBON, &ribbon);
+
+    GiveMonToPlayer(&mon);
+}
+
+static void TryActivateStorksBlessing(void)
+{
+    u32 i;
+    bool8 hasStork = FALSE;
+
+    // 1. Battle was won against a gym leader or E4
+    if (gBattleOutcome == B_OUTCOME_WON && (gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+    {
+        enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
+        if (trainerClass != TRAINER_CLASS_LEADER || trainerClass == TRAINER_CLASS_ELITE_FOUR || trainerClass == TRAINER_CLASS_PALACE_MAVEN)
+        {
+            // 2. A Pokémon with "Stork's Blessing" is alive
+            for (i = 0; i < PARTY_SIZE; i++)
+            {
+                if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) != SPECIES_NONE
+                    && GetMonData(&gPlayerParty[i], MON_DATA_HP, NULL) != 0
+                    && GetMonAbility(&gPlayerParty[i]) == ABILITY_STORKS_BLESSING)
+                {
+                    hasStork = TRUE;
+                    break;
+                }
+            }
+
+            if (hasStork && CalculatePlayerPartyCount() < PARTY_SIZE)
+                GiveStorkEgg();
+        }
+    }
+}
+
 static void TryDoEventsBeforeFirstTurn(void);
 static void HandleTurnActionSelectionState(void);
 static void RunTurnActionsFunctions(void);
@@ -128,6 +185,8 @@ static void HandleEndTurn_FinishBattle(void);
 static u32 Crc32B (const u8 *data, u32 size);
 static u32 GeneratePartyHash(const struct Trainer *trainer, u32 i);
 static s32 Factorial(s32);
+
+u32 GetGiftEggPoolSize(void);
 
 EWRAM_DATA u16 gBattle_BG0_X = 0;
 EWRAM_DATA u16 gBattle_BG0_Y = 0;
@@ -5657,6 +5716,8 @@ static void HandleEndTurn_FinishBattle(void)
             TryEvolveFaintedCorsola();
             gBattleMons[i].species = SPECIES_NONE;
         }
+        TryActivateStorksBlessing();
+
         gBattleMainFunc = FreeResetData_ReturnToOvOrDoEvolutions;
         gCB2_AfterEvolution = BattleMainCB2;
     }

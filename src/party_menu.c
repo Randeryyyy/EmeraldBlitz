@@ -6000,6 +6000,19 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     bool32 canStopEvo = TRUE;
     bool8 fromFieldMove = gIsFromFieldMove; // Store gIsFromFieldMove before it's reset
 
+    if (GetMonData(mon, MON_DATA_SKY_RIBBON, NULL))
+    {
+        gPartyMenuUseExitCallback = FALSE;
+        PlaySE(SE_SELECT);
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        if (gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD)
+            gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+        else
+            gTasks[taskId].func = task;
+        return;
+    }
+
     if (GetMonData(mon, MON_DATA_HP) == 0)
     {
         gPartyMenuUseExitCallback = FALSE;

@@ -361,15 +361,32 @@ static void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
 
 static void AddHatchedMonToParty(u8 id)
 {
-    u8 isEgg = 0x46; // ?
+    u8 isEgg = FALSE;
     enum NationalDexOrder species;
     u8 name[POKEMON_NAME_LENGTH + 1];
     u16 metLevel;
     metloc_u8_t metLocation;
     struct Pokemon *mon = &gPlayerParty[id];
 
-    CreateHatchedMon(mon, &gEnemyParty[0]);
-    SetMonData(mon, MON_DATA_IS_EGG, &isEgg);
+    // Check for the Sky Ribbon flag on the stork egg.
+    if (GetMonData(mon, MON_DATA_SKY_RIBBON, NULL))
+    {
+        // This is a special gift egg. Just "hatch" it by clearing the egg flag.
+        SetMonData(mon, MON_DATA_IS_EGG, &isEgg);
+        // A met level of 0 is interpreted on the summary screen as "hatched at"
+        // For a gift egg, we want to preserve the location it was received at.
+        // By setting met level to 0, the summary screen will correctly show "Hatched at <location>".
+        metLevel = 0;
+        SetMonData(mon, 5, &metLevel);
+    }
+    else
+    {
+        // This is a normal egg. Re-create it at the default hatch level.
+        CreateHatchedMon(mon, &gEnemyParty[0]);
+        SetMonData(mon, MON_DATA_IS_EGG, &isEgg);
+        metLocation = GetCurrentRegionMapSectionId();
+        SetMonData(mon, MON_DATA_MET_LOCATION, &metLocation);
+    }
 
     species = GetMonData(mon, MON_DATA_SPECIES);
     StringCopy(name, GetSpeciesName(species));
@@ -380,13 +397,6 @@ static void AddHatchedMonToParty(u8 id)
     GetSetPokedexFlag(species, FLAG_SET_CAUGHT);
 
     GetMonNickname(mon, gStringVar1);
-
-    // A met level of 0 is interpreted on the summary screen as "hatched at"
-    metLevel = 0;
-    SetMonData(mon, MON_DATA_MET_LEVEL, &metLevel);
-
-    metLocation = GetCurrentRegionMapSectionId();
-    SetMonData(mon, MON_DATA_MET_LOCATION, &metLocation);
 
     MonRestorePP(mon);
     CalculateMonStats(mon);

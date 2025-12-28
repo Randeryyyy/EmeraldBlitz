@@ -1,16 +1,17 @@
 InsideOfTruck_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, InsideOfTruck_OnLoad
 	.byte 0
 
 InsideOfTruck_OnLoad:
-	setmetatile 4, 1, METATILE_InsideOfTruck_ExitLight_Top, TRUE
-	setmetatile 4, 2, METATILE_InsideOfTruck_ExitLight_Mid, TRUE
-	setmetatile 4, 3, METATILE_InsideOfTruck_ExitLight_Bottom, TRUE
+	setmetatile 4, 1, METATILE_InsideOfTruck_DoorClosedFloor_Top, FALSE
+	setmetatile 4, 2, METATILE_InsideOfTruck_DoorClosedFloor_Mid, FALSE
+	setmetatile 4, 3, METATILE_InsideOfTruck_DoorClosedFloor_Bottom, FALSE
 	end
 
 InsideOfTruck_EventScript_KommooCry::
-	lock
-	msgbox InsideOfTruck_Text_SideEye, MSGBOX_NPC
-	release
+	lockall
+	msgbox InsideOfTruck_Text_SideEye, MSGBOX_SIGN
+	releaseall
 	end
 
 InsideOfTruck_OnResume:
@@ -35,9 +36,9 @@ InsideOfTruck_Text_BoxPrintedWithMonLogo:
 	.string "your hopes and dreams for this run.$"
 
 InsideOfTruck_Text_SideEye:
-	.string "…\p"
-	.string "…………\p"
-	.string "…………………………………………\p"
+	.string "………\p"
+	.string "………………………\p"
+	.string "…………………………………………………………………………\p"
 	.string "KOMMO-O is giving you some judgmental\n"
 	.string "side eye.\p"
 	.string "…………\p"

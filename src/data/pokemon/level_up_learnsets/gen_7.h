@@ -22113,10 +22113,10 @@ static const struct LevelUpMove sWugtrioLevelUpLearnset[] = {
 #if P_FAMILY_BOMBIRDIER
 static const struct LevelUpMove sBombirdierLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_WING_ATTACK),
-    LEVEL_UP_MOVE( 1, MOVE_LEER),
-    LEVEL_UP_MOVE( 1, MOVE_PECK),
     LEVEL_UP_MOVE( 1, MOVE_MEMENTO),
     LEVEL_UP_MOVE( 1, MOVE_HONE_CLAWS),
+    LEVEL_UP_MOVE( 1, MOVE_LEER),
+    LEVEL_UP_MOVE( 1, MOVE_PECK),
     LEVEL_UP_MOVE( 7, MOVE_THIEF),
     LEVEL_UP_MOVE(11, MOVE_ROCK_THROW),
     LEVEL_UP_MOVE(16, MOVE_WHIRLWIND),

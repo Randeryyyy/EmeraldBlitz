@@ -2412,4 +2412,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+    [ABILITY_STORKS_BLESSING] =
+    {
+        .name = _("Stork's Blessing"),
+        .description = COMPOUND_STRING("Delivers miraculous babies."),
+        .aiRating = 8,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+    },
 };

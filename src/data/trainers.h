@@ -46014,7 +46014,7 @@ F_TRAINER_FEMALE |
                 MOVE_NIGHT_SLASH,
                 MOVE_AQUA_TAIL,
                 MOVE_MEGAHORN,
-                MOVE_AERIAL_ACE,
+                MOVE_AQUA_JET,
             },
             },
             {
