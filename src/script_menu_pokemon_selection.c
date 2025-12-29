@@ -62,6 +62,7 @@ static const u16 sGiftPokemonList[] = {
     SPECIES_HONEDGE,
     SPECIES_HORSEA,
     SPECIES_HOUNDOUR,
+    SPECIES_INKAY,
     SPECIES_JANGMO_O,
     SPECIES_JOLTIK,
     SPECIES_LITTEN, 

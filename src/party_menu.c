@@ -505,6 +505,33 @@ bool32 SetUpFieldMove_Surf(void);
 bool32 SetUpFieldMove_Fly(void);
 bool32 SetUpFieldMove_Waterfall(void);
 bool32 SetUpFieldMove_Dive(void);
+
+// When the party menu is opened in battle, revert any Mega Evolutions
+// for Pokémon that are not currently on the field. This is to ensure
+// their party menu sprites are correct, as they should de-Mega on switch-out.
+static void RevertInactiveMegas(void)
+{
+    if (gMain.inBattle)
+    {
+        u32 i, j;
+        for (i = 0; i < gPlayerPartyCount; i++)
+        {
+            bool8 isOnField = FALSE;
+            for (j = 0; j < gBattlersCount; j++)
+            {
+                if (GetBattlerSide(j) == B_SIDE_PLAYER && gBattlerPartyIndexes[j] == i)
+                {
+                    isOnField = TRUE;
+                    break;
+                }
+            }
+
+            if (!isOnField)
+                TryRevertPartyMonFormChange(i);
+        }
+    }
+}
+
 static void CursorCb_Evolution(u8 taskId);
 static void CursorCb_Heal(u8 taskId);
 void TryItemHoldFormChange(struct Pokemon *mon, s8 slotId);
@@ -562,6 +589,8 @@ static void InitPartyMenu(u8 menuType, u8 layout, u8 partyAction, bool8 keepCurs
 
         gTextFlags.autoScroll = 0;
         CalculatePlayerPartyCount();
+        if (menuType == PARTY_MENU_TYPE_IN_BATTLE)
+            RevertInactiveMegas();
         SetMainCallback2(CB2_InitPartyMenu);
     }
 }
@@ -2604,12 +2633,8 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
          //|| GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_DEINO
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_TYNAMO
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_SWINUB
-        )) || (VarGet(VAR_BADGE_COUNT) >= 0 && (
-            GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_AZURILL
-         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_PICHU
-         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_CLEFFA
-         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_IGGLYBUFF
-         || GET_BASE_SPECIES_ID(GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES)) == SPECIES_SCATTERBUG
+        )) || (GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_LEVEL) >= 9 && (
+            GET_BASE_SPECIES_ID(GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES)) == SPECIES_SCATTERBUG
          || GET_BASE_SPECIES_ID(GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES)) == SPECIES_SPEWPA
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_PIKIPEK
          || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_MAREEP
@@ -2625,6 +2650,10 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
             GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_APPLIN
         )) || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LAVARIDGE_TOWN_GYM_B1F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LAVARIDGE_TOWN_GYM_B1F) && (
             GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_APPLIN
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_PICHU
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_CLEFFA
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_IGGLYBUFF
+         || GetMonData(&gPlayerParty[menuBox->windowId], MON_DATA_SPECIES) == SPECIES_AZURILL
         ))))
     {
         if (palFlags & PARTY_PAL_SELECTED)
@@ -8330,10 +8359,13 @@ static const u16 sSketchMovePool[] = {
     MOVE_ENDEAVOR,
     MOVE_EXPLOSION,
     MOVE_FEATHER_DANCE,
+    MOVE_FISSURE,
     MOVE_FOUL_PLAY,
     MOVE_GIGATON_HAMMER,
     MOVE_KINGS_SHIELD,
     MOVE_LEECH_SEED,
+    MOVE_LIGHT_SCREEN,
+    MOVE_MAT_BLOCK,
     MOVE_MILK_DRINK,
     MOVE_NIGHT_DAZE,
     MOVE_OBSTRUCT,
@@ -8343,6 +8375,7 @@ static const u16 sSketchMovePool[] = {
     MOVE_POWDER,
     MOVE_RAIN_DANCE,
     MOVE_RAPID_SPIN,
+    MOVE_REFLECT,
     MOVE_SHEER_COLD,
     MOVE_SNARL,
     MOVE_SPIKY_SHIELD,
@@ -8350,9 +8383,11 @@ static const u16 sSketchMovePool[] = {
     MOVE_STICKY_WEB,
     MOVE_STONE_AXE,
     MOVE_STRENGTH_SAP,
+    MOVE_SYRUP_BOMB,
     MOVE_SUNNY_DAY,
     MOVE_SUPER_FANG,
     MOVE_TAIL_SLAP,
+    MOVE_TAIL_WHIP,
     MOVE_TAILWIND,
     MOVE_TAUNT,
     MOVE_TOXIC_SPIKES,

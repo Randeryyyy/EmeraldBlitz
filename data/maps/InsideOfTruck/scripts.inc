@@ -22,6 +22,14 @@
 #define LOCALID_CASTFORM 23
 #define LOCALID_EXEGGUTOR 24
 #define LOCALID_MIMIKYU 25
+#define LOCALID_DARKRAI 26
+#define LOCALID_COFAGRIGUS_1 27
+#define LOCALID_COFAGRIGUS_2 28
+#define LOCALID_COFAGRIGUS_3 29
+#define LOCALID_COFAGRIGUS_4 30
+#define LOCALID_TV 31
+#define LOCALID_CUBCHOO 32
+#define LOCALID_SKITTY 33
 
 InsideOfTruck_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, InsideOfTruck_OnLoad
@@ -41,8 +49,13 @@ InsideOfTruck_OnLoad:
 	setflag FLAG_HIDE_TRUCK_CASTFORM
 	setflag FLAG_HIDE_TRUCK_EXEGGUTOR
 	setflag FLAG_HIDE_TRUCK_MIMIKYU
+	setflag FLAG_HIDE_TRUCK_DARKRAI
+	setflag FLAG_HIDE_TRUCK_COFAGRIGUS
+	setflag FLAG_HIDE_TRUCK_TV
+	setflag FLAG_HIDE_TRUCK_CUBCHOO
+	setflag FLAG_HIDE_TRUCK_SKITTY
 	@ Randomly select a scenario and un-hide the corresponding NPCs
-	random 7 @ Number of scenarios
+	random 10 @ Number of scenarios
 	switch VAR_RESULT
 	case 0, InsideOfTruck_EventScript_SetupKommoo
 	case 1, InsideOfTruck_EventScript_SetupShuppets
@@ -51,6 +64,10 @@ InsideOfTruck_OnLoad:
 	case 4, InsideOfTruck_EventScript_SetupCastform
 	case 5, InsideOfTruck_EventScript_SetupExeggutor
 	case 6, InsideOfTruck_EventScript_SetupMimikyu
+	case 7, InsideOfTruck_EventScript_SetupDarkrai
+	case 8, InsideOfTruck_EventScript_SetupCofagrigus
+	@ case 9, InsideOfTruck_EventScript_SetupCubchooTV
+	case 9, InsideOfTruck_EventScript_SetupSkitty
 	end
 
 InsideOfTruck_EventScript_SetupKommoo::
@@ -82,6 +99,23 @@ InsideOfTruck_EventScript_SetupExeggutor::
 InsideOfTruck_EventScript_SetupMimikyu::
 	setflashlevel 7
 	clearflag FLAG_HIDE_TRUCK_MIMIKYU
+	return
+
+InsideOfTruck_EventScript_SetupDarkrai::
+	clearflag FLAG_HIDE_TRUCK_DARKRAI
+	return
+
+InsideOfTruck_EventScript_SetupCofagrigus::
+	clearflag FLAG_HIDE_TRUCK_COFAGRIGUS
+	return
+
+InsideOfTruck_EventScript_SetupCubchooTV::
+	clearflag FLAG_HIDE_TRUCK_TV
+	clearflag FLAG_HIDE_TRUCK_CUBCHOO
+	return
+
+InsideOfTruck_EventScript_SetupSkitty::
+	clearflag FLAG_HIDE_TRUCK_SKITTY
 	return
 
 InsideOfTruck_EventScript_KommooCry::
@@ -160,6 +194,12 @@ InsideOfTruck_Text_BoxPrintedWithMonLogo:
 	.string "It's filled to the brim with\n"
 	.string "your hopes and dreams for this run.$"
 
+InsideOfTruck_EventScript_Cofagrigus::
+	lockall
+	msgbox InsideOfTruck_Text_Cofagrigus, MSGBOX_SIGN
+	releaseall
+	end
+
 InsideOfTruck_EventScript_Jellicent::
 	lockall
 	msgbox InsideOfTruck_Text_Jellicent, MSGBOX_SIGN
@@ -191,6 +231,29 @@ InsideOfTruck_EventScript_Mimikyu::
 	waitmoncry
 	waitstate
 
+InsideOfTruck_EventScript_Darkrai::
+	lockall
+	faceplayer
+	playmoncry SPECIES_DARKRAI, CRY_MODE_NORMAL
+	waitmoncry
+	setvar VAR_RESULT, 4
+	special DoOrbEffect
+	waitstate
+	waitstate
+	msgbox InsideOfTruck_Text_Darkrai, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	waitstate
+	waitstate
+
+InsideOfTruck_Text_Darkrai:
+	.string "After a run like that, you're suddenly\n"
+	.string "feeling… so very… so very sleepy………$"
+
+InsideOfTruck_Text_Cofagrigus:
+	.string "Well this is no good. Even with so\n"
+	.string "many coffins, there still aren't enough\l"
+	.string "to fit all of the POKéMON you let die.$"
+
 InsideOfTruck_Text_Exeggutor:
 	.string "EXEGGUTOR seems to think it's being\n"
 	.string "very sneaky.$"
@@ -217,6 +280,52 @@ InsideOfTruck_EventScript_Loudred::
 	msgbox InsideOfTruck_Text_Loudred, MSGBOX_NPC
 	releaseall
 	end
+
+InsideOfTruck_EventScript_TV::
+	lockall
+	msgbox InsideOfTruck_Text_TruckTVWipe, MSGBOX_SIGN
+	releaseall
+	end
+
+InsideOfTruck_EventScript_Cubchoo::
+	lock
+	faceplayer
+	msgbox InsideOfTruck_Text_TruckCubchooRecognizes, MSGBOX_NPC
+	release
+	end
+
+InsideOfTruck_EventScript_Skitty::
+	lock
+	faceplayer
+	playse SE_PIN
+	applymovement LOCALID_SKITTY, InsideOfTruck_Movement_Heart
+	waitmovement 0
+	msgbox InsideOfTruck_Text_Skitty, MSGBOX_NPC
+	release
+	end
+
+InsideOfTruck_Movement_Heart:
+	emote_heart
+	step_end
+
+InsideOfTruck_Text_TruckTVWipe:
+	.string "This just in, folks. {PLAYER} has\n"
+	.string "wiped again in yet another embarrassing\l"
+	.string "turn of events. This time…\p"
+	.string "The anchor is speaking over a montage\n"
+	.string "of each of your POKéMON being brutally\l"
+	.string "knocked out one after the next.$"
+
+InsideOfTruck_Text_TruckCubchooRecognizes:
+	.string "CUBCHOO's eyes light up looking at\n"
+	.string "you. It seems to recognize your\l"
+	.string "discouraged expression from the TV.$"
+
+InsideOfTruck_Text_Skitty:
+	.string "SKITTY looks thrilled to finally have\n"
+	.string "some friends to play with. It's looking\l"
+	.string "eagerly at your POKé BALLS.\p"
+	.string "…She's going to be very disappointed.$"
 
 InsideOfTruck_Text_Loudred:
 	.string "KRRRZZZZTBOOM BAMBAMBAMBAMBAM\n"

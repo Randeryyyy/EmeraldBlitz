@@ -1231,18 +1231,18 @@
 #define FLAG_FOUR_BADGES                                            0x493 // Do we have 4 badges? (Used for move tutors)
 #define FLAG_NUZLOCKE	                                            0x494 // Are we nuzlocking?
 #define FLAG_RECEIVED_NECTAR                                        0x495 // Did you get Oricorio's nectar?
-#define FLAG_HIDE_TRUCK_KOMMOO                                      0x496 // Unused Flag
-#define FLAG_HIDE_TRUCK_SHUPPET                                     0x497 // Unused Flag
-#define FLAG_HIDE_TRUCK_JELLICENT                                   0x498 // Unused Flag
+#define FLAG_HIDE_TRUCK_KOMMOO                                      0x496 
+#define FLAG_HIDE_TRUCK_SHUPPET                                     0x497
+#define FLAG_HIDE_TRUCK_JELLICENT                                   0x498 
 #define FLAG_HIDE_TRUCK_LOUDRED                                     0x499
-#define FLAG_HIDE_TRUCK_CASTFORM                                    0x49A // Unused Flag
+#define FLAG_HIDE_TRUCK_CASTFORM                                    0x49A 
 #define FLAG_HIDE_TRUCK_EXEGGUTOR                                   0x49B
-#define FLAG_HIDE_TRUCK_MIMIKYU                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
+#define FLAG_HIDE_TRUCK_MIMIKYU                                     0x49C 
+#define FLAG_HIDE_TRUCK_DARKRAI                                     0x49D
+#define FLAG_HIDE_TRUCK_COFAGRIGUS                                  0x49E // Unused Flag
+#define FLAG_HIDE_TRUCK_CUBCHOO                                           0x49F // Unused Flag
+#define FLAG_HIDE_TRUCK_TV                                          0x4A0 // Unused Flag
+#define FLAG_HIDE_TRUCK_SKITTY                                           0x4A1 // Unused Flag
 #define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
 #define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
 #define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag

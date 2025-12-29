@@ -347,18 +347,7 @@ static const u16 sPoliwagEggMoveLearnset[] = {
 
 #if P_FAMILY_ABRA
 static const u16 sAbraEggMoveLearnset[] = {
-    MOVE_ENCORE,
-    MOVE_BARRIER,
-    MOVE_KNOCK_OFF,
-    MOVE_FIRE_PUNCH,
-    MOVE_THUNDER_PUNCH,
-    MOVE_ICE_PUNCH,
-    MOVE_POWER_TRICK,
-    MOVE_GUARD_SWAP,
-    MOVE_SKILL_SWAP,
-    MOVE_GUARD_SPLIT,
     MOVE_PSYCHO_SHIFT,
-    MOVE_ALLY_SWITCH,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_ABRA
@@ -3675,12 +3664,7 @@ static const u16 sSwirlixEggMoveLearnset[] = {
 
 #if P_FAMILY_INKAY
 static const u16 sInkayEggMoveLearnset[] = {
-    MOVE_SIMPLE_BEAM,
-    MOVE_POWER_SPLIT,
     MOVE_CAMOUFLAGE,
-    MOVE_FLATTER,
-    MOVE_DESTINY_BOND,
-    MOVE_GUARD_SWAP,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_INKAY
@@ -4416,11 +4400,7 @@ static const u16 sDreepyEggMoveLearnset[] = {
 
 #if P_FAMILY_SPRIGATITO
 static const u16 sSprigatitoEggMoveLearnset[] = {
-    MOVE_ALLY_SWITCH,
     MOVE_COPYCAT,
-    MOVE_LEECH_SEED,
-    MOVE_PETAL_BLIZZARD,
-    MOVE_SUCKER_PUNCH,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_SPRIGATITO
@@ -4434,10 +4414,7 @@ static const u16 sFuecocoEggMoveLearnset[] = {
 
 #if P_FAMILY_QUAXLY
 static const u16 sQuaxlyEggMoveLearnset[] = {
-    MOVE_DETECT,
-    MOVE_LAST_RESORT,
     MOVE_RAPID_SPIN,
-    MOVE_ROOST,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_QUAXLY

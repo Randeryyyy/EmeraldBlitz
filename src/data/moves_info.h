@@ -20197,13 +20197,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "a critical hit, never missing."),
         .effect = EFFECT_HIT,
         .power = 70,
+        .criticalHitStage = B_UPDATED_MOVE_DATA >= GEN_3 ? 1 : 2,
         .type = TYPE_GRASS,
         .accuracy = 0,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .alwaysCriticalHit = TRUE,
         .battleAnimScript = gBattleAnimMove_FlowerTrick,
     },
 
@@ -20250,7 +20250,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
             .self = TRUE,
-            .chance = 100,
+            .chance = 70,
         }),
         .battleAnimScript = gBattleAnimMove_AquaStep,
     },

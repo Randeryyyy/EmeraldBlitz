@@ -4366,8 +4366,11 @@ u16 Script_CheckPartyBelowLevelCap(void)
 
     for (i = 0; i < partyCount; i++)
     {
+        u8 level = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
+
         if (GetMonData(&gPlayerParty[i], MON_DATA_HP, NULL) > 0
-         && GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) < levelCap)
+         && level != 5
+         && level < levelCap)
             return TRUE;
     }
 

@@ -47170,17 +47170,15 @@ F_TRAINER_FEMALE |
             .heldItem = ITEM_METAGROSSITE,
 #line 18647
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 18650
+#line 18649
             .ability = ABILITY_CLEAR_BODY,
 #line 18646
             .lvl = 58,
-#line 18649
-            .nature = NATURE_SERIOUS,
 #line 18648
-            .isShiny = TRUE,
+            .nature = NATURE_SERIOUS,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
-#line 18651
+#line 18650
                 MOVE_HAMMER_ARM,
                 MOVE_PSYCHIC,
                 MOVE_METEOR_MASH,

@@ -1141,15 +1141,17 @@ void DoSpinExitWarp(void)
     CreateTask(Task_SpinExitWarp, 10);
 }
 
-static void LoadOrbEffectPalette(bool8 blueOrb)
+static void LoadOrbEffectPalette(u8 orbType)
 {
     int i;
     u16 color[1];
 
-    if (!blueOrb)
-        color[0] = RGB_RED;
-    else
+    if (orbType == 1)
         color[0] = RGB_BLUE;
+    else if (orbType == 2)
+        color[0] = RGB_BLACK;
+    else
+        color[0] = RGB_RED;
 
     for (i = 0; i < 16; i++)
         LoadPalette(color, BG_PLTT_ID(15) + i, PLTT_SIZEOF(1));
@@ -1300,6 +1302,11 @@ void DoOrbEffect(void)
     else if (gSpecialVar_Result == 2)
     {
         tBlueOrb = FALSE;
+        tCenterX = 120;
+    }
+    else if (gSpecialVar_Result == 4)
+    {
+        tBlueOrb = 2; // Black
         tCenterX = 120;
     }
     else

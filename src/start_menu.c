@@ -135,6 +135,7 @@ static u8 SaveDoSaveCallback(void);
 static u8 SaveSuccessCallback(void);
 static u8 SaveReturnSuccessCallback(void);
 static u8 SaveErrorCallback(void);
+static u8 SaveCallback_Cancel(void);
 static u8 SaveReturnErrorCallback(void);
 static u8 BattlePyramidConfirmRetireCallback(void);
 static u8 BattlePyramidRetireYesNoCallback(void);
@@ -1020,6 +1021,13 @@ static bool8 SaveErrorTimer(void)
     return FALSE;
 }
 
+static u8 SaveCallback_Cancel(void)
+{
+    HideSaveInfoWindow();
+    HideSaveMessageWindow();
+    return SAVE_CANCELED;
+}
+
 static u8 SaveConfirmSaveCallback(void)
 {
     ClearStdWindowAndFrame(GetStartMenuWindowId(), FALSE);
@@ -1131,6 +1139,12 @@ static u8 SaveSavingMessageCallback(void)
 static u8 SaveDoSaveCallback(void)
 {
     u8 saveStatus;
+
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_INSIDE_OF_TRUCK) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_INSIDE_OF_TRUCK))
+    {
+        ShowSaveMessage(gText_NoProgressToSave, SaveCallback_Cancel);
+        return SAVE_IN_PROGRESS;
+    }
 
     IncrementGameStat(GAME_STAT_SAVED_GAME);
     PausePyramidChallenge();

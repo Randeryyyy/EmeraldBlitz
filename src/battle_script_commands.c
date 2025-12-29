@@ -4431,6 +4431,14 @@ static void Cmd_dofaintanimation(void)
         return;
     }
 
+if (GetActiveGimmick(battler) == GIMMICK_MEGA)
+    {
+        UndoMega(battler);
+        gBattleScripting.battler = battler;
+        BattleScriptCall(BattleScript_MegaEvolutionEnds_Ret);
+        return;
+    }
+
     BtlController_EmitFaintAnimation(battler, B_COMM_TO_CONTROLLER);
     MarkBattlerForControllerExec(battler);
     gBattlescriptCurrInstr = cmd->nextInstr;
@@ -17357,7 +17365,7 @@ void BS_InvertStatStages(void)
     for (u32 i = 0; i < NUM_BATTLE_STATS; i++)
     {
         if (gBattleMons[gBattlerTarget].statStages[i] < DEFAULT_STAT_STAGE) // Negative becomes positive.
-            gBattleMons[gBattlerTarget].statStages[i] = DEFAULT_STAT_STAGE + (DEFAULT_STAT_STAGE - gBattleMons[gBattlerTarget].statStages[i]);
+            gBattleMons[gBattlerTarget].statStages[i] = DEFAULT_STAT_STAGE + 1;
         else if (gBattleMons[gBattlerTarget].statStages[i] > DEFAULT_STAT_STAGE) // Positive becomes negative.
             gBattleMons[gBattlerTarget].statStages[i] = DEFAULT_STAT_STAGE - (gBattleMons[gBattlerTarget].statStages[i] - DEFAULT_STAT_STAGE);
     }

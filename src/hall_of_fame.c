@@ -72,6 +72,7 @@ static void Task_Hof_DoConfetti(u8 taskId);
 static void Task_Hof_WaitToDisplayPlayer(u8 taskId);
 static void Task_Hof_DisplayPlayer(u8 taskId);
 static void Task_Hof_WaitAndPrintPlayerInfo(u8 taskId);
+static void Task_Hof_WaitForInput(u8 taskId);
 static void Task_Hof_ExitOnKeyPressed(u8 taskId);
 static void Task_Hof_HandlePaletteOnExit(u8 taskId);
 static void Task_Hof_HandleExit(u8 taskId);
@@ -673,16 +674,25 @@ static void Task_Hof_DoConfetti(u8 taskId)
             if (gTasks[taskId].tMonSpriteId(i) != SPRITE_NONE)
                 gSprites[gTasks[taskId].tMonSpriteId(i)].oam.priority = 1;
         }
-        BeginNormalPaletteFade(sHofFadePalettes, 0, 12, 12, RGB(16, 29, 24));
-        FillWindowPixelBuffer(0, PIXEL_FILL(0));
-        CopyWindowToVram(0, COPYWIN_FULL);
         gTasks[taskId].tFrameCount = 7;
+        gTasks[taskId].func = Task_Hof_WaitForInput;
+    }
+}
+
+static void Task_Hof_WaitForInput(u8 taskId)
+{
+    if (JOY_NEW(A_BUTTON | B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
         gTasks[taskId].func = Task_Hof_WaitToDisplayPlayer;
     }
 }
 
 static void Task_Hof_WaitToDisplayPlayer(u8 taskId)
 {
+    FillWindowPixelBuffer(0, PIXEL_FILL(0));
+    CopyWindowToVram(0, COPYWIN_FULL);
+    BeginNormalPaletteFade(sHofFadePalettes, 0, 12, 12, RGB(16, 29, 24));
     if (gTasks[taskId].tFrameCount >= 16)
     {
         gTasks[taskId].func = Task_Hof_DisplayPlayer;
