@@ -275,29 +275,13 @@ static const u16 sMeowthEggMoveLearnset[] = {
 };
 #if P_ALOLAN_FORMS
 static const u16 sMeowthAlolaEggMoveLearnset[] = {
-    MOVE_AMNESIA,
-    MOVE_ASSIST,
     MOVE_CHARM,
-    MOVE_COVET,
-    MOVE_FLAIL,
-    MOVE_FLATTER,
-    MOVE_FOUL_PLAY,
-    MOVE_HYPNOSIS,
-    MOVE_PARTING_SHOT,
-    MOVE_PUNISHMENT,
-    MOVE_SNATCH,
-    MOVE_SPITE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_ALOLAN_FORMS
 #if P_GALARIAN_FORMS
 static const u16 sMeowthGalarEggMoveLearnset[] = {
-    MOVE_SPITE,
-    MOVE_DOUBLE_EDGE,
-    MOVE_CURSE,
-    MOVE_FLAIL,
     MOVE_NIGHT_SLASH,
-    MOVE_COVET,
     MOVE_UNAVAILABLE,
 };
 #endif //P_GALARIAN_FORMS
@@ -1723,7 +1707,7 @@ static const u16 sSurskitEggMoveLearnset[] = {
 
 #if P_FAMILY_SHROOMISH
 static const u16 sShroomishEggMoveLearnset[] = {
-    MOVE_DRAIN_PUNCH,
+    MOVE_WAKE_UP_SLAP,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_SHROOMISH
