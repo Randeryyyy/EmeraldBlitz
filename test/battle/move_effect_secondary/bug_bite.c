@@ -148,3 +148,27 @@ SINGLE_BATTLE_TEST("Bug Bite ignores Unnerve")
         EXPECT_EQ(opponent->item, ITEM_NONE);
     }
 }
+
+SINGLE_BATTLE_TEST("Chesto Berry triggers immediately after Yawn sleep at the end of a turn")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_CHESTO_BERRY); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_YAWN); MOVE(player, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); }
+    } SCENE {
+        // Turn 1
+        MESSAGE("Opponent Wobbuffet used Yawn!");
+        MESSAGE("Wobbuffet became drowsy!");
+        
+        // End of Turn 1
+        MESSAGE("Wobbuffet fell asleep!");
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+        MESSAGE("Wobbuffet's Chesto Berry cured its sleep status!");
+        
+        // Turn 2
+        NONE_OF { MESSAGE("Wobbuffet is fast asleep."); }
+        MESSAGE("Wobbuffet used Celebrate!");
+    }
+}

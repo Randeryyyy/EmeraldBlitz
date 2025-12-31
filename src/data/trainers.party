@@ -10415,13 +10415,12 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
-Zigzagoon
+Skrelp
 Level: 4
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Shroomish
-Level: 4
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Solid Rock
+- Yawn
 
 === TRAINER_HALEY_1 ===
 Name: HALEY
