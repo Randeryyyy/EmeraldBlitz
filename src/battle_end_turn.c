@@ -1294,6 +1294,7 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
     case THIRD_EVENT_BLOCK_ITEMS:
     {
         // TODO: simplify
+        enum HoldEffect holdEffect = GetBattlerHoldEffect(battler);
         switch (holdEffect)
         {
         case HOLD_EFFECT_FLAME_ORB:
@@ -1309,7 +1310,6 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
         default:
             break;
         }
-
         gBattleStruct->eventState.endTurnBlock = 0;
         gBattleStruct->eventState.endTurnBattler++;
         break;
