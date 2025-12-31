@@ -6401,20 +6401,31 @@ static void Task_SacredAshDisplayHPRestored(u8 taskId)
 
 void ItemUseCB_EvolutionStone(u8 taskId, TaskFunc task)
 {
-    PlaySE(SE_SELECT);
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u16 item = gSpecialVar_ItemId;
+    bool32 canStopEvo = TRUE;
+    u16 targetSpecies;
+
     gCB2_AfterEvolution = gPartyMenu.exitCallback;
-    if (ExecuteTableBasedItemEffect(&gPlayerParty[gPartyMenu.slotId], gSpecialVar_ItemId, gPartyMenu.slotId, 0))
+    targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_ITEM_CHECK, item, NULL, &canStopEvo, CHECK_EVO);
+
+    if (targetSpecies != SPECIES_NONE)
     {
+        PlaySE(SE_USE_ITEM);
+        if (GetItemPocket(item) != POCKET_KEY_ITEMS)
+            RemoveBagItem(item, 1);
+        GetEvolutionTargetSpecies(mon, EVO_MODE_ITEM_USE, item, NULL, &canStopEvo, DO_EVO);
+        FreePartyPointers();
+        BeginEvolutionScene(mon, targetSpecies, canStopEvo, gPartyMenu.slotId);
+        DestroyTask(taskId);
+    }
+    else
+    {
+        PlaySE(SE_SELECT);
         gPartyMenuUseExitCallback = FALSE;
         DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
         ScheduleBgCopyTilemapToVram(2);
         gTasks[taskId].func = task;
-    }
-    else
-    {
-        if (GetItemPocket(gSpecialVar_ItemId) != POCKET_KEY_ITEMS)
-            RemoveBagItem(gSpecialVar_ItemId, 1);
-        FreePartyPointers();
     }
 }
 
