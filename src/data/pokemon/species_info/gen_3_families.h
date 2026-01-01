@@ -10985,8 +10985,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sClamperlLevelUpLearnset,
         .teachableLearnset = sClamperlTeachableLearnset,
         .eggMoveLearnset = sClamperlEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_HUNTAIL,  CONDITIONS({IF_GENDER, MON_MALE})},
-                                {EVO_LEVEL, 25, SPECIES_GOREBYSS, CONDITIONS({IF_GENDER, MON_FEMALE})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_HUNTAIL,  CONDITIONS({IF_GENDER, MON_MALE})},
+                                {EVO_LEVEL, 28, SPECIES_GOREBYSS, CONDITIONS({IF_GENDER, MON_FEMALE})}),
     },
 
     [SPECIES_HUNTAIL] =

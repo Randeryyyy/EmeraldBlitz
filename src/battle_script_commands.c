@@ -13330,41 +13330,14 @@ static void Cmd_pickup(void)
 
             ability = GetSpeciesAbility(species, GetMonData(&gPlayerParty[i], MON_DATA_ABILITY_NUM));
 
-            if (ability == ABILITY_PICKUP
+            if ((ability == ABILITY_PICKUP || ability == ABILITY_HONEY_GATHER || ability == ABILITY_BALL_FETCH)
                 && species != SPECIES_NONE
-                && species != SPECIES_EGG
-                && heldItem == ITEM_NONE
-                && (Random() % 10) == 0)
-            {
-                if (isInPyramid)
-                {
-                    heldItem = GetBattlePyramidPickupItemId();
-                    SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
-                }
-                else
-                {
-                    u32 rand = Random() % 100;
-                    u32 percentTotal = 0;
-
-                    for (j = 0; j < ARRAY_COUNT(sPickupTable); j++)
-                    {
-                        percentTotal += sPickupTable[j].percentage[lvlDivBy10];
-                        if (rand < percentTotal)
-                        {
-                            SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &sPickupTable[j].itemId);
-                            break;
-                        }
-                    }
-                }
-            }
-            else if (ability == ABILITY_HONEY_GATHER
-                && species != 0
                 && species != SPECIES_EGG
                 && heldItem == ITEM_NONE)
             {
-                if ((lvlDivBy10 + 1 ) * 5 > 1)
+                if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) && IsGymLeader(TRAINER_BATTLE_PARAM.opponentA))
                 {
-                    heldItem = ITEM_HONEY;
+                    heldItem = ITEM_SITRUS_BERRY;
                     SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
                 }
             }
@@ -13490,10 +13463,7 @@ static void Cmd_tryrecycleitem(void)
 
     u16 *usedHeldItem;
 
-    if (gCurrentMove == MOVE_NONE && GetBattlerAbility(gBattlerAttacker) == ABILITY_PICKUP)
-        usedHeldItem = &GetBattlerPartyState(gBattlerTarget)->usedHeldItem;
-    else
-        usedHeldItem = &GetBattlerPartyState(gBattlerAttacker)->usedHeldItem;
+    usedHeldItem = &GetBattlerPartyState(gBattlerAttacker)->usedHeldItem;
     if (*usedHeldItem != ITEM_NONE && gBattleMons[gBattlerAttacker].item == ITEM_NONE)
     {
         gLastUsedItem = *usedHeldItem;
